@@ -78,6 +78,9 @@ def read_front_matter(path)
 end
 
 KNOWN_STEPS = ["erb", "md"]
+# Render the file at path to out_dir, using metadata and the frontmatter in path if present.
+# Writes the file to its new location. If path has transformable extensions like .md or .erb,
+# the file will be processed using one or multiple steps.
 def render_file_to_location(path, out_dir, metadata)
   FileUtils.mkdir_p(out_dir)
   filename = path.split("/")[-1]
@@ -121,21 +124,23 @@ def render_file_to_location(path, out_dir, metadata)
   File.write("#{out_filename}", contents)
 end
 
+# Render the file at path, using metadata and the frontmatter in path if present.
+# Returns the rendered text.
 def render_file(path, metadata)
   raise "Can't render a directory!" if File.directory?(path)
 
   front_matter_data, line_offset, erb_template = read_front_matter(path)
+  metadata = front_matter_data.merge(metadata)
 
-  #dsl = OpenStruct.new(metadata.merge(front_matter_data).merge(content: ""))
-  front_matter_data[:content] = ""  # Overwrite if metadata has :content
-  dsl = RenderContext.new metadata.merge(front_matter_data.merge(metadata))
+  metadata[:content] = ""  # Overwrite if metadata has :content
+  dsl = RenderContext.new metadata
   erb_tmpl = ERB.new(erb_template)
   #erb_tmpl.location = [path, 1 + line_offset]
   text = dsl.instance_eval erb_tmpl.src, path, 1 + line_offset
   #text = erb_tmpl.result(dsl.send(:binding))
 
-  if front_matter_data[:layout]
-    return render_file("_layouts/#{front_matter_data[:layout]}.erb", metadata.merge(content: text))
+  if metadata[:layout]
+    return render_file("_layouts/#{metadata[:layout]}.erb", metadata.merge(content: text))
   end
 
   text
@@ -161,6 +166,7 @@ def parse_collections
       item_data, _line, _content = read_front_matter(file_w_frontmatter)
       item_data[:name] = file_w_frontmatter.split("/")[-1].gsub("_", "-") # Ah, Jekyll. There's probably some deep annoying meaning to why this is needed.
       item_data[:url] = "/#{coll}/#{File.basename(file_w_frontmatter.gsub("_", "-"), ".*")}"
+
       out[coll] << OpenStruct.new(item_data)
     end
   end
