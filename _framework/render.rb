@@ -129,7 +129,7 @@ end
 
 # Render the file at path, using metadata and the frontmatter in path if present.
 # Returns the rendered text.
-def render_file(path, metadata)
+def render_file(path, metadata, no_layout: false)
   raise "Can't render a directory!" if File.directory?(path)
 
   front_matter_data, line_offset, erb_template = read_front_matter(path)
@@ -142,8 +142,9 @@ def render_file(path, metadata)
   text = dsl.instance_eval erb_tmpl.src, path, 1 + line_offset
   #text = erb_tmpl.result(dsl.send(:binding))
 
-  if metadata[:layout]
-    return render_file("_layouts/#{metadata[:layout]}.erb", metadata.merge(content: text))
+  if metadata[:layout] && !no_layout
+    layout = metadata.delete(:layout)
+    return render_file("_layouts/#{layout}.erb", metadata.merge(content: text), no_layout: true)
   end
 
   text
@@ -156,9 +157,18 @@ def render_collection_item_to_location(item, out_dir, metadata)
     raise "Can't find layout for item #{item["name"].inspect} / #{item.inspect}!"
   end
 
+  # Hack: convert .md to .html
+  do_md_conversion = false
+  if item[:name].end_with?(".md") && !item[:name].end_with?(".html.md")
+    item[:name].gsub!(/.md$/, ".html")
+    do_md_conversion = true
+  end
+
   # Trim off leading _site for url
   url = "#{out_dir.split("/")[1..-1].join("/")}/#{item[:name]}"
-  contents = render_file("_layouts/#{layout}.erb", metadata.merge(page: item, url: url))
+  metadata.delete(:layout)
+  contents = render_file("_layouts/#{layout}.erb", metadata.merge(page: item, url: url), no_layout: true)
+  contents = redcarpet_render_markdown(contents) if do_md_conversion
   File.write("#{out_dir}/#{item[:name]}", contents)
 end
 
