@@ -1,0 +1,58 @@
+method call exit reasons: 
+              iseq_has_no_kw    1330896 (30.0%)
+            iseq_arity_error    1032385 (23.3%)
+                 iseq_zsuper     591542 (13.3%)
+                   block_arg     443632 (10.0%)
+         iseq_ruby2_keywords     443613 (10.0%)
+    iseq_missing_optional_kw     295742 ( 6.7%)
+      args_splat_cfunc_zuper     147872 ( 3.3%)
+     iseq_materialized_block     147871 ( 3.3%)
+
+leave exit reasons: 
+    interp_return   15242827 (100.0%)
+     se_interrupt          5 ( 0.0%)
+
+getinstancevariable exit reasons: 
+    (all relevant counters are zero)
+setinstancevariable exit reasons: 
+    (all relevant counters are zero)
+opt_aref exit reasons: 
+    (all relevant counters are zero)
+
+bindings_allocations:           0
+bindings_set:                   0
+compiled_iseq_count:          289
+compiled_block_count:        2914
+invalidation_count:             1
+constant_state_bumps:           0
+inline_code_size:         1502936
+outlined_code_size:       1368227
+
+total_exit_count:        15242837
+total_insns_count:     1777189037
+vm_insns_count:           1078151
+yjit_insns_count:      1776110896
+ratio_in_yjit:              99.9%
+avg_len_in_yjit:            116.5
+
+Top-20 most frequent exit ops (100.0% of exits):
+                     leave:          5 (50.0)
+    opt_send_without_block:          3 (30.0)
+               invokesuper:          1 (10.0)
+                      send:          1 (10.0)
+               adjuststack:          0 (0.0)
+               anytostring:          0 (0.0)
+                  branchif:          0 (0.0)
+                 branchnil:          0 (0.0)
+              branchunless:          0 (0.0)
+              checkkeyword:          0 (0.0)
+                checkmatch:          0 (0.0)
+                 checktype:          0 (0.0)
+               concatarray:          0 (0.0)
+             concatstrings:          0 (0.0)
+               defineclass:          0 (0.0)
+                   defined:          0 (0.0)
+               definedivar:          0 (0.0)
+              definemethod:          0 (0.0)
+             definesmethod:          0 (0.0)
+                       dup:          0 (0.0)

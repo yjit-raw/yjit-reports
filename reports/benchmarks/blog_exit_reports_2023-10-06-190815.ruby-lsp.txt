@@ -1,0 +1,70 @@
+method call exit reasons: 
+                        send_getter    2907261 (38.7%)
+                          block_arg    1776416 (23.6%)
+            iseq_materialized_block    1399302 (18.6%)
+          args_splat_cfunc_var_args     967907 (12.9%)
+                iseq_ruby2_keywords     112239 ( 1.5%)
+                      iseq_has_post      88545 ( 1.2%)
+    args_splat_cfunc_ruby2_keywords      86149 ( 1.1%)
+       send_chain_not_string_or_sym      84835 ( 1.1%)
+                           kw_splat      38941 ( 0.5%)
+                     iseq_has_no_kw      31921 ( 0.4%)
+              cfunc_ruby_array_varg       9124 ( 0.1%)
+                      zsuper_method       6002 ( 0.1%)
+                   iseq_arity_error       4169 ( 0.1%)
+                    args_splat_ivar       3867 ( 0.1%)
+                    iseq_has_kwrest       1423 ( 0.0%)
+                 iseq_splat_with_kw        802 ( 0.0%)
+           iseq_missing_optional_kw        589 ( 0.0%)
+                        iseq_zsuper        387 ( 0.0%)
+        iseq_has_rest_opt_and_block        242 ( 0.0%)
+      iseq_has_rest_and_kw_supplied         27 ( 0.0%)
+
+leave exit reasons: 
+    interp_return   60432760 (100.0%)
+     se_interrupt         31 ( 0.0%)
+
+getinstancevariable exit reasons: 
+    (all relevant counters are zero)
+setinstancevariable exit reasons: 
+    (all relevant counters are zero)
+opt_aref exit reasons: 
+    (all relevant counters are zero)
+
+bindings_allocations:           4
+bindings_set:                   0
+compiled_iseq_count:         3508
+compiled_block_count:       48673
+invalidation_count:           342
+constant_state_bumps:           0
+inline_code_size:         5065824
+outlined_code_size:       5014566
+
+total_exit_count:        60788276
+total_insns_count:     2818846584
+vm_insns_count:         202336573
+yjit_insns_count:      2616865527
+ratio_in_yjit:              92.8%
+avg_len_in_yjit:             43.0
+
+Top-20 most frequent exit ops (100.0% of exits):
+         opt_case_dispatch:     185096 (52.1)
+               expandarray:      85817 (24.1)
+    opt_send_without_block:      34549 (9.7)
+                      once:      21384 (6.0)
+        getblockparamproxy:      13671 (3.8)
+                  opt_ltlt:       6636 (1.9)
+      opt_getconstant_path:       4268 (1.2)
+                    opt_eq:       4047 (1.1)
+                     leave:         31 (0.0)
+               objtostring:          6 (0.0)
+                   opt_neq:          4 (0.0)
+                      send:          4 (0.0)
+               invokesuper:          1 (0.0)
+                opt_length:          1 (0.0)
+                 opt_minus:          1 (0.0)
+               adjuststack:          0 (0.0)
+               anytostring:          0 (0.0)
+                  branchif:          0 (0.0)
+                 branchnil:          0 (0.0)
+              branchunless:          0 (0.0)

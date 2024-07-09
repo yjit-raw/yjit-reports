@@ -1,0 +1,56 @@
+method call exit reasons: 
+              block_arg    3053920 (46.1%)
+    iseq_ruby2_keywords    1526955 (23.1%)
+       iseq_arity_error    1017981 (15.4%)
+         iseq_has_no_kw     509000 ( 7.7%)
+               kw_splat     508942 ( 7.7%)
+            interrupted        635 ( 0.0%)
+
+leave exit reasons: 
+    interp_return   31559389 (100.0%)
+     se_interrupt        295 ( 0.0%)
+
+getinstancevariable exit reasons: 
+    (all relevant counters are zero)
+setinstancevariable exit reasons: 
+    (all relevant counters are zero)
+opt_aref exit reasons: 
+    (all relevant counters are zero)
+
+bindings_allocations:           0
+bindings_set:                   0
+compiled_iseq_count:           51
+compiled_block_count:         460
+invalidation_count:             1
+constant_state_bumps:           0
+inline_code_size:          729692
+outlined_code_size:        672290
+
+total_exit_count:        38686161
+total_insns_count:     1967826170
+vm_insns_count:         103377969
+yjit_insns_count:      1871574973
+ratio_in_yjit:              94.7%
+avg_len_in_yjit:             48.2
+
+Top-20 most frequent exit ops (100.0% of exits):
+                      send:    5089970 (71.4)
+               invokeblock:    1017981 (14.3)
+               invokesuper:    1017943 (14.3)
+    opt_send_without_block:        477 (0.0)
+                     leave:        295 (0.0)
+                  opt_aref:         45 (0.0)
+                  branchif:         42 (0.0)
+                opt_length:         18 (0.0)
+      opt_getconstant_path:          1 (0.0)
+               adjuststack:          0 (0.0)
+               anytostring:          0 (0.0)
+                 branchnil:          0 (0.0)
+              branchunless:          0 (0.0)
+              checkkeyword:          0 (0.0)
+                checkmatch:          0 (0.0)
+                 checktype:          0 (0.0)
+               concatarray:          0 (0.0)
+             concatstrings:          0 (0.0)
+               defineclass:          0 (0.0)
+                   defined:          0 (0.0)

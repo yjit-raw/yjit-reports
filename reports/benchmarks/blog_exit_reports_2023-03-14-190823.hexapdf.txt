@@ -1,0 +1,67 @@
+method call exit reasons: 
+                    block_arg    4209904 (79.7%)
+                  send_getter     292982 ( 5.5%)
+    args_splat_cfunc_var_args     257196 ( 4.9%)
+                zsuper_method     180136 ( 3.4%)
+          is_a_class_mismatch     110284 ( 2.1%)
+                     kw_splat      87120 ( 1.6%)
+              iseq_has_kwrest      73546 ( 1.4%)
+       iseq_splat_arity_error      73202 ( 1.4%)
+              args_splat_ivar        324 ( 0.0%)
+             iseq_arity_error        132 ( 0.0%)
+      iseq_has_rest_and_block        104 ( 0.0%)
+                     keywords         44 ( 0.0%)
+          iseq_ruby2_keywords         16 ( 0.0%)
+          args_splat_opt_call         16 ( 0.0%)
+               iseq_has_no_kw         16 ( 0.0%)
+        cfunc_ruby_array_varg         16 ( 0.0%)
+
+leave exit reasons: 
+        interp_return  235428698 (99.6%)
+    start_pc_non_zero     838894 ( 0.4%)
+         se_interrupt        293 ( 0.0%)
+
+getinstancevariable exit reasons: 
+    (all relevant counters are zero)
+setinstancevariable exit reasons: 
+    (all relevant counters are zero)
+opt_aref exit reasons: 
+    (all relevant counters are zero)
+
+bindings_allocations:           0
+bindings_set:                   0
+compiled_iseq_count:          604
+compiled_block_count:       10618
+invalidation_count:            22
+constant_state_bumps:           0
+inline_code_size:         1194993
+outlined_code_size:       1192348
+
+total_exit_count:       242656832
+total_insns_count:     13357933217
+vm_insns_count:        1324895069
+yjit_insns_count:      12040266282
+ratio_in_yjit:              90.1%
+avg_len_in_yjit:             49.6
+
+Top-20 most frequent exit ops (100.0% of exits):
+                      send:    4210443 (58.3)
+    opt_send_without_block:    1111401 (15.4)
+               invokeblock:     695499 (9.6)
+        getblockparamproxy:     293835 (4.1)
+               invokesuper:     293465 (4.1)
+                    opt_eq:     293166 (4.1)
+                     throw:     219999 (3.0)
+             setlocal_WC_0:     109802 (1.5)
+                     leave:        293 (0.0)
+             setlocal_WC_1:        202 (0.0)
+                  branchif:         12 (0.0)
+      opt_getconstant_path:         10 (0.0)
+                  opt_mult:          7 (0.0)
+               adjuststack:          0 (0.0)
+               anytostring:          0 (0.0)
+                 branchnil:          0 (0.0)
+              branchunless:          0 (0.0)
+              checkkeyword:          0 (0.0)
+                checkmatch:          0 (0.0)
+                 checktype:          0 (0.0)

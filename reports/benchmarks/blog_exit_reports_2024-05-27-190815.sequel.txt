@@ -1,0 +1,53 @@
+method call exit reasons: 
+    singleton_class    3981996 (78.6%)
+    ivar_set_method     723992 (14.3%)
+    cfunc_block_arg     362000 ( 7.1%)
+
+leave exit reasons: 
+    interp_return   20997336 (100.0%)
+     se_interrupt       6027 ( 0.0%)
+
+getinstancevariable exit reasons: 
+    (all relevant counters are zero)
+setinstancevariable exit reasons: 
+    (all relevant counters are zero)
+opt_aref exit reasons: 
+    (all relevant counters are zero)
+
+bindings_allocations:           0
+bindings_set:                   0
+compiled_iseq_count:           16
+compiled_block_count:         117
+invalidation_count:             0
+constant_state_bumps:           0
+inline_code_size:          483895
+outlined_code_size:        439247
+
+total_exit_count:        21003578
+total_insns_count:      825248454
+vm_insns_count:           9907218
+yjit_insns_count:       815347478
+ratio_in_yjit:              98.8%
+avg_len_in_yjit:             38.8
+
+Top-20 most frequent exit ops (100.0% of exits):
+                     leave:       6027 (96.6)
+    opt_send_without_block:        191 (3.1)
+                  opt_mult:         24 (0.4)
+               adjuststack:          0 (0.0)
+               anytostring:          0 (0.0)
+                  branchif:          0 (0.0)
+                 branchnil:          0 (0.0)
+              branchunless:          0 (0.0)
+              checkkeyword:          0 (0.0)
+                checkmatch:          0 (0.0)
+                 checktype:          0 (0.0)
+               concatarray:          0 (0.0)
+             concatstrings:          0 (0.0)
+             concattoarray:          0 (0.0)
+               defineclass:          0 (0.0)
+                   defined:          0 (0.0)
+               definedivar:          0 (0.0)
+              definemethod:          0 (0.0)
+             definesmethod:          0 (0.0)
+                       dup:          0 (0.0)

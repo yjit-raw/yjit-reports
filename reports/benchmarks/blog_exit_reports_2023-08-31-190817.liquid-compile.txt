@@ -1,0 +1,52 @@
+method call exit reasons: 
+               zsuper_method     320291 (99.9%)
+    iseq_missing_optional_kw        237 ( 0.1%)
+
+leave exit reasons: 
+    interp_return    6682953 (100.0%)
+     se_interrupt         78 ( 0.0%)
+
+getinstancevariable exit reasons: 
+    (all relevant counters are zero)
+setinstancevariable exit reasons: 
+    (all relevant counters are zero)
+opt_aref exit reasons: 
+    (all relevant counters are zero)
+
+bindings_allocations:           0
+bindings_set:                   0
+compiled_iseq_count:          151
+compiled_block_count:        2009
+invalidation_count:             2
+constant_state_bumps:           0
+inline_code_size:          356453
+outlined_code_size:        328982
+
+total_exit_count:         6708735
+total_insns_count:     1299058741
+vm_insns_count:            640367
+yjit_insns_count:      1298444156
+ratio_in_yjit:             100.0%
+avg_len_in_yjit:            193.5
+
+Top-20 most frequent exit ops (100.0% of exits):
+                  opt_ltlt:      20790 (80.6)
+                      once:       4591 (17.8)
+    opt_send_without_block:        267 (1.0)
+                     leave:         78 (0.3)
+                      send:         28 (0.1)
+                  opt_aref:         26 (0.1)
+      opt_getconstant_path:          2 (0.0)
+               adjuststack:          0 (0.0)
+               anytostring:          0 (0.0)
+                  branchif:          0 (0.0)
+                 branchnil:          0 (0.0)
+              branchunless:          0 (0.0)
+              checkkeyword:          0 (0.0)
+                checkmatch:          0 (0.0)
+                 checktype:          0 (0.0)
+               concatarray:          0 (0.0)
+             concatstrings:          0 (0.0)
+               defineclass:          0 (0.0)
+                   defined:          0 (0.0)
+               definedivar:          0 (0.0)

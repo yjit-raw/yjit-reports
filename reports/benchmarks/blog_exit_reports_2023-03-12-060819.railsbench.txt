@@ -1,0 +1,70 @@
+method call exit reasons: 
+                          block_arg    2830337 (20.4%)
+                        iseq_zsuper    2702963 (19.5%)
+            iseq_has_rest_and_block    2431832 (17.5%)
+                   iseq_arity_error    1376287 ( 9.9%)
+                iseq_ruby2_keywords    1114651 ( 8.0%)
+                     iseq_has_no_kw     864163 ( 6.2%)
+          args_splat_cfunc_var_args     716602 ( 5.2%)
+                           kw_splat     565249 ( 4.1%)
+      iseq_has_rest_and_splat_fewer     477430 ( 3.4%)
+                    iseq_has_kwrest     328526 ( 2.4%)
+         iseq_has_rest_and_optional      90555 ( 0.7%)
+             args_splat_cfunc_zuper      89972 ( 0.6%)
+           iseq_missing_optional_kw      89971 ( 0.6%)
+               iseq_has_rest_and_kw      89964 ( 0.6%)
+                      iseq_has_post      89381 ( 0.6%)
+    args_splat_cfunc_ruby2_keywords       2673 ( 0.0%)
+                           keywords         90 ( 0.0%)
+                  klass_megamorphic         55 ( 0.0%)
+              cfunc_ruby_array_varg         12 ( 0.0%)
+
+leave exit reasons: 
+        interp_return   70485162 (97.9%)
+    start_pc_non_zero    1479770 ( 2.1%)
+         se_interrupt        660 ( 0.0%)
+
+getinstancevariable exit reasons: 
+    (all relevant counters are zero)
+setinstancevariable exit reasons: 
+    (all relevant counters are zero)
+opt_aref exit reasons: 
+    (all relevant counters are zero)
+
+bindings_allocations:           0
+bindings_set:                   0
+compiled_iseq_count:         1355
+compiled_block_count:       11322
+invalidation_count:             6
+constant_state_bumps:           0
+inline_code_size:         2395188
+outlined_code_size:       2394380
+
+total_exit_count:        86708065
+total_insns_count:     3716132061
+vm_insns_count:         252744786
+yjit_insns_count:      3479610178
+ratio_in_yjit:              93.2%
+avg_len_in_yjit:             39.9
+
+Top-20 most frequent exit ops (100.0% of exits):
+               invokesuper:    4700227 (29.0)
+                      send:    4275610 (26.4)
+    opt_send_without_block:    3741631 (23.1)
+               invokeblock:    1286316 (7.9)
+                  opt_aref:     629999 (3.9)
+                     throw:     466130 (2.9)
+               expandarray:     448600 (2.8)
+             setlocal_WC_0:     358586 (2.2)
+                    opt_eq:     223653 (1.4)
+        getblockparamproxy:      90118 (0.6)
+               opt_empty_p:       1322 (0.0)
+                     leave:        660 (0.0)
+                  opt_size:         11 (0.0)
+                opt_length:         10 (0.0)
+                  branchif:          7 (0.0)
+               objtostring:          7 (0.0)
+                   opt_and:          6 (0.0)
+      opt_getconstant_path:          4 (0.0)
+                  opt_ltlt:          3 (0.0)
+                  opt_plus:          3 (0.0)

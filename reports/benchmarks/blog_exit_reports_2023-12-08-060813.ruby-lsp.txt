@@ -1,0 +1,71 @@
+method call exit reasons: 
+                        megamorphic   30759110 (83.2%)
+                        send_getter    2404269 ( 6.5%)
+                          block_arg    1472490 ( 4.0%)
+            iseq_materialized_block    1156806 ( 3.1%)
+          args_splat_cfunc_var_args     801805 ( 2.2%)
+                iseq_ruby2_keywords      96759 ( 0.3%)
+                      iseq_has_post      73210 ( 0.2%)
+    args_splat_cfunc_ruby2_keywords      71821 ( 0.2%)
+       send_chain_not_string_or_sym      70147 ( 0.2%)
+                           kw_splat      34404 ( 0.1%)
+                     iseq_has_no_kw      26377 ( 0.1%)
+              cfunc_ruby_array_varg       7540 ( 0.0%)
+                      zsuper_method       6002 ( 0.0%)
+                    args_splat_ivar       3867 ( 0.0%)
+                   iseq_arity_error       3521 ( 0.0%)
+                    iseq_has_kwrest       1279 ( 0.0%)
+                 iseq_splat_with_kw        659 ( 0.0%)
+           iseq_missing_optional_kw        590 ( 0.0%)
+                        iseq_zsuper        315 ( 0.0%)
+        iseq_has_rest_opt_and_block        242 ( 0.0%)
+      iseq_has_rest_and_kw_supplied         27 ( 0.0%)
+
+leave exit reasons: 
+    interp_return   49638707 (100.0%)
+     se_interrupt         42 ( 0.0%)
+
+getinstancevariable exit reasons: 
+    (all relevant counters are zero)
+setinstancevariable exit reasons: 
+    (all relevant counters are zero)
+opt_aref exit reasons: 
+    (all relevant counters are zero)
+
+bindings_allocations:           4
+bindings_set:                   0
+compiled_iseq_count:         3395
+compiled_block_count:       49720
+invalidation_count:           399
+constant_state_bumps:           0
+inline_code_size:         5315804
+outlined_code_size:       4587601
+
+total_exit_count:        49903528
+total_insns_count:     2386886100
+vm_insns_count:         116899069
+yjit_insns_count:      2270251852
+ratio_in_yjit:              95.1%
+avg_len_in_yjit:             45.5
+
+Top-20 most frequent exit ops (100.0% of exits):
+         opt_case_dispatch:     124507 (47.0)
+               expandarray:      71056 (26.8)
+    opt_send_without_block:      28578 (10.8)
+                      once:      19796 (7.5)
+        getblockparamproxy:      11295 (4.3)
+                  opt_ltlt:       5484 (2.1)
+                    opt_eq:       4047 (1.5)
+                     leave:         42 (0.0)
+                      send:          6 (0.0)
+                   opt_neq:          4 (0.0)
+               objtostring:          3 (0.0)
+                  opt_aref:          2 (0.0)
+               invokesuper:          1 (0.0)
+               adjuststack:          0 (0.0)
+               anytostring:          0 (0.0)
+                  branchif:          0 (0.0)
+                 branchnil:          0 (0.0)
+              branchunless:          0 (0.0)
+              checkkeyword:          0 (0.0)
+                checkmatch:          0 (0.0)

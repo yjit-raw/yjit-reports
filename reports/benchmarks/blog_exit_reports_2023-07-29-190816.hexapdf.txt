@@ -1,0 +1,67 @@
+method call exit reasons: 
+                    block_arg    4391889 (80.3%)
+                  send_getter     292982 ( 5.4%)
+    args_splat_cfunc_var_args     257196 ( 4.7%)
+                zsuper_method     180136 ( 3.3%)
+          is_a_class_mismatch     110288 ( 2.0%)
+                     kw_splat      87150 ( 1.6%)
+              iseq_has_kwrest      73698 ( 1.3%)
+                  not_fixnums      36939 ( 0.7%)
+       iseq_has_rest_and_send      36601 ( 0.7%)
+              args_splat_ivar        324 ( 0.0%)
+             iseq_arity_error        132 ( 0.0%)
+                     keywords         44 ( 0.0%)
+          iseq_ruby2_keywords         16 ( 0.0%)
+          args_splat_opt_call         16 ( 0.0%)
+               iseq_has_no_kw         16 ( 0.0%)
+        cfunc_ruby_array_varg         16 ( 0.0%)
+                  interrupted          1 ( 0.0%)
+
+leave exit reasons: 
+    interp_return  202967515 (100.0%)
+     se_interrupt         53 ( 0.0%)
+
+getinstancevariable exit reasons: 
+    (all relevant counters are zero)
+setinstancevariable exit reasons: 
+    (all relevant counters are zero)
+opt_aref exit reasons: 
+    (all relevant counters are zero)
+
+bindings_allocations:           0
+bindings_set:                   0
+compiled_iseq_count:          600
+compiled_block_count:       11787
+invalidation_count:            22
+constant_state_bumps:           0
+inline_code_size:         1298864
+outlined_code_size:       1275181
+
+total_exit_count:       203703596
+total_insns_count:     13793140341
+vm_insns_count:         775986739
+yjit_insns_count:      13017889683
+ratio_in_yjit:              94.4%
+avg_len_in_yjit:             63.9
+
+Top-20 most frequent exit ops (100.0% of exits):
+               invokesuper:     293405 (39.9)
+        getblockparamproxy:     185244 (25.2)
+    opt_send_without_block:     110288 (15.0)
+             setlocal_WC_0:     109803 (14.9)
+                    opt_eq:      36939 (5.0)
+             setlocal_WC_1:        336 (0.0)
+                     leave:         53 (0.0)
+      opt_getconstant_path:         10 (0.0)
+                  branchif:          2 (0.0)
+                      send:          1 (0.0)
+               adjuststack:          0 (0.0)
+               anytostring:          0 (0.0)
+                 branchnil:          0 (0.0)
+              branchunless:          0 (0.0)
+              checkkeyword:          0 (0.0)
+                checkmatch:          0 (0.0)
+                 checktype:          0 (0.0)
+               concatarray:          0 (0.0)
+             concatstrings:          0 (0.0)
+               defineclass:          0 (0.0)

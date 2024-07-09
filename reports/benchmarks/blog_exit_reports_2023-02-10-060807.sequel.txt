@@ -1,0 +1,58 @@
+method call exit reasons: 
+    klass_megamorphic    8413929 (83.6%)
+        iseq_has_rest     824713 ( 8.2%)
+             keywords     495000 ( 4.9%)
+      ivar_set_method     164895 ( 1.6%)
+             kw_splat     164854 ( 1.6%)
+       iseq_has_no_kw         12 ( 0.0%)
+            block_arg          3 ( 0.0%)
+
+leave exit reasons: 
+        interp_return   18144215 (100.0%)
+         se_interrupt       4368 ( 0.0%)
+    start_pc_non_zero         60 ( 0.0%)
+
+getinstancevariable exit reasons: 
+    (all relevant counters are zero)
+setinstancevariable exit reasons: 
+    (all relevant counters are zero)
+opt_aref exit reasons: 
+    (all relevant counters are zero)
+
+bindings_allocations:           0
+bindings_set:                   0
+compiled_iseq_count:           47
+compiled_block_count:         616
+invalidation_count:             0
+constant_state_bumps:           0
+inline_code_size:          533791
+outlined_code_size:        533256
+
+total_exit_count:        28877050
+total_insns_count:      615279088
+vm_insns_count:         108526341
+yjit_insns_count:       517485582
+ratio_in_yjit:              82.4%
+avg_len_in_yjit:             17.5
+
+Top-20 most frequent exit ops (100.0% of exits):
+    opt_send_without_block:    8581755 (80.0)
+                      send:     990854 (9.2)
+               invokesuper:     495000 (4.6)
+                     throw:     329991 (3.1)
+                checkmatch:     329852 (3.1)
+                     leave:       4368 (0.0)
+                    opt_eq:        284 (0.0)
+                  opt_aref:        210 (0.0)
+                  opt_mult:        202 (0.0)
+                opt_length:        109 (0.0)
+                   opt_neq:         93 (0.0)
+                  branchif:         60 (0.0)
+          opt_regexpmatch2:         57 (0.0)
+               adjuststack:          0 (0.0)
+               anytostring:          0 (0.0)
+                 branchnil:          0 (0.0)
+              branchunless:          0 (0.0)
+              checkkeyword:          0 (0.0)
+                 checktype:          0 (0.0)
+               concatarray:          0 (0.0)

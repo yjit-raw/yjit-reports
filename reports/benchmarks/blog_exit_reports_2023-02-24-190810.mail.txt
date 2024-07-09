@@ -1,0 +1,55 @@
+method call exit reasons: 
+                  block_arg    1061174 (71.6%)
+          klass_megamorphic     237827 (16.0%)
+    iseq_has_rest_and_block     146313 ( 9.9%)
+          bmethod_block_arg      36542 ( 2.5%)
+
+leave exit reasons: 
+        interp_return   13014373 (99.7%)
+    start_pc_non_zero      36632 ( 0.3%)
+         se_interrupt        370 ( 0.0%)
+
+getinstancevariable exit reasons: 
+    (all relevant counters are zero)
+setinstancevariable exit reasons: 
+    (all relevant counters are zero)
+opt_aref exit reasons: 
+    (all relevant counters are zero)
+
+bindings_allocations:           0
+bindings_set:                   0
+compiled_iseq_count:          347
+compiled_block_count:        4785
+invalidation_count:             9
+constant_state_bumps:           0
+inline_code_size:          644156
+outlined_code_size:        642384
+
+total_exit_count:        15440019
+total_insns_count:     2605375881
+vm_insns_count:          25314950
+yjit_insns_count:      2582486577
+ratio_in_yjit:              99.0%
+avg_len_in_yjit:            167.1
+
+Top-20 most frequent exit ops (100.0% of exits):
+                      send:    1134307 (46.8)
+    opt_send_without_block:     943198 (38.9)
+               invokesuper:     182908 (7.5)
+               opt_empty_p:     118921 (4.9)
+                  opt_ltlt:      18284 (0.8)
+               invokeblock:      18271 (0.8)
+               expandarray:       9143 (0.4)
+                     leave:        370 (0.0)
+          opt_regexpmatch2:        113 (0.0)
+                  branchif:         46 (0.0)
+               objtostring:         36 (0.0)
+                  opt_plus:         19 (0.0)
+                      jump:         14 (0.0)
+              branchunless:         11 (0.0)
+      opt_getconstant_path:          5 (0.0)
+               adjuststack:          0 (0.0)
+               anytostring:          0 (0.0)
+                 branchnil:          0 (0.0)
+              checkkeyword:          0 (0.0)
+                checkmatch:          0 (0.0)

@@ -1,0 +1,60 @@
+method call exit reasons: 
+                iseq_ruby2_keywords    3093797 (28.0%)
+            iseq_has_rest_and_block    2872867 (26.0%)
+                          block_arg    2209809 (20.0%)
+                   iseq_arity_error     883991 ( 8.0%)
+    args_splat_cfunc_ruby2_keywords     441975 ( 4.0%)
+                 args_splat_bmethod     441974 ( 4.0%)
+                           kw_splat     441923 ( 4.0%)
+                     iseq_has_no_kw     221000 ( 2.0%)
+                        iseq_zsuper     221000 ( 2.0%)
+                    iseq_has_kwrest     220973 ( 2.0%)
+
+leave exit reasons: 
+    interp_return   36244153 (100.0%)
+     se_interrupt        497 ( 0.0%)
+
+getinstancevariable exit reasons: 
+    (all relevant counters are zero)
+setinstancevariable exit reasons: 
+    (all relevant counters are zero)
+opt_aref exit reasons: 
+    (all relevant counters are zero)
+
+bindings_allocations:           0
+bindings_set:                   0
+compiled_iseq_count:          193
+compiled_block_count:        1485
+invalidation_count:             1
+constant_state_bumps:           0
+inline_code_size:          820784
+outlined_code_size:        820124
+
+total_exit_count:        47515630
+total_insns_count:     1844029385
+vm_insns_count:         143272971
+yjit_insns_count:      1712027891
+ratio_in_yjit:              92.2%
+avg_len_in_yjit:             35.8
+
+Top-20 most frequent exit ops (100.0% of exits):
+                      send:    6408658 (56.9)
+    opt_send_without_block:    3094199 (27.5)
+               invokeblock:     883991 (7.8)
+               invokesuper:     663045 (5.9)
+               opt_empty_p:     220973 (2.0)
+                     leave:        497 (0.0)
+                  opt_aref:        101 (0.0)
+                  branchif:         12 (0.0)
+      opt_getconstant_path:          1 (0.0)
+               adjuststack:          0 (0.0)
+               anytostring:          0 (0.0)
+                 branchnil:          0 (0.0)
+              branchunless:          0 (0.0)
+              checkkeyword:          0 (0.0)
+                checkmatch:          0 (0.0)
+                 checktype:          0 (0.0)
+               concatarray:          0 (0.0)
+             concatstrings:          0 (0.0)
+               defineclass:          0 (0.0)
+                   defined:          0 (0.0)

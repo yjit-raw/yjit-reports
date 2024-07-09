@@ -1,0 +1,56 @@
+method call exit reasons: 
+                  block_arg    1337943 (37.5%)
+    iseq_has_rest_and_block     669000 (18.8%)
+        iseq_ruby2_keywords     668986 (18.8%)
+           iseq_arity_error     445980 (12.5%)
+             iseq_has_no_kw     223000 ( 6.3%)
+                   kw_splat     222946 ( 6.2%)
+
+leave exit reasons: 
+    interp_return   13826868 (100.0%)
+     se_interrupt        141 ( 0.0%)
+
+getinstancevariable exit reasons: 
+    (all relevant counters are zero)
+setinstancevariable exit reasons: 
+    (all relevant counters are zero)
+opt_aref exit reasons: 
+    (all relevant counters are zero)
+
+bindings_allocations:           0
+bindings_set:                   0
+compiled_iseq_count:           51
+compiled_block_count:         448
+invalidation_count:             1
+constant_state_bumps:           0
+inline_code_size:          724215
+outlined_code_size:        722859
+
+total_exit_count:        17618156
+total_insns_count:      863248321
+vm_insns_count:          45968062
+yjit_insns_count:       821071547
+ratio_in_yjit:              94.7%
+avg_len_in_yjit:             46.4
+
+Top-20 most frequent exit ops (100.0% of exits):
+                      send:    2229983 (58.8)
+    opt_send_without_block:     669194 (17.7)
+               invokeblock:     445980 (11.8)
+               invokesuper:     445947 (11.8)
+                     leave:        141 (0.0)
+                  branchif:         17 (0.0)
+                  opt_aref:         14 (0.0)
+                opt_length:         11 (0.0)
+      opt_getconstant_path:          1 (0.0)
+               adjuststack:          0 (0.0)
+               anytostring:          0 (0.0)
+                 branchnil:          0 (0.0)
+              branchunless:          0 (0.0)
+              checkkeyword:          0 (0.0)
+                checkmatch:          0 (0.0)
+                 checktype:          0 (0.0)
+               concatarray:          0 (0.0)
+             concatstrings:          0 (0.0)
+               defineclass:          0 (0.0)
+                   defined:          0 (0.0)

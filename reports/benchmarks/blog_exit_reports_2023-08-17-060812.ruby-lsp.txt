@@ -1,0 +1,70 @@
+method call exit reasons: 
+                        send_getter    2921233 (38.7%)
+                          block_arg    1804303 (23.9%)
+            iseq_materialized_block    1405761 (18.6%)
+          args_splat_cfunc_var_args     934693 (12.4%)
+                iseq_ruby2_keywords     112729 ( 1.5%)
+                      iseq_has_post      88971 ( 1.2%)
+    args_splat_cfunc_ruby2_keywords      86547 ( 1.1%)
+       send_chain_not_string_or_sym      85243 ( 1.1%)
+                           kw_splat      39088 ( 0.5%)
+                     iseq_has_no_kw      32078 ( 0.4%)
+                   iseq_arity_error      15924 ( 0.2%)
+              cfunc_ruby_array_varg       9168 ( 0.1%)
+                      zsuper_method       6013 ( 0.1%)
+                    args_splat_ivar       3867 ( 0.1%)
+                    iseq_has_kwrest       1469 ( 0.0%)
+                 iseq_splat_with_kw        806 ( 0.0%)
+           iseq_missing_optional_kw        551 ( 0.0%)
+                        iseq_zsuper        389 ( 0.0%)
+        iseq_has_rest_opt_and_block        242 ( 0.0%)
+      iseq_has_rest_and_kw_supplied         27 ( 0.0%)
+
+leave exit reasons: 
+    interp_return   53750145 (100.0%)
+     se_interrupt        185 ( 0.0%)
+
+getinstancevariable exit reasons: 
+    (all relevant counters are zero)
+setinstancevariable exit reasons: 
+    (all relevant counters are zero)
+opt_aref exit reasons: 
+    (all relevant counters are zero)
+
+bindings_allocations:           4
+bindings_set:                   0
+compiled_iseq_count:         3420
+compiled_block_count:       51317
+invalidation_count:           392
+constant_state_bumps:           0
+inline_code_size:         5847266
+outlined_code_size:       5455992
+
+total_exit_count:        55613555
+total_insns_count:     3129815556
+vm_insns_count:         159093742
+yjit_insns_count:      2972585224
+ratio_in_yjit:              94.9%
+avg_len_in_yjit:             53.4
+
+Top-20 most frequent exit ops (100.0% of exits):
+        getblockparamproxy:    1215800 (65.2)
+             setlocal_WC_0:     201023 (10.8)
+         opt_case_dispatch:     187242 (10.0)
+    opt_send_without_block:     136002 (7.3)
+               expandarray:      86233 (4.6)
+                      once:      21425 (1.1)
+                  opt_ltlt:       6668 (0.4)
+      opt_getconstant_path:       4301 (0.2)
+                    opt_eq:       4045 (0.2)
+             setlocal_WC_1:        389 (0.0)
+                     leave:        185 (0.0)
+                      send:         57 (0.0)
+                  opt_aref:         14 (0.0)
+                   opt_neq:         13 (0.0)
+                opt_length:         11 (0.0)
+               objtostring:          2 (0.0)
+               adjuststack:          0 (0.0)
+               anytostring:          0 (0.0)
+                  branchif:          0 (0.0)
+                 branchnil:          0 (0.0)

@@ -1,0 +1,55 @@
+method call exit reasons: 
+    iseq_has_rest_opt_and_block     320000 (24.9%)
+                      block_arg     320000 (24.9%)
+              klass_megamorphic     320000 (24.9%)
+                ivar_set_method     319682 (24.9%)
+                    interrupted       4421 ( 0.3%)
+
+leave exit reasons: 
+    interp_return   20155042 (100.0%)
+     se_interrupt       5504 ( 0.0%)
+
+getinstancevariable exit reasons: 
+    (all relevant counters are zero)
+setinstancevariable exit reasons: 
+    (all relevant counters are zero)
+opt_aref exit reasons: 
+    (all relevant counters are zero)
+
+bindings_allocations:           0
+bindings_set:                   0
+compiled_iseq_count:           15
+compiled_block_count:          94
+invalidation_count:             0
+constant_state_bumps:           0
+inline_code_size:          628776
+outlined_code_size:        541423
+
+total_exit_count:        21444802
+total_insns_count:      722884269
+vm_insns_count:          28305545
+yjit_insns_count:       695868484
+ratio_in_yjit:              96.1%
+avg_len_in_yjit:             32.4
+
+Top-20 most frequent exit ops (100.0% of exits):
+    opt_send_without_block:     643606 (49.9)
+                      send:     640278 (49.6)
+                     leave:       5504 (0.4)
+                  opt_mult:        162 (0.0)
+                  branchif:        153 (0.0)
+                  opt_size:         57 (0.0)
+               adjuststack:          0 (0.0)
+               anytostring:          0 (0.0)
+                 branchnil:          0 (0.0)
+              branchunless:          0 (0.0)
+              checkkeyword:          0 (0.0)
+                checkmatch:          0 (0.0)
+                 checktype:          0 (0.0)
+               concatarray:          0 (0.0)
+             concatstrings:          0 (0.0)
+               defineclass:          0 (0.0)
+                   defined:          0 (0.0)
+               definedivar:          0 (0.0)
+              definemethod:          0 (0.0)
+             definesmethod:          0 (0.0)

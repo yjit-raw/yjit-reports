@@ -1,0 +1,58 @@
+method call exit reasons: 
+              iseq_has_no_kw    1315597 (30.0%)
+            iseq_arity_error    1020485 (23.3%)
+                 iseq_zsuper     584742 (13.3%)
+                   block_arg     438532 (10.0%)
+         iseq_ruby2_keywords     438513 (10.0%)
+    iseq_missing_optional_kw     292342 ( 6.7%)
+      args_splat_cfunc_zuper     146172 ( 3.3%)
+     iseq_materialized_block     146171 ( 3.3%)
+
+leave exit reasons: 
+    interp_return   15067617 (100.0%)
+     se_interrupt          5 ( 0.0%)
+
+getinstancevariable exit reasons: 
+    (all relevant counters are zero)
+setinstancevariable exit reasons: 
+    (all relevant counters are zero)
+opt_aref exit reasons: 
+    (all relevant counters are zero)
+
+bindings_allocations:           0
+bindings_set:                   0
+compiled_iseq_count:          284
+compiled_block_count:        2939
+invalidation_count:             1
+constant_state_bumps:           0
+inline_code_size:         1495562
+outlined_code_size:       1386153
+
+total_exit_count:        15067624
+total_insns_count:     1757213824
+vm_insns_count:           1080522
+yjit_insns_count:      1756133309
+ratio_in_yjit:              99.9%
+avg_len_in_yjit:            116.6
+
+Top-20 most frequent exit ops (100.0% of exits):
+            leave:          5 (71.4)
+      invokesuper:          1 (14.3)
+          opt_and:          1 (14.3)
+      adjuststack:          0 (0.0)
+      anytostring:          0 (0.0)
+         branchif:          0 (0.0)
+        branchnil:          0 (0.0)
+     branchunless:          0 (0.0)
+     checkkeyword:          0 (0.0)
+       checkmatch:          0 (0.0)
+        checktype:          0 (0.0)
+      concatarray:          0 (0.0)
+    concatstrings:          0 (0.0)
+      defineclass:          0 (0.0)
+          defined:          0 (0.0)
+      definedivar:          0 (0.0)
+     definemethod:          0 (0.0)
+    definesmethod:          0 (0.0)
+              dup:          0 (0.0)
+         duparray:          0 (0.0)

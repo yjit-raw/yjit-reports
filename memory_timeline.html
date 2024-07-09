@@ -1,0 +1,1522 @@
+<!DOCTYPE html>
+<!-- Copied from Slate default and modified -->
+<html lang="en-US">
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,maximum-scale=2">
+    <script src="assets/js/clipboard.min.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/style.css">
+    <title>YJIT Benchmarks</title>
+
+    <style media="all">
+      #svg_tooltip {
+        background: white;
+        border:  1px solid black;
+        border-radius: 5px;
+        padding: 5px;
+        position: absolute;
+        display: none;
+      }
+      #svg_tooltip_sha_copied {
+        background: white;
+        border:  1px solid black;
+        border-radius: 5px;
+        padding: 5px;
+        position: absolute;
+        display: none;
+      }
+      .timeline-report-explanation {
+        text-align: center;
+      }
+      footer ul {
+        display: inline-block;
+      }
+      footer ul li {
+        display: inline-block;
+        margin-right: 0.5em;
+      }
+      footer ul li:last-child {
+        margin-right: 0;
+      }
+      .headline-box ul {
+        padding-left: 0;
+      }
+    </style>
+
+  </head>
+
+  <body>
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <!-- <a id="forkme_banner" href="https://github.com/Shopify/yjit-metrics">View on GitHub</a> -->
+
+          <h1 id="project_title">YJIT Benchmarks</h1>
+          <div style="clear:both;"></div>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        
+<script src="/assets/js/d3.v5.js"></script>
+
+<h2 style="text-align: center;">YJIT Memory Usage Over Time</h2>
+
+<script>
+var timeParser = d3.timeParse("%Y %m %d %H %M %S");
+var timePrinter = d3.timeFormat("%b %d %I%p");
+var commaPrinter = d3.format(",d");
+var data_series;
+var all_series_time_range;
+
+document.timeline_data = {} // For sharing data w/ handlers
+</script>
+
+<p>
+  To zoom in, drag over the time range you want to see. Double-click to zoom back out.
+</p>
+
+<div class="timeline_report">
+    <img class="graph-loading" src="/images/loading.gif" height="32" width="32" style="display: none" />
+    <div class="graph-error" style="display: none"><span style="color: red; font-size: 300%;">Error Loading Data (please reload page)</span></div>
+    <form>
+        <fieldset id="plat-select-fieldset" style="border: 1px solid black">
+            <legend>Select Dataset</legend>
+
+            <input type="radio" id="platform-radio-yjit-x86-recent" name="plat-data-select" value="x86_64.recent" />
+            <label for="platform-radio-x86-recent">x86_64 Recent</label>
+
+            <input type="radio" id="platform-radio-yjit-x86-recent" name="plat-data-select" value="x86_64.all_time" checked />
+            <label for="platform-radio-x86-recent">x86_64 All-Time</label>
+
+            <input type="radio" id="platform-radio-yjit-aarch-recent" name="plat-data-select" value="aarch64.recent" />
+            <label for="platform-radio-aarch-recent">ARM64 Recent</label>
+
+            <input type="radio" id="platform-radio-yjit-aarch-recent" name="plat-data-select" value="aarch64.all_time" />
+            <label for="platform-radio-aarch-recent">ARM64 All-Time</label>
+        </fieldset>
+    </form>
+    <!-- This is the full-size timeline report, for the deep dive -->
+
+<div id="timeline_rs_chart"></div>
+
+<div id="legend_parent_flexbox" style="display: flex; justify-content: center;">
+  <div id="timeline_legend_child">
+    <ul style="display:inline-block">
+      
+        <li style="display: none" data-benchmark="30k_ifelse">
+        <span style='background: #00cc00'>&nbsp;&nbsp;
+          <strong style="color: white;">30k_ifelse no-jit</strong> &nbsp;&nbsp;
+        </span>
+      </li>
+      
+        <li style="display: none" data-benchmark="30k_ifelse">
+        <span style='background: #0066b3'>&nbsp;&nbsp;
+          <strong style="color: white;">30k_ifelse yjit</strong> &nbsp;&nbsp;
+        </span>
+      </li>
+      
+        <li style="display: none" data-benchmark="30k_methods">
+        <span style='background: #ff8000'>&nbsp;&nbsp;
+          <strong style="color: white;">30k_methods no-jit</strong> &nbsp;&nbsp;
+        </span>
+      </li>
+      
+        <li style="display: none" data-benchmark="30k_methods">
+        <span style='background: #ffcc00'>&nbsp;&nbsp;
+          <strong style="color: white;">30k_methods yjit</strong> &nbsp;&nbsp;
+        </span>
+      </li>
+      
+        <li style="display: none" data-benchmark="activerecord">
+        <span style='background: #330099'>&nbsp;&nbsp;
+          <strong style="color: white;">activerecord no-jit</strong> &nbsp;&nbsp;
+        </span>
+      </li>
+      
+        <li style="display: none" data-benchmark="activerecord">
+        <span style='background: #990099'>&nbsp;&nbsp;
+          <strong style="color: white;">activerecord yjit</strong> &nbsp;&nbsp;
+        </span>
+      </li>
+      
+        <li style="display: none" data-benchmark="binarytrees">
+        <span style='background: #ccff00'>&nbsp;&nbsp;
+          <strong style="color: white;">binarytrees no-jit</strong> &nbsp;&nbsp;
+        </span>
+      </li>
+      
+        <li style="display: none" data-benchmark="binarytrees">
+        <span style='background: #ff0000'>&nbsp;&nbsp;
+          <strong style="color: white;">binarytrees yjit</strong> &nbsp;&nbsp;
+        </span>
+      </li>
+      
+        <li style="display: none" data-benchmark="blurhash">
+        <span style='background: #808080'>&nbsp;&nbsp;
+          <strong style="color: white;">blurhash no-jit</strong> &nbsp;&nbsp;
+        </span>
+      </li>
+      
+        <li style="display: none" data-benchmark="blurhash">
+        <span style='background: #008f00'>&nbsp;&nbsp;
+          <strong style="color: white;">blurhash yjit</strong> &nbsp;&nbsp;
+        </span>
+      </li>
+      
+        <li style="display: none" data-benchmark="cfunc_itself">
+        <span style='background: #00487d'>&nbsp;&nbsp;
+          <strong style="color: white;">cfunc_itself no-jit</strong> &nbsp;&nbsp;
+        </span>
+      </li>
+      
+        <li style="display: none" data-benchmark="cfunc_itself">
+        <span style='background: #b35a00'>&nbsp;&nbsp;
+          <strong style="color: white;">cfunc_itself yjit</strong> &nbsp;&nbsp;
+        </span>
+      </li>
+      
+        <li style="display: none" data-benchmark="chunky-png">
+        <span style='background: #b38f00'>&nbsp;&nbsp;
+          <strong style="color: white;">chunky-png no-jit</strong> &nbsp;&nbsp;
+        </span>
+      </li>
+      
+        <li style="display: none" data-benchmark="chunky-png">
+        <span style='background: #6b006b'>&nbsp;&nbsp;
+          <strong style="color: white;">chunky-png yjit</strong> &nbsp;&nbsp;
+        </span>
+      </li>
+      
+        <li style="display: none" data-benchmark="chunky_png">
+        <span style='background: #8fb300'>&nbsp;&nbsp;
+          <strong style="color: white;">chunky_png no-jit</strong> &nbsp;&nbsp;
+        </span>
+      </li>
+      
+        <li style="display: none" data-benchmark="chunky_png">
+        <span style='background: #b30000'>&nbsp;&nbsp;
+          <strong style="color: white;">chunky_png yjit</strong> &nbsp;&nbsp;
+        </span>
+      </li>
+      
+        <li style="display: none" data-benchmark="erubi">
+        <span style='background: #80c9ff'>&nbsp;&nbsp;
+          <strong style="color: white;">erubi no-jit</strong> &nbsp;&nbsp;
+        </span>
+      </li>
+      
+        <li style="display: none" data-benchmark="erubi">
+        <span style='background: #ffc080'>&nbsp;&nbsp;
+          <strong style="color: white;">erubi yjit</strong> &nbsp;&nbsp;
+        </span>
+      </li>
+      
+        <li style="display: none" data-benchmark="erubi-rails">
+        <span style='background: #ffe680'>&nbsp;&nbsp;
+          <strong style="color: white;">erubi-rails no-jit</strong> &nbsp;&nbsp;
+        </span>
+      </li>
+      
+        <li style="display: none" data-benchmark="erubi-rails">
+        <span style='background: #aa80ff'>&nbsp;&nbsp;
+          <strong style="color: white;">erubi-rails yjit</strong> &nbsp;&nbsp;
+        </span>
+      </li>
+      
+        <li style="display: none" data-benchmark="erubi_rails">
+        <span style='background: #ee00cc'>&nbsp;&nbsp;
+          <strong style="color: white;">erubi_rails no-jit</strong> &nbsp;&nbsp;
+        </span>
+      </li>
+      
+        <li style="display: none" data-benchmark="erubi_rails">
+        <span style='background: #ff8080'>&nbsp;&nbsp;
+          <strong style="color: white;">erubi_rails yjit</strong> &nbsp;&nbsp;
+        </span>
+      </li>
+      
+        <li style="display: none" data-benchmark="etanni">
+        <span style='background: #666600'>&nbsp;&nbsp;
+          <strong style="color: white;">etanni no-jit</strong> &nbsp;&nbsp;
+        </span>
+      </li>
+      
+        <li style="display: none" data-benchmark="etanni">
+        <span style='background: #ffbfff'>&nbsp;&nbsp;
+          <strong style="color: white;">etanni yjit</strong> &nbsp;&nbsp;
+        </span>
+      </li>
+      
+        <li style="display: none" data-benchmark="fannkuchredux">
+        <span style='background: #00ffcc'>&nbsp;&nbsp;
+          <strong style="color: white;">fannkuchredux no-jit</strong> &nbsp;&nbsp;
+        </span>
+      </li>
+      
+        <li style="display: none" data-benchmark="fannkuchredux">
+        <span style='background: #cc6699'>&nbsp;&nbsp;
+          <strong style="color: white;">fannkuchredux yjit</strong> &nbsp;&nbsp;
+        </span>
+      </li>
+      
+        <li style="display: none" data-benchmark="fib">
+        <span style='background: #999900'>&nbsp;&nbsp;
+          <strong style="color: white;">fib no-jit</strong> &nbsp;&nbsp;
+        </span>
+      </li>
+      
+        <li style="display: none" data-benchmark="fib">
+        <span style='background: #003399'>&nbsp;&nbsp;
+          <strong style="color: white;">fib yjit</strong> &nbsp;&nbsp;
+        </span>
+      </li>
+      
+        <li style="display: none" data-benchmark="fluentd">
+        <span style='background: #00cc00'>&nbsp;&nbsp;
+          <strong style="color: white;">fluentd no-jit</strong> &nbsp;&nbsp;
+        </span>
+      </li>
+      
+        <li style="display: none" data-benchmark="fluentd">
+        <span style='background: #0066b3'>&nbsp;&nbsp;
+          <strong style="color: white;">fluentd yjit</strong> &nbsp;&nbsp;
+        </span>
+      </li>
+      
+        <li style="display: none" data-benchmark="getivar">
+        <span style='background: #ff8000'>&nbsp;&nbsp;
+          <strong style="color: white;">getivar no-jit</strong> &nbsp;&nbsp;
+        </span>
+      </li>
+      
+        <li style="display: none" data-benchmark="getivar">
+        <span style='background: #ffcc00'>&nbsp;&nbsp;
+          <strong style="color: white;">getivar yjit</strong> &nbsp;&nbsp;
+        </span>
+      </li>
+      
+        <li style="display: none" data-benchmark="graphql">
+        <span style='background: #330099'>&nbsp;&nbsp;
+          <strong style="color: white;">graphql no-jit</strong> &nbsp;&nbsp;
+        </span>
+      </li>
+      
+        <li style="display: none" data-benchmark="graphql">
+        <span style='background: #990099'>&nbsp;&nbsp;
+          <strong style="color: white;">graphql yjit</strong> &nbsp;&nbsp;
+        </span>
+      </li>
+      
+        <li style="display: none" data-benchmark="graphql-native">
+        <span style='background: #ccff00'>&nbsp;&nbsp;
+          <strong style="color: white;">graphql-native no-jit</strong> &nbsp;&nbsp;
+        </span>
+      </li>
+      
+        <li style="display: none" data-benchmark="graphql-native">
+        <span style='background: #ff0000'>&nbsp;&nbsp;
+          <strong style="color: white;">graphql-native yjit</strong> &nbsp;&nbsp;
+        </span>
+      </li>
+      
+        <li style="display: none" data-benchmark="hexapdf">
+        <span style='background: #808080'>&nbsp;&nbsp;
+          <strong style="color: white;">hexapdf no-jit</strong> &nbsp;&nbsp;
+        </span>
+      </li>
+      
+        <li style="display: none" data-benchmark="hexapdf">
+        <span style='background: #008f00'>&nbsp;&nbsp;
+          <strong style="color: white;">hexapdf yjit</strong> &nbsp;&nbsp;
+        </span>
+      </li>
+      
+        <li style="display: none" data-benchmark="keyword_args">
+        <span style='background: #8fb300'>&nbsp;&nbsp;
+          <strong style="color: white;">keyword_args no-jit</strong> &nbsp;&nbsp;
+        </span>
+      </li>
+      
+        <li style="display: none" data-benchmark="keyword_args">
+        <span style='background: #b30000'>&nbsp;&nbsp;
+          <strong style="color: white;">keyword_args yjit</strong> &nbsp;&nbsp;
+        </span>
+      </li>
+      
+        <li style="display: none" data-benchmark="lee">
+        <span style='background: #bebebe'>&nbsp;&nbsp;
+          <strong style="color: white;">lee no-jit</strong> &nbsp;&nbsp;
+        </span>
+      </li>
+      
+        <li style="display: none" data-benchmark="lee">
+        <span style='background: #80ff80'>&nbsp;&nbsp;
+          <strong style="color: white;">lee yjit</strong> &nbsp;&nbsp;
+        </span>
+      </li>
+      
+        <li style="display: none" data-benchmark="liquid-c">
+        <span style='background: #80c9ff'>&nbsp;&nbsp;
+          <strong style="color: white;">liquid-c no-jit</strong> &nbsp;&nbsp;
+        </span>
+      </li>
+      
+        <li style="display: none" data-benchmark="liquid-c">
+        <span style='background: #ffc080'>&nbsp;&nbsp;
+          <strong style="color: white;">liquid-c yjit</strong> &nbsp;&nbsp;
+        </span>
+      </li>
+      
+        <li style="display: none" data-benchmark="liquid-compile">
+        <span style='background: #ffe680'>&nbsp;&nbsp;
+          <strong style="color: white;">liquid-compile no-jit</strong> &nbsp;&nbsp;
+        </span>
+      </li>
+      
+        <li style="display: none" data-benchmark="liquid-compile">
+        <span style='background: #aa80ff'>&nbsp;&nbsp;
+          <strong style="color: white;">liquid-compile yjit</strong> &nbsp;&nbsp;
+        </span>
+      </li>
+      
+        <li style="display: none" data-benchmark="liquid-render">
+        <span style='background: #ee00cc'>&nbsp;&nbsp;
+          <strong style="color: white;">liquid-render no-jit</strong> &nbsp;&nbsp;
+        </span>
+      </li>
+      
+        <li style="display: none" data-benchmark="liquid-render">
+        <span style='background: #ff8080'>&nbsp;&nbsp;
+          <strong style="color: white;">liquid-render yjit</strong> &nbsp;&nbsp;
+        </span>
+      </li>
+      
+        <li style="display: none" data-benchmark="lobsters">
+        <span style='background: #666600'>&nbsp;&nbsp;
+          <strong style="color: white;">lobsters no-jit</strong> &nbsp;&nbsp;
+        </span>
+      </li>
+      
+        <li style="display: none" data-benchmark="lobsters">
+        <span style='background: #ffbfff'>&nbsp;&nbsp;
+          <strong style="color: white;">lobsters yjit</strong> &nbsp;&nbsp;
+        </span>
+      </li>
+      
+        <li style="display: none" data-benchmark="mail">
+        <span style='background: #00ffcc'>&nbsp;&nbsp;
+          <strong style="color: white;">mail no-jit</strong> &nbsp;&nbsp;
+        </span>
+      </li>
+      
+        <li style="display: none" data-benchmark="mail">
+        <span style='background: #cc6699'>&nbsp;&nbsp;
+          <strong style="color: white;">mail yjit</strong> &nbsp;&nbsp;
+        </span>
+      </li>
+      
+        <li style="display: none" data-benchmark="matmul">
+        <span style='background: #999900'>&nbsp;&nbsp;
+          <strong style="color: white;">matmul no-jit</strong> &nbsp;&nbsp;
+        </span>
+      </li>
+      
+        <li style="display: none" data-benchmark="matmul">
+        <span style='background: #003399'>&nbsp;&nbsp;
+          <strong style="color: white;">matmul yjit</strong> &nbsp;&nbsp;
+        </span>
+      </li>
+      
+        <li style="display: none" data-benchmark="nbody">
+        <span style='background: #00cc00'>&nbsp;&nbsp;
+          <strong style="color: white;">nbody no-jit</strong> &nbsp;&nbsp;
+        </span>
+      </li>
+      
+        <li style="display: none" data-benchmark="nbody">
+        <span style='background: #0066b3'>&nbsp;&nbsp;
+          <strong style="color: white;">nbody yjit</strong> &nbsp;&nbsp;
+        </span>
+      </li>
+      
+        <li style="display: none" data-benchmark="nqueens">
+        <span style='background: #ff8000'>&nbsp;&nbsp;
+          <strong style="color: white;">nqueens no-jit</strong> &nbsp;&nbsp;
+        </span>
+      </li>
+      
+        <li style="display: none" data-benchmark="nqueens">
+        <span style='background: #ffcc00'>&nbsp;&nbsp;
+          <strong style="color: white;">nqueens yjit</strong> &nbsp;&nbsp;
+        </span>
+      </li>
+      
+        <li style="display: none" data-benchmark="optcarrot">
+        <span style='background: #330099'>&nbsp;&nbsp;
+          <strong style="color: white;">optcarrot no-jit</strong> &nbsp;&nbsp;
+        </span>
+      </li>
+      
+        <li style="display: none" data-benchmark="optcarrot">
+        <span style='background: #990099'>&nbsp;&nbsp;
+          <strong style="color: white;">optcarrot yjit</strong> &nbsp;&nbsp;
+        </span>
+      </li>
+      
+        <li style="display: none" data-benchmark="protoboeuf">
+        <span style='background: #ccff00'>&nbsp;&nbsp;
+          <strong style="color: white;">protoboeuf no-jit</strong> &nbsp;&nbsp;
+        </span>
+      </li>
+      
+        <li style="display: none" data-benchmark="protoboeuf">
+        <span style='background: #ff0000'>&nbsp;&nbsp;
+          <strong style="color: white;">protoboeuf yjit</strong> &nbsp;&nbsp;
+        </span>
+      </li>
+      
+        <li style="display: none" data-benchmark="psych-load">
+        <span style='background: #808080'>&nbsp;&nbsp;
+          <strong style="color: white;">psych-load no-jit</strong> &nbsp;&nbsp;
+        </span>
+      </li>
+      
+        <li style="display: none" data-benchmark="psych-load">
+        <span style='background: #008f00'>&nbsp;&nbsp;
+          <strong style="color: white;">psych-load yjit</strong> &nbsp;&nbsp;
+        </span>
+      </li>
+      
+        <li style="display: none" data-benchmark="rack">
+        <span style='background: #00487d'>&nbsp;&nbsp;
+          <strong style="color: white;">rack no-jit</strong> &nbsp;&nbsp;
+        </span>
+      </li>
+      
+        <li style="display: none" data-benchmark="rack">
+        <span style='background: #b35a00'>&nbsp;&nbsp;
+          <strong style="color: white;">rack yjit</strong> &nbsp;&nbsp;
+        </span>
+      </li>
+      
+        <li style="display: none" data-benchmark="railsbench">
+        <span style='background: #b38f00'>&nbsp;&nbsp;
+          <strong style="color: white;">railsbench no-jit</strong> &nbsp;&nbsp;
+        </span>
+      </li>
+      
+        <li style="display: none" data-benchmark="railsbench">
+        <span style='background: #6b006b'>&nbsp;&nbsp;
+          <strong style="color: white;">railsbench yjit</strong> &nbsp;&nbsp;
+        </span>
+      </li>
+      
+        <li style="display: none" data-benchmark="respond_to">
+        <span style='background: #8fb300'>&nbsp;&nbsp;
+          <strong style="color: white;">respond_to no-jit</strong> &nbsp;&nbsp;
+        </span>
+      </li>
+      
+        <li style="display: none" data-benchmark="respond_to">
+        <span style='background: #b30000'>&nbsp;&nbsp;
+          <strong style="color: white;">respond_to yjit</strong> &nbsp;&nbsp;
+        </span>
+      </li>
+      
+        <li style="display: none" data-benchmark="rubocop">
+        <span style='background: #bebebe'>&nbsp;&nbsp;
+          <strong style="color: white;">rubocop no-jit</strong> &nbsp;&nbsp;
+        </span>
+      </li>
+      
+        <li style="display: none" data-benchmark="rubocop">
+        <span style='background: #80ff80'>&nbsp;&nbsp;
+          <strong style="color: white;">rubocop yjit</strong> &nbsp;&nbsp;
+        </span>
+      </li>
+      
+        <li style="display: none" data-benchmark="ruby-json">
+        <span style='background: #80c9ff'>&nbsp;&nbsp;
+          <strong style="color: white;">ruby-json no-jit</strong> &nbsp;&nbsp;
+        </span>
+      </li>
+      
+        <li style="display: none" data-benchmark="ruby-json">
+        <span style='background: #ffc080'>&nbsp;&nbsp;
+          <strong style="color: white;">ruby-json yjit</strong> &nbsp;&nbsp;
+        </span>
+      </li>
+      
+        <li style="display: none" data-benchmark="ruby-lsp">
+        <span style='background: #ffe680'>&nbsp;&nbsp;
+          <strong style="color: white;">ruby-lsp no-jit</strong> &nbsp;&nbsp;
+        </span>
+      </li>
+      
+        <li style="display: none" data-benchmark="ruby-lsp">
+        <span style='background: #aa80ff'>&nbsp;&nbsp;
+          <strong style="color: white;">ruby-lsp yjit</strong> &nbsp;&nbsp;
+        </span>
+      </li>
+      
+        <li style="display: none" data-benchmark="ruby-xor">
+        <span style='background: #ee00cc'>&nbsp;&nbsp;
+          <strong style="color: white;">ruby-xor no-jit</strong> &nbsp;&nbsp;
+        </span>
+      </li>
+      
+        <li style="display: none" data-benchmark="ruby-xor">
+        <span style='background: #ff8080'>&nbsp;&nbsp;
+          <strong style="color: white;">ruby-xor yjit</strong> &nbsp;&nbsp;
+        </span>
+      </li>
+      
+        <li style="display: none" data-benchmark="rubykon">
+        <span style='background: #666600'>&nbsp;&nbsp;
+          <strong style="color: white;">rubykon no-jit</strong> &nbsp;&nbsp;
+        </span>
+      </li>
+      
+        <li style="display: none" data-benchmark="rubykon">
+        <span style='background: #ffbfff'>&nbsp;&nbsp;
+          <strong style="color: white;">rubykon yjit</strong> &nbsp;&nbsp;
+        </span>
+      </li>
+      
+        <li style="display: none" data-benchmark="sequel">
+        <span style='background: #00ffcc'>&nbsp;&nbsp;
+          <strong style="color: white;">sequel no-jit</strong> &nbsp;&nbsp;
+        </span>
+      </li>
+      
+        <li style="display: none" data-benchmark="sequel">
+        <span style='background: #cc6699'>&nbsp;&nbsp;
+          <strong style="color: white;">sequel yjit</strong> &nbsp;&nbsp;
+        </span>
+      </li>
+      
+        <li style="display: none" data-benchmark="setivar">
+        <span style='background: #999900'>&nbsp;&nbsp;
+          <strong style="color: white;">setivar no-jit</strong> &nbsp;&nbsp;
+        </span>
+      </li>
+      
+        <li style="display: none" data-benchmark="setivar">
+        <span style='background: #003399'>&nbsp;&nbsp;
+          <strong style="color: white;">setivar yjit</strong> &nbsp;&nbsp;
+        </span>
+      </li>
+      
+        <li style="display: none" data-benchmark="setivar_object">
+        <span style='background: #00cc00'>&nbsp;&nbsp;
+          <strong style="color: white;">setivar_object no-jit</strong> &nbsp;&nbsp;
+        </span>
+      </li>
+      
+        <li style="display: none" data-benchmark="setivar_object">
+        <span style='background: #0066b3'>&nbsp;&nbsp;
+          <strong style="color: white;">setivar_object yjit</strong> &nbsp;&nbsp;
+        </span>
+      </li>
+      
+        <li style="display: none" data-benchmark="setivar_young">
+        <span style='background: #ff8000'>&nbsp;&nbsp;
+          <strong style="color: white;">setivar_young no-jit</strong> &nbsp;&nbsp;
+        </span>
+      </li>
+      
+        <li style="display: none" data-benchmark="setivar_young">
+        <span style='background: #ffcc00'>&nbsp;&nbsp;
+          <strong style="color: white;">setivar_young yjit</strong> &nbsp;&nbsp;
+        </span>
+      </li>
+      
+        <li style="display: none" data-benchmark="setivar_young_object">
+        <span style='background: #330099'>&nbsp;&nbsp;
+          <strong style="color: white;">setivar_young_object no-jit</strong> &nbsp;&nbsp;
+        </span>
+      </li>
+      
+        <li style="display: none" data-benchmark="setivar_young_object">
+        <span style='background: #990099'>&nbsp;&nbsp;
+          <strong style="color: white;">setivar_young_object yjit</strong> &nbsp;&nbsp;
+        </span>
+      </li>
+      
+        <li style="display: none" data-benchmark="str_concat">
+        <span style='background: #ccff00'>&nbsp;&nbsp;
+          <strong style="color: white;">str_concat no-jit</strong> &nbsp;&nbsp;
+        </span>
+      </li>
+      
+        <li style="display: none" data-benchmark="str_concat">
+        <span style='background: #ff0000'>&nbsp;&nbsp;
+          <strong style="color: white;">str_concat yjit</strong> &nbsp;&nbsp;
+        </span>
+      </li>
+      
+        <li style="display: none" data-benchmark="sudoku">
+        <span style='background: #808080'>&nbsp;&nbsp;
+          <strong style="color: white;">sudoku no-jit</strong> &nbsp;&nbsp;
+        </span>
+      </li>
+      
+        <li style="display: none" data-benchmark="sudoku">
+        <span style='background: #008f00'>&nbsp;&nbsp;
+          <strong style="color: white;">sudoku yjit</strong> &nbsp;&nbsp;
+        </span>
+      </li>
+      
+        <li style="display: none" data-benchmark="throw">
+        <span style='background: #00487d'>&nbsp;&nbsp;
+          <strong style="color: white;">throw no-jit</strong> &nbsp;&nbsp;
+        </span>
+      </li>
+      
+        <li style="display: none" data-benchmark="throw">
+        <span style='background: #b35a00'>&nbsp;&nbsp;
+          <strong style="color: white;">throw yjit</strong> &nbsp;&nbsp;
+        </span>
+      </li>
+      
+        <li style="display: none" data-benchmark="tinygql">
+        <span style='background: #b38f00'>&nbsp;&nbsp;
+          <strong style="color: white;">tinygql no-jit</strong> &nbsp;&nbsp;
+        </span>
+      </li>
+      
+        <li style="display: none" data-benchmark="tinygql">
+        <span style='background: #6b006b'>&nbsp;&nbsp;
+          <strong style="color: white;">tinygql yjit</strong> &nbsp;&nbsp;
+        </span>
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="timeline-report-explanation">
+  Y axis values are the maximum memory usage while running the benchmark - lower is better.
+</div>
+
+<div id="bottom_selection_checkboxes" style="display: none;">
+  <ul>
+    
+    
+    
+    <li>
+      <input type="checkbox" data-benchmark="30k_ifelse" />
+      <span style='background: #0066b3'>
+        &nbsp;&nbsp; <strong style="color: white;">30k_ifelse</strong> &nbsp;&nbsp;
+      </span>
+    </li>
+  
+    
+    
+    <li>
+      <input type="checkbox" data-benchmark="30k_methods" />
+      <span style='background: #ffcc00'>
+        &nbsp;&nbsp; <strong style="color: white;">30k_methods</strong> &nbsp;&nbsp;
+      </span>
+    </li>
+  
+    
+    
+    <li>
+      <input type="checkbox" data-benchmark="activerecord" />
+      <span style='background: #990099'>
+        &nbsp;&nbsp; <strong style="color: white;">activerecord</strong> &nbsp;&nbsp;
+      </span>
+    </li>
+  
+    
+    
+    <li>
+      <input type="checkbox" data-benchmark="binarytrees" />
+      <span style='background: #ff0000'>
+        &nbsp;&nbsp; <strong style="color: white;">binarytrees</strong> &nbsp;&nbsp;
+      </span>
+    </li>
+  
+    
+    
+    <li>
+      <input type="checkbox" data-benchmark="blurhash" />
+      <span style='background: #008f00'>
+        &nbsp;&nbsp; <strong style="color: white;">blurhash</strong> &nbsp;&nbsp;
+      </span>
+    </li>
+  
+    
+    
+    <li>
+      <input type="checkbox" data-benchmark="cfunc_itself" />
+      <span style='background: #b35a00'>
+        &nbsp;&nbsp; <strong style="color: white;">cfunc_itself</strong> &nbsp;&nbsp;
+      </span>
+    </li>
+  
+    
+    
+    <li>
+      <input type="checkbox" data-benchmark="chunky-png" />
+      <span style='background: #6b006b'>
+        &nbsp;&nbsp; <strong style="color: white;">chunky-png</strong> &nbsp;&nbsp;
+      </span>
+    </li>
+  
+    
+    
+    <li>
+      <input type="checkbox" data-benchmark="chunky_png" />
+      <span style='background: #b30000'>
+        &nbsp;&nbsp; <strong style="color: white;">chunky_png</strong> &nbsp;&nbsp;
+      </span>
+    </li>
+  
+    
+    
+    <li>
+      <input type="checkbox" data-benchmark="erubi" />
+      <span style='background: #ffc080'>
+        &nbsp;&nbsp; <strong style="color: white;">erubi</strong> &nbsp;&nbsp;
+      </span>
+    </li>
+  
+    
+    
+    <li>
+      <input type="checkbox" data-benchmark="erubi-rails" />
+      <span style='background: #aa80ff'>
+        &nbsp;&nbsp; <strong style="color: white;">erubi-rails</strong> &nbsp;&nbsp;
+      </span>
+    </li>
+  
+    
+    
+    <li>
+      <input type="checkbox" data-benchmark="erubi_rails" />
+      <span style='background: #ff8080'>
+        &nbsp;&nbsp; <strong style="color: white;">erubi_rails</strong> &nbsp;&nbsp;
+      </span>
+    </li>
+  
+    
+    
+    <li>
+      <input type="checkbox" data-benchmark="etanni" />
+      <span style='background: #ffbfff'>
+        &nbsp;&nbsp; <strong style="color: white;">etanni</strong> &nbsp;&nbsp;
+      </span>
+    </li>
+  
+    
+    
+    <li>
+      <input type="checkbox" data-benchmark="fannkuchredux" />
+      <span style='background: #cc6699'>
+        &nbsp;&nbsp; <strong style="color: white;">fannkuchredux</strong> &nbsp;&nbsp;
+      </span>
+    </li>
+  
+    
+    
+    <li>
+      <input type="checkbox" data-benchmark="fib" />
+      <span style='background: #003399'>
+        &nbsp;&nbsp; <strong style="color: white;">fib</strong> &nbsp;&nbsp;
+      </span>
+    </li>
+  
+    
+    
+    <li>
+      <input type="checkbox" data-benchmark="fluentd" />
+      <span style='background: #0066b3'>
+        &nbsp;&nbsp; <strong style="color: white;">fluentd</strong> &nbsp;&nbsp;
+      </span>
+    </li>
+  
+    
+    
+    <li>
+      <input type="checkbox" data-benchmark="getivar" />
+      <span style='background: #ffcc00'>
+        &nbsp;&nbsp; <strong style="color: white;">getivar</strong> &nbsp;&nbsp;
+      </span>
+    </li>
+  
+    
+    
+    <li>
+      <input type="checkbox" data-benchmark="graphql" />
+      <span style='background: #990099'>
+        &nbsp;&nbsp; <strong style="color: white;">graphql</strong> &nbsp;&nbsp;
+      </span>
+    </li>
+  
+    
+    
+    <li>
+      <input type="checkbox" data-benchmark="graphql-native" />
+      <span style='background: #ff0000'>
+        &nbsp;&nbsp; <strong style="color: white;">graphql-native</strong> &nbsp;&nbsp;
+      </span>
+    </li>
+  
+    
+    
+    <li>
+      <input type="checkbox" data-benchmark="hexapdf" />
+      <span style='background: #008f00'>
+        &nbsp;&nbsp; <strong style="color: white;">hexapdf</strong> &nbsp;&nbsp;
+      </span>
+    </li>
+  
+    
+    
+    <li>
+      <input type="checkbox" data-benchmark="keyword_args" />
+      <span style='background: #b30000'>
+        &nbsp;&nbsp; <strong style="color: white;">keyword_args</strong> &nbsp;&nbsp;
+      </span>
+    </li>
+  
+    
+    
+    <li>
+      <input type="checkbox" data-benchmark="lee" />
+      <span style='background: #80ff80'>
+        &nbsp;&nbsp; <strong style="color: white;">lee</strong> &nbsp;&nbsp;
+      </span>
+    </li>
+  
+    
+    
+    <li>
+      <input type="checkbox" data-benchmark="liquid-c" />
+      <span style='background: #ffc080'>
+        &nbsp;&nbsp; <strong style="color: white;">liquid-c</strong> &nbsp;&nbsp;
+      </span>
+    </li>
+  
+    
+    
+    <li>
+      <input type="checkbox" data-benchmark="liquid-compile" />
+      <span style='background: #aa80ff'>
+        &nbsp;&nbsp; <strong style="color: white;">liquid-compile</strong> &nbsp;&nbsp;
+      </span>
+    </li>
+  
+    
+    
+    <li>
+      <input type="checkbox" data-benchmark="liquid-render" />
+      <span style='background: #ff8080'>
+        &nbsp;&nbsp; <strong style="color: white;">liquid-render</strong> &nbsp;&nbsp;
+      </span>
+    </li>
+  
+    
+    
+    <li>
+      <input type="checkbox" data-benchmark="lobsters" />
+      <span style='background: #ffbfff'>
+        &nbsp;&nbsp; <strong style="color: white;">lobsters</strong> &nbsp;&nbsp;
+      </span>
+    </li>
+  
+    
+    
+    <li>
+      <input type="checkbox" data-benchmark="mail" />
+      <span style='background: #cc6699'>
+        &nbsp;&nbsp; <strong style="color: white;">mail</strong> &nbsp;&nbsp;
+      </span>
+    </li>
+  
+    
+    
+    <li>
+      <input type="checkbox" data-benchmark="matmul" />
+      <span style='background: #003399'>
+        &nbsp;&nbsp; <strong style="color: white;">matmul</strong> &nbsp;&nbsp;
+      </span>
+    </li>
+  
+    
+    
+    <li>
+      <input type="checkbox" data-benchmark="nbody" />
+      <span style='background: #0066b3'>
+        &nbsp;&nbsp; <strong style="color: white;">nbody</strong> &nbsp;&nbsp;
+      </span>
+    </li>
+  
+    
+    
+    <li>
+      <input type="checkbox" data-benchmark="nqueens" />
+      <span style='background: #ffcc00'>
+        &nbsp;&nbsp; <strong style="color: white;">nqueens</strong> &nbsp;&nbsp;
+      </span>
+    </li>
+  
+    
+    
+    <li>
+      <input type="checkbox" data-benchmark="optcarrot" />
+      <span style='background: #990099'>
+        &nbsp;&nbsp; <strong style="color: white;">optcarrot</strong> &nbsp;&nbsp;
+      </span>
+    </li>
+  
+    
+    
+    <li>
+      <input type="checkbox" data-benchmark="protoboeuf" />
+      <span style='background: #ff0000'>
+        &nbsp;&nbsp; <strong style="color: white;">protoboeuf</strong> &nbsp;&nbsp;
+      </span>
+    </li>
+  
+    
+    
+    <li>
+      <input type="checkbox" data-benchmark="psych-load" />
+      <span style='background: #008f00'>
+        &nbsp;&nbsp; <strong style="color: white;">psych-load</strong> &nbsp;&nbsp;
+      </span>
+    </li>
+  
+    
+    
+    <li>
+      <input type="checkbox" data-benchmark="rack" />
+      <span style='background: #b35a00'>
+        &nbsp;&nbsp; <strong style="color: white;">rack</strong> &nbsp;&nbsp;
+      </span>
+    </li>
+  
+    
+    
+    <li>
+      <input type="checkbox" data-benchmark="railsbench" />
+      <span style='background: #6b006b'>
+        &nbsp;&nbsp; <strong style="color: white;">railsbench</strong> &nbsp;&nbsp;
+      </span>
+    </li>
+  
+    
+    
+    <li>
+      <input type="checkbox" data-benchmark="respond_to" />
+      <span style='background: #b30000'>
+        &nbsp;&nbsp; <strong style="color: white;">respond_to</strong> &nbsp;&nbsp;
+      </span>
+    </li>
+  
+    
+    
+    <li>
+      <input type="checkbox" data-benchmark="rubocop" />
+      <span style='background: #80ff80'>
+        &nbsp;&nbsp; <strong style="color: white;">rubocop</strong> &nbsp;&nbsp;
+      </span>
+    </li>
+  
+    
+    
+    <li>
+      <input type="checkbox" data-benchmark="ruby-json" />
+      <span style='background: #ffc080'>
+        &nbsp;&nbsp; <strong style="color: white;">ruby-json</strong> &nbsp;&nbsp;
+      </span>
+    </li>
+  
+    
+    
+    <li>
+      <input type="checkbox" data-benchmark="ruby-lsp" />
+      <span style='background: #aa80ff'>
+        &nbsp;&nbsp; <strong style="color: white;">ruby-lsp</strong> &nbsp;&nbsp;
+      </span>
+    </li>
+  
+    
+    
+    <li>
+      <input type="checkbox" data-benchmark="ruby-xor" />
+      <span style='background: #ff8080'>
+        &nbsp;&nbsp; <strong style="color: white;">ruby-xor</strong> &nbsp;&nbsp;
+      </span>
+    </li>
+  
+    
+    
+    <li>
+      <input type="checkbox" data-benchmark="rubykon" />
+      <span style='background: #ffbfff'>
+        &nbsp;&nbsp; <strong style="color: white;">rubykon</strong> &nbsp;&nbsp;
+      </span>
+    </li>
+  
+    
+    
+    <li>
+      <input type="checkbox" data-benchmark="sequel" />
+      <span style='background: #cc6699'>
+        &nbsp;&nbsp; <strong style="color: white;">sequel</strong> &nbsp;&nbsp;
+      </span>
+    </li>
+  
+    
+    
+    <li>
+      <input type="checkbox" data-benchmark="setivar" />
+      <span style='background: #003399'>
+        &nbsp;&nbsp; <strong style="color: white;">setivar</strong> &nbsp;&nbsp;
+      </span>
+    </li>
+  
+    
+    
+    <li>
+      <input type="checkbox" data-benchmark="setivar_object" />
+      <span style='background: #0066b3'>
+        &nbsp;&nbsp; <strong style="color: white;">setivar_object</strong> &nbsp;&nbsp;
+      </span>
+    </li>
+  
+    
+    
+    <li>
+      <input type="checkbox" data-benchmark="setivar_young" />
+      <span style='background: #ffcc00'>
+        &nbsp;&nbsp; <strong style="color: white;">setivar_young</strong> &nbsp;&nbsp;
+      </span>
+    </li>
+  
+    
+    
+    <li>
+      <input type="checkbox" data-benchmark="setivar_young_object" />
+      <span style='background: #990099'>
+        &nbsp;&nbsp; <strong style="color: white;">setivar_young_object</strong> &nbsp;&nbsp;
+      </span>
+    </li>
+  
+    
+    
+    <li>
+      <input type="checkbox" data-benchmark="str_concat" />
+      <span style='background: #ff0000'>
+        &nbsp;&nbsp; <strong style="color: white;">str_concat</strong> &nbsp;&nbsp;
+      </span>
+    </li>
+  
+    
+    
+    <li>
+      <input type="checkbox" data-benchmark="sudoku" />
+      <span style='background: #008f00'>
+        &nbsp;&nbsp; <strong style="color: white;">sudoku</strong> &nbsp;&nbsp;
+      </span>
+    </li>
+  
+    
+    
+    <li>
+      <input type="checkbox" data-benchmark="throw" />
+      <span style='background: #b35a00'>
+        &nbsp;&nbsp; <strong style="color: white;">throw</strong> &nbsp;&nbsp;
+      </span>
+    </li>
+  
+    
+    
+    <li>
+      <input type="checkbox" data-benchmark="tinygql" />
+      <span style='background: #6b006b'>
+        &nbsp;&nbsp; <strong style="color: white;">tinygql</strong> &nbsp;&nbsp;
+      </span>
+    </li>
+  
+  </ul>
+</div>
+
+</div>
+
+<script>
+// D3 line graph, based on https://www.d3-graph-gallery.com/graph/line_basic.html
+// set the dimensions and margins of the graph
+var margin = {top: 10, right: 30, bottom: 70, left: 60},
+    width = 800 - margin.left - margin.right,
+    height = 400 - margin.top - margin.bottom;
+
+// append the svg object to the body of the page
+var svg = d3.select("#timeline_rs_chart")
+  .append("svg")
+    .attr("viewBox", "0 0 " + (width + margin.left + margin.right) + " " + (height + margin.top + margin.bottom))
+    .attr("xmlns", "http://www.w3.org/2000/svg")
+    .attr("xmlns:xlink", "http://www.w3.org/1999/xlink")
+    //.attr("width", width + margin.left + margin.right)
+    //.attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform",
+          "translate(" + margin.left + "," + margin.top + ")");
+
+// Add X axis --> it is a date format
+var x = d3.scaleTime()
+    .domain([new Date(), new Date()])
+    .range([ 0, width ]);
+document.timeline_data.x_axis_function = x; /* Export for the event handlers */
+var xAxis = d3.axisBottom(x);
+var xAxisGroup = svg.append("g")
+    .attr("transform", "translate(0," + height + ")")
+    .attr("class", "x_axis_group")
+    .call(xAxis);
+xAxisGroup.selectAll("text")
+    .attr("transform", "rotate(-60)")
+    .style("text-anchor", "end");
+document.timeline_data.x_axis = xAxis;
+document.timeline_data.x_axis_group = xAxisGroup;
+
+// Add Y axis
+var y = d3.scaleLinear()
+        .domain([0, 1.0])  // Dynamically set from data later
+        .range([ height, 0 ]);
+document.timeline_data.y_axis_function = y; /* Export for the event handlers */
+document.timeline_data.y_axis = d3.axisLeft(y).tickFormat(d => `${(d / (1024 * 1024)).toFixed(1)} MiB`);
+document.timeline_data.top_svg_group = svg.append("g")
+  .call(document.timeline_data.y_axis);
+
+var whiskerStrokeWidth = 1.0;
+var whiskerBarWidth = 5;
+
+var clip = svg.append("defs").append("svg:clipPath")
+    .attr("id", "clip")
+    .append("svg:rect")
+    .attr("width", width + 30 )
+    .attr("height", height + 20 )
+    .attr("x", 0)
+    .attr("y", -20);
+
+// Code borrowed from https://d3-graph-gallery.com/graph/line_brushZoom.html
+var idleTimeout = null;
+
+function idled() { idleTimeout = null; }
+
+function updateChart() {
+    const extent = d3.event.selection
+
+    // If no selection, back to initial coordinate. Otherwise, update X axis domain
+    if (!extent) {
+        if (!idleTimeout) {
+            return (idleTimeout = setTimeout(idled, 350)); // This allows to wait a little bit
+        }
+        x.domain(d3.extent(all_series_time_range));
+    } else {
+        x.domain([x.invert(extent[0]), x.invert(extent[1])]);
+        // Remove the grey brush area as soon as the selection has been done
+        document.timeline_data.top_svg_group.select(".brush").call(brush.move, null);
+    }
+    // Update axis and circle position
+    xAxisGroup.transition().duration(1000).call(xAxis)
+    svg
+        .selectAll("circle.whiskerdot")
+        .transition().duration(1000)
+        .attr("cx", function(d) { return x(d.date) } )
+        .attr("cy", function(d) { return y(d.value) } )
+        ;
+
+    svg
+        .selectAll("path.line")
+        .transition().duration(1000)
+        .attr("d", d3.line()
+            .x(function(d) { return x(d.date) })
+            .y(function(d) { return y(d.value) })
+        );
+}
+
+var brush = d3.brushX()                 // Add the brush feature using the d3.brush function
+    .extent( [ [0,0], [width,height] ] ) // initialise the brush area: start at 0,0 and finishes at width,height: it means I select the whole graph area
+    .on("end", updateChart);
+
+document.timeline_data.top_svg_group
+    .append("g")
+    .attr("class", "brush")
+    .call(brush);
+
+function updateDomainsAndAxesFromData() {
+    // Find the new data scale based on visible series
+    var minY = 0.0;
+    var maxY = 1.0;
+    var minX = data_series[0].time_range[0];
+    var maxX = data_series[0].time_range[1];
+    data_series.forEach(function (series) {
+        let valueRange = series.value_range;
+        if(series.visible && valueRange[0] < minY) {
+            minY = valueRange[0];
+        }
+        if(series.visible && valueRange[1] > maxY) {
+            maxY = valueRange[1];
+        }
+        if(series.visible && series.time_range[0] < minX) {
+            minX = series.time_range[0];
+        }
+        if(series.visible && series.time_range[1] > maxX) {
+            maxX = series.time_range[1];
+        }
+    });
+    var yAxis = document.timeline_data.y_axis;
+    var yAxisFunc = document.timeline_data.y_axis_function;
+
+    var xAxis = document.timeline_data.x_axis;
+    var xAxisFunc = document.timeline_data.x_axis_function;
+
+    yAxisFunc.domain([minY, maxY]);
+    yAxis.scale(yAxisFunc);
+    document.timeline_data.top_svg_group.call(yAxis);
+
+    xAxisFunc.domain([minX, maxX]);
+    xAxis.scale(xAxisFunc);
+    document.timeline_data.x_axis_group.call(xAxis);
+
+    all_series_time_range = [minX, maxX];
+}
+
+function updateGraphFromData() {
+    updateDomainsAndAxesFromData();
+
+    // Add top-level SVG groups for data series
+    svg.selectAll("g.svg_tl_data")
+        .data(data_series, (item) => item.name)
+        .join("g")
+            .attr("class", d => "svg_tl_data " + d.name)
+            .attr("visibility", d => d.visible ? "visible" : "hidden")
+            ;
+
+    data_series.forEach(function(item) {
+        var group = svg.select("svg g.svg_tl_data." + item.name);
+
+        // Add the graph line
+        group.selectAll("path")
+        .data([item.data])
+        .join("path")
+        .attr("class", "line")
+        .attr("fill", "none")
+        .attr("stroke", item.color)
+        .attr("stroke-width", 1.5)
+        .attr("d", d3.line()
+            .x(function(d) { return x(d.date) })
+            .y(function(d) { return y(d.value) })
+            )
+        .attr("clip-path", "url(#clip)");
+
+        // Add a circle at each datapoint
+        var circles = group.selectAll("circle.whiskerdot." + item.name)
+        .data(item.data, (d) => d.date)
+        .join("circle")
+        .attr("class", "whiskerdot " + item.name)
+        .attr("fill", item.color)
+        .attr("r", 4.0)
+        .attr("cx", function(d) { return x(d.date) } )
+        .attr("cy", function(d) { return y(d.value) } )
+        .attr("data-tooltip", function(d) { return item.benchmark + " at " + timePrinter(d.date) + ": " + commaPrinter(d.value) + " bytes<br/>" + item.platform + " Ruby " + d.ruby_desc; } )
+        .attr("clip-path", "url(#clip)")
+        ;
+    });
+
+}
+
+function rescaleGraphFromFetchedData() {
+    updateAllFromCheckboxes();
+    updateGraphFromData();
+}
+
+function setRequestPending() {
+    var loader = document.querySelector(".graph-loading");
+    loader.style.display = "block";
+    var error = document.querySelector(".graph-error");
+    error.style.display = "none";
+}
+
+function setRequestFinished() {
+    var loader = document.querySelector(".graph-loading");
+    loader.style.display = "none";
+    var error = document.querySelector(".graph-error");
+    error.style.display = "none";
+}
+
+function setRequestError() {
+    var loader = document.querySelector(".graph-loading");
+    loader.style.display = "none";
+    var error = document.querySelector(".graph-error");
+    error.style.display = "block";
+}
+
+// Default to x86_64 YJIT recent-only data
+setRequestPending();
+fetch("/reports/timeline/memory_timeline.data.x86_64.all_time.js").then(function (response) {
+    if(response.ok) {
+        return response.text().then(function (data) {
+            setRequestFinished();
+            eval(data);
+            updateGraphFromData();
+            rescaleGraphFromFetchedData();
+
+            var handler = function(event) {
+                // Did they click a platform radio button? If not, we ignore it.
+                if(!event.target.matches('#plat-select-fieldset input[type="radio"]')) return;
+
+                setRequestPending();
+                var newDataSet = event.target.value;
+                fetch("/reports/timeline/memory_timeline.data." + newDataSet + ".js").then(function(response) {
+                    if(response.ok) {
+                        return response.text().then(function(data) {
+                            setRequestFinished();
+                            eval(data);
+                            rescaleGraphFromFetchedData();
+                        });
+                    } else {
+                        setRequestError();
+                    }
+                });
+            };
+            // If anybody clicks a platform radio button, send a new request and cancel the old one, if any.
+            document.addEventListener('click', handler);
+        });
+    } else {
+        setRequestError();
+    }
+});
+
+// Handle legend and checkboxes
+document.getElementById("bottom_selection_checkboxes").style.display = "block";
+var checkboxes = document.querySelectorAll("#bottom_selection_checkboxes li input");
+
+function setHashParamFromCheckboxes() {
+    //console.log("setHashParamFromCheckboxes");
+    var newHash = "";
+    checkboxes.forEach(function (cb) {
+        if(cb.checked) {
+            var bench = cb.getAttribute("data-benchmark");
+            newHash += "+" + bench
+        }
+    });
+    newHash = newHash.slice(1); // Remove extra leading plus
+
+    window.location.hash = newHash;
+}
+
+function setCheckboxesFromHashParam() {
+    var hash = window.location.hash;
+    var benchmarks = hash.slice(1).split("+");
+
+    var benchHash = {};
+    benchmarks.forEach(function (bench) {
+        benchHash[bench] = true;
+    });
+
+    checkboxes.forEach(function (cb) {
+        var bench = cb.getAttribute("data-benchmark");
+        if(benchHash[bench]) {
+            if(!cb.checked) {
+                cb.checked = true;
+            }
+        } else {
+            if(cb.checked) {
+                cb.checked = false;
+            }
+        }
+    });
+}
+
+function updateAllFromCheckboxes() {
+    checkboxes.forEach(function(cb) {
+        updateAllFromCheckbox(cb);
+    });
+}
+
+function updateAllFromCheckbox(cb) {
+    var bench = cb.getAttribute("data-benchmark");
+    var legendBox = document.querySelectorAll("#timeline_legend_child li[data-benchmark=\"" + bench + "\"]");
+
+    // Find the graph series for this benchmark
+    var yjitGraphSeries = document.querySelector("svg g.prod_ruby_with_yjit-" + bench);
+    var nojitGraphSeries = document.querySelector("svg g.prod_ruby_no_jit-" + bench);
+
+    var thisYJITDataSeries;
+    var thisNoJITDataSeries;
+    if(data_series) {
+        data_series.forEach(function (series) {
+            if(series.name == "prod_ruby_with_yjit-" + bench) {
+                thisYJITDataSeries = series;
+            }
+            if(series.name == "prod_ruby_no_jit-" + bench) {
+                thisNoJITDataSeries = series;
+            }
+        });
+    }
+
+    if(cb.checked) {
+        /* Make series visible */
+        if(thisYJITDataSeries) { thisYJITDataSeries.visible = true; }
+        if(thisNoJITDataSeries) { thisNoJITDataSeries.visible = true; }
+        legendBox.forEach(function(elt) { elt.style.display = "inline-block"; });
+        if(yjitGraphSeries) { yjitGraphSeries.style.visibility = "visible"; }
+        if(nojitGraphSeries) { nojitGraphSeries.style.visibility = "visible"; }
+    } else {
+        /* Make series invisible */
+        if(thisYJITDataSeries) { thisYJITDataSeries.visible = false; }
+        if(thisNoJITDataSeries) { thisNoJITDataSeries.visible = false; }
+        legendBox.forEach(function(elt) { elt.style.display = "none"; });
+        if(yjitGraphSeries) { yjitGraphSeries.style.visibility = "hidden"; }
+        if(nojitGraphSeries) { nojitGraphSeries.style.visibility = "hidden"; }
+    }
+}
+
+window.addEventListener("hashchange", function () {
+    setCheckboxesFromHashParam();
+    updateAllFromCheckboxes();
+});
+
+setCheckboxesFromHashParam();
+updateAllFromCheckboxes();
+
+checkboxes.forEach(function (cb) {
+    cb.addEventListener('change', function (event) {
+        updateAllFromCheckbox(this);
+        updateGraphFromData();
+        setHashParamFromCheckboxes();
+    });
+});
+
+</script>
+
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <ul>
+          <li><a href="/about.html">About YJIT Benchmarks</a></li>
+          <li><a href="/history.html">Raw Results History</a></li>
+        </ul>
+      </footer>
+    </div>
+
+    <div id="svg_tooltip"></div>
+    <div id="svg_tooltip_sha_copied"></div>
+
+    <script type="text/javascript" src="/assets/js/footer.js?78c941cb4"></script>
+  </body>
+</html>
