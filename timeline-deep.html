@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width,maximum-scale=2">
     <script src="/assets/js/clipboard.min.js?15f52a1ee"></script>
     <script src="/assets/js/d3.v5.js?c88eae886"></script>
-    <script src="/assets/js/timeline.js?c9e612562"></script>
+    <script src="/assets/js/timeline.js?51fb25873"></script>
     <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/style.css?178eacd6a">
     <title>YJIT Benchmarks</title>
   </head>
@@ -111,6 +111,12 @@
         </span>
       </li>
 
+      <li style="display: none" data-benchmark="discourse">
+        <span style='background: #808080'>&nbsp;&nbsp;
+          <strong style="color: white;">discourse</strong> &nbsp;&nbsp;
+        </span>
+      </li>
+
       <li style="display: none" data-benchmark="erubi">
         <span style='background: #008f00'>&nbsp;&nbsp;
           <strong style="color: white;">erubi</strong> &nbsp;&nbsp;
@@ -174,6 +180,18 @@
       <li style="display: none" data-benchmark="hexapdf">
         <span style='background: #ffc080'>&nbsp;&nbsp;
           <strong style="color: white;">hexapdf</strong> &nbsp;&nbsp;
+        </span>
+      </li>
+
+      <li style="display: none" data-benchmark="hexapdf_line_wrap">
+        <span style='background: #ffe680'>&nbsp;&nbsp;
+          <strong style="color: white;">hexapdf_line_wrap</strong> &nbsp;&nbsp;
+        </span>
+      </li>
+
+      <li style="display: none" data-benchmark="jekyll">
+        <span style='background: #aa80ff'>&nbsp;&nbsp;
+          <strong style="color: white;">jekyll</strong> &nbsp;&nbsp;
         </span>
       </li>
 
@@ -438,6 +456,13 @@
     </li>
   
     <li>
+      <input type="checkbox" data-benchmark="discourse" />
+      <span style='background: #808080'>
+        &nbsp;&nbsp; <strong style="color: white;">discourse</strong> &nbsp;&nbsp;
+      </span>
+    </li>
+  
+    <li>
       <input type="checkbox" data-benchmark="erubi" />
       <span style='background: #008f00'>
         &nbsp;&nbsp; <strong style="color: white;">erubi</strong> &nbsp;&nbsp;
@@ -511,6 +536,20 @@
       <input type="checkbox" data-benchmark="hexapdf" />
       <span style='background: #ffc080'>
         &nbsp;&nbsp; <strong style="color: white;">hexapdf</strong> &nbsp;&nbsp;
+      </span>
+    </li>
+  
+    <li>
+      <input type="checkbox" data-benchmark="hexapdf_line_wrap" />
+      <span style='background: #ffe680'>
+        &nbsp;&nbsp; <strong style="color: white;">hexapdf_line_wrap</strong> &nbsp;&nbsp;
+      </span>
+    </li>
+  
+    <li>
+      <input type="checkbox" data-benchmark="jekyll" />
+      <span style='background: #aa80ff'>
+        &nbsp;&nbsp; <strong style="color: white;">jekyll</strong> &nbsp;&nbsp;
       </span>
     </li>
   

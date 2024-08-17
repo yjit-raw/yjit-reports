@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width,maximum-scale=2">
     <script src="/assets/js/clipboard.min.js?15f52a1ee"></script>
     <script src="/assets/js/d3.v5.js?c88eae886"></script>
-    <script src="/assets/js/timeline.js?c9e612562"></script>
+    <script src="/assets/js/timeline.js?51fb25873"></script>
     <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/style.css?178eacd6a">
     <title>YJIT Benchmarks</title>
   </head>
@@ -159,6 +159,18 @@
         </span>
       </li>
       
+        <li style="display: none" data-benchmark="discourse">
+        <span style='background: #bebebe'>&nbsp;&nbsp;
+          <strong style="color: white;">discourse no-jit</strong> &nbsp;&nbsp;
+        </span>
+      </li>
+      
+        <li style="display: none" data-benchmark="discourse">
+        <span style='background: #80ff80'>&nbsp;&nbsp;
+          <strong style="color: white;">discourse yjit</strong> &nbsp;&nbsp;
+        </span>
+      </li>
+      
         <li style="display: none" data-benchmark="erubi">
         <span style='background: #80c9ff'>&nbsp;&nbsp;
           <strong style="color: white;">erubi no-jit</strong> &nbsp;&nbsp;
@@ -288,6 +300,30 @@
         <li style="display: none" data-benchmark="hexapdf">
         <span style='background: #008f00'>&nbsp;&nbsp;
           <strong style="color: white;">hexapdf yjit</strong> &nbsp;&nbsp;
+        </span>
+      </li>
+      
+        <li style="display: none" data-benchmark="hexapdf_line_wrap">
+        <span style='background: #00487d'>&nbsp;&nbsp;
+          <strong style="color: white;">hexapdf_line_wrap no-jit</strong> &nbsp;&nbsp;
+        </span>
+      </li>
+      
+        <li style="display: none" data-benchmark="hexapdf_line_wrap">
+        <span style='background: #b35a00'>&nbsp;&nbsp;
+          <strong style="color: white;">hexapdf_line_wrap yjit</strong> &nbsp;&nbsp;
+        </span>
+      </li>
+      
+        <li style="display: none" data-benchmark="jekyll">
+        <span style='background: #b38f00'>&nbsp;&nbsp;
+          <strong style="color: white;">jekyll no-jit</strong> &nbsp;&nbsp;
+        </span>
+      </li>
+      
+        <li style="display: none" data-benchmark="jekyll">
+        <span style='background: #6b006b'>&nbsp;&nbsp;
+          <strong style="color: white;">jekyll yjit</strong> &nbsp;&nbsp;
         </span>
       </li>
       
@@ -687,10 +723,9 @@
   <ul>
     
     
-    
     <li>
       <input type="checkbox" data-benchmark="30k_ifelse" />
-      <span style='background: #0066b3'>
+      <span style='background: #00cc00'>
         &nbsp;&nbsp; <strong style="color: white;">30k_ifelse</strong> &nbsp;&nbsp;
       </span>
     </li>
@@ -699,7 +734,7 @@
     
     <li>
       <input type="checkbox" data-benchmark="30k_methods" />
-      <span style='background: #ffcc00'>
+      <span style='background: #ff8000'>
         &nbsp;&nbsp; <strong style="color: white;">30k_methods</strong> &nbsp;&nbsp;
       </span>
     </li>
@@ -708,7 +743,7 @@
     
     <li>
       <input type="checkbox" data-benchmark="activerecord" />
-      <span style='background: #990099'>
+      <span style='background: #330099'>
         &nbsp;&nbsp; <strong style="color: white;">activerecord</strong> &nbsp;&nbsp;
       </span>
     </li>
@@ -717,7 +752,7 @@
     
     <li>
       <input type="checkbox" data-benchmark="binarytrees" />
-      <span style='background: #ff0000'>
+      <span style='background: #ccff00'>
         &nbsp;&nbsp; <strong style="color: white;">binarytrees</strong> &nbsp;&nbsp;
       </span>
     </li>
@@ -726,7 +761,7 @@
     
     <li>
       <input type="checkbox" data-benchmark="blurhash" />
-      <span style='background: #008f00'>
+      <span style='background: #808080'>
         &nbsp;&nbsp; <strong style="color: white;">blurhash</strong> &nbsp;&nbsp;
       </span>
     </li>
@@ -735,7 +770,7 @@
     
     <li>
       <input type="checkbox" data-benchmark="cfunc_itself" />
-      <span style='background: #b35a00'>
+      <span style='background: #00487d'>
         &nbsp;&nbsp; <strong style="color: white;">cfunc_itself</strong> &nbsp;&nbsp;
       </span>
     </li>
@@ -744,7 +779,7 @@
     
     <li>
       <input type="checkbox" data-benchmark="chunky-png" />
-      <span style='background: #6b006b'>
+      <span style='background: #b38f00'>
         &nbsp;&nbsp; <strong style="color: white;">chunky-png</strong> &nbsp;&nbsp;
       </span>
     </li>
@@ -753,7 +788,7 @@
     
     <li>
       <input type="checkbox" data-benchmark="chunky_png" />
-      <span style='background: #b30000'>
+      <span style='background: #8fb300'>
         &nbsp;&nbsp; <strong style="color: white;">chunky_png</strong> &nbsp;&nbsp;
       </span>
     </li>
@@ -761,8 +796,17 @@
     
     
     <li>
+      <input type="checkbox" data-benchmark="discourse" />
+      <span style='background: #bebebe'>
+        &nbsp;&nbsp; <strong style="color: white;">discourse</strong> &nbsp;&nbsp;
+      </span>
+    </li>
+  
+    
+    
+    <li>
       <input type="checkbox" data-benchmark="erubi" />
-      <span style='background: #ffc080'>
+      <span style='background: #80c9ff'>
         &nbsp;&nbsp; <strong style="color: white;">erubi</strong> &nbsp;&nbsp;
       </span>
     </li>
@@ -771,7 +815,7 @@
     
     <li>
       <input type="checkbox" data-benchmark="erubi-rails" />
-      <span style='background: #aa80ff'>
+      <span style='background: #ffe680'>
         &nbsp;&nbsp; <strong style="color: white;">erubi-rails</strong> &nbsp;&nbsp;
       </span>
     </li>
@@ -780,7 +824,7 @@
     
     <li>
       <input type="checkbox" data-benchmark="erubi_rails" />
-      <span style='background: #ff8080'>
+      <span style='background: #ee00cc'>
         &nbsp;&nbsp; <strong style="color: white;">erubi_rails</strong> &nbsp;&nbsp;
       </span>
     </li>
@@ -789,7 +833,7 @@
     
     <li>
       <input type="checkbox" data-benchmark="etanni" />
-      <span style='background: #ffbfff'>
+      <span style='background: #666600'>
         &nbsp;&nbsp; <strong style="color: white;">etanni</strong> &nbsp;&nbsp;
       </span>
     </li>
@@ -798,7 +842,7 @@
     
     <li>
       <input type="checkbox" data-benchmark="fannkuchredux" />
-      <span style='background: #cc6699'>
+      <span style='background: #00ffcc'>
         &nbsp;&nbsp; <strong style="color: white;">fannkuchredux</strong> &nbsp;&nbsp;
       </span>
     </li>
@@ -807,7 +851,7 @@
     
     <li>
       <input type="checkbox" data-benchmark="fib" />
-      <span style='background: #003399'>
+      <span style='background: #999900'>
         &nbsp;&nbsp; <strong style="color: white;">fib</strong> &nbsp;&nbsp;
       </span>
     </li>
@@ -816,7 +860,7 @@
     
     <li>
       <input type="checkbox" data-benchmark="fluentd" />
-      <span style='background: #0066b3'>
+      <span style='background: #00cc00'>
         &nbsp;&nbsp; <strong style="color: white;">fluentd</strong> &nbsp;&nbsp;
       </span>
     </li>
@@ -825,7 +869,7 @@
     
     <li>
       <input type="checkbox" data-benchmark="getivar" />
-      <span style='background: #ffcc00'>
+      <span style='background: #ff8000'>
         &nbsp;&nbsp; <strong style="color: white;">getivar</strong> &nbsp;&nbsp;
       </span>
     </li>
@@ -834,7 +878,7 @@
     
     <li>
       <input type="checkbox" data-benchmark="graphql" />
-      <span style='background: #990099'>
+      <span style='background: #330099'>
         &nbsp;&nbsp; <strong style="color: white;">graphql</strong> &nbsp;&nbsp;
       </span>
     </li>
@@ -843,7 +887,7 @@
     
     <li>
       <input type="checkbox" data-benchmark="graphql-native" />
-      <span style='background: #ff0000'>
+      <span style='background: #ccff00'>
         &nbsp;&nbsp; <strong style="color: white;">graphql-native</strong> &nbsp;&nbsp;
       </span>
     </li>
@@ -852,7 +896,7 @@
     
     <li>
       <input type="checkbox" data-benchmark="hexapdf" />
-      <span style='background: #008f00'>
+      <span style='background: #808080'>
         &nbsp;&nbsp; <strong style="color: white;">hexapdf</strong> &nbsp;&nbsp;
       </span>
     </li>
@@ -860,8 +904,26 @@
     
     
     <li>
+      <input type="checkbox" data-benchmark="hexapdf_line_wrap" />
+      <span style='background: #00487d'>
+        &nbsp;&nbsp; <strong style="color: white;">hexapdf_line_wrap</strong> &nbsp;&nbsp;
+      </span>
+    </li>
+  
+    
+    
+    <li>
+      <input type="checkbox" data-benchmark="jekyll" />
+      <span style='background: #b38f00'>
+        &nbsp;&nbsp; <strong style="color: white;">jekyll</strong> &nbsp;&nbsp;
+      </span>
+    </li>
+  
+    
+    
+    <li>
       <input type="checkbox" data-benchmark="keyword_args" />
-      <span style='background: #b30000'>
+      <span style='background: #8fb300'>
         &nbsp;&nbsp; <strong style="color: white;">keyword_args</strong> &nbsp;&nbsp;
       </span>
     </li>
@@ -870,7 +932,7 @@
     
     <li>
       <input type="checkbox" data-benchmark="lee" />
-      <span style='background: #80ff80'>
+      <span style='background: #bebebe'>
         &nbsp;&nbsp; <strong style="color: white;">lee</strong> &nbsp;&nbsp;
       </span>
     </li>
@@ -879,7 +941,7 @@
     
     <li>
       <input type="checkbox" data-benchmark="liquid-c" />
-      <span style='background: #ffc080'>
+      <span style='background: #80c9ff'>
         &nbsp;&nbsp; <strong style="color: white;">liquid-c</strong> &nbsp;&nbsp;
       </span>
     </li>
@@ -888,7 +950,7 @@
     
     <li>
       <input type="checkbox" data-benchmark="liquid-compile" />
-      <span style='background: #aa80ff'>
+      <span style='background: #ffe680'>
         &nbsp;&nbsp; <strong style="color: white;">liquid-compile</strong> &nbsp;&nbsp;
       </span>
     </li>
@@ -897,7 +959,7 @@
     
     <li>
       <input type="checkbox" data-benchmark="liquid-render" />
-      <span style='background: #ff8080'>
+      <span style='background: #ee00cc'>
         &nbsp;&nbsp; <strong style="color: white;">liquid-render</strong> &nbsp;&nbsp;
       </span>
     </li>
@@ -906,7 +968,7 @@
     
     <li>
       <input type="checkbox" data-benchmark="lobsters" />
-      <span style='background: #ffbfff'>
+      <span style='background: #666600'>
         &nbsp;&nbsp; <strong style="color: white;">lobsters</strong> &nbsp;&nbsp;
       </span>
     </li>
@@ -915,7 +977,7 @@
     
     <li>
       <input type="checkbox" data-benchmark="mail" />
-      <span style='background: #cc6699'>
+      <span style='background: #00ffcc'>
         &nbsp;&nbsp; <strong style="color: white;">mail</strong> &nbsp;&nbsp;
       </span>
     </li>
@@ -924,7 +986,7 @@
     
     <li>
       <input type="checkbox" data-benchmark="matmul" />
-      <span style='background: #003399'>
+      <span style='background: #999900'>
         &nbsp;&nbsp; <strong style="color: white;">matmul</strong> &nbsp;&nbsp;
       </span>
     </li>
@@ -933,7 +995,7 @@
     
     <li>
       <input type="checkbox" data-benchmark="nbody" />
-      <span style='background: #0066b3'>
+      <span style='background: #00cc00'>
         &nbsp;&nbsp; <strong style="color: white;">nbody</strong> &nbsp;&nbsp;
       </span>
     </li>
@@ -942,7 +1004,7 @@
     
     <li>
       <input type="checkbox" data-benchmark="nqueens" />
-      <span style='background: #ffcc00'>
+      <span style='background: #ff8000'>
         &nbsp;&nbsp; <strong style="color: white;">nqueens</strong> &nbsp;&nbsp;
       </span>
     </li>
@@ -951,7 +1013,7 @@
     
     <li>
       <input type="checkbox" data-benchmark="object-new" />
-      <span style='background: #990099'>
+      <span style='background: #330099'>
         &nbsp;&nbsp; <strong style="color: white;">object-new</strong> &nbsp;&nbsp;
       </span>
     </li>
@@ -960,7 +1022,7 @@
     
     <li>
       <input type="checkbox" data-benchmark="optcarrot" />
-      <span style='background: #ff0000'>
+      <span style='background: #ccff00'>
         &nbsp;&nbsp; <strong style="color: white;">optcarrot</strong> &nbsp;&nbsp;
       </span>
     </li>
@@ -969,7 +1031,7 @@
     
     <li>
       <input type="checkbox" data-benchmark="protoboeuf" />
-      <span style='background: #008f00'>
+      <span style='background: #808080'>
         &nbsp;&nbsp; <strong style="color: white;">protoboeuf</strong> &nbsp;&nbsp;
       </span>
     </li>
@@ -978,7 +1040,7 @@
     
     <li>
       <input type="checkbox" data-benchmark="protoboeuf-encode" />
-      <span style='background: #b35a00'>
+      <span style='background: #00487d'>
         &nbsp;&nbsp; <strong style="color: white;">protoboeuf-encode</strong> &nbsp;&nbsp;
       </span>
     </li>
@@ -987,7 +1049,7 @@
     
     <li>
       <input type="checkbox" data-benchmark="psych-load" />
-      <span style='background: #6b006b'>
+      <span style='background: #b38f00'>
         &nbsp;&nbsp; <strong style="color: white;">psych-load</strong> &nbsp;&nbsp;
       </span>
     </li>
@@ -996,7 +1058,7 @@
     
     <li>
       <input type="checkbox" data-benchmark="rack" />
-      <span style='background: #b30000'>
+      <span style='background: #8fb300'>
         &nbsp;&nbsp; <strong style="color: white;">rack</strong> &nbsp;&nbsp;
       </span>
     </li>
@@ -1005,7 +1067,7 @@
     
     <li>
       <input type="checkbox" data-benchmark="railsbench" />
-      <span style='background: #80ff80'>
+      <span style='background: #bebebe'>
         &nbsp;&nbsp; <strong style="color: white;">railsbench</strong> &nbsp;&nbsp;
       </span>
     </li>
@@ -1014,7 +1076,7 @@
     
     <li>
       <input type="checkbox" data-benchmark="respond_to" />
-      <span style='background: #ffc080'>
+      <span style='background: #80c9ff'>
         &nbsp;&nbsp; <strong style="color: white;">respond_to</strong> &nbsp;&nbsp;
       </span>
     </li>
@@ -1023,7 +1085,7 @@
     
     <li>
       <input type="checkbox" data-benchmark="rubocop" />
-      <span style='background: #aa80ff'>
+      <span style='background: #ffe680'>
         &nbsp;&nbsp; <strong style="color: white;">rubocop</strong> &nbsp;&nbsp;
       </span>
     </li>
@@ -1032,7 +1094,7 @@
     
     <li>
       <input type="checkbox" data-benchmark="ruby-json" />
-      <span style='background: #ff8080'>
+      <span style='background: #ee00cc'>
         &nbsp;&nbsp; <strong style="color: white;">ruby-json</strong> &nbsp;&nbsp;
       </span>
     </li>
@@ -1041,7 +1103,7 @@
     
     <li>
       <input type="checkbox" data-benchmark="ruby-lsp" />
-      <span style='background: #ffbfff'>
+      <span style='background: #666600'>
         &nbsp;&nbsp; <strong style="color: white;">ruby-lsp</strong> &nbsp;&nbsp;
       </span>
     </li>
@@ -1050,7 +1112,7 @@
     
     <li>
       <input type="checkbox" data-benchmark="ruby-xor" />
-      <span style='background: #cc6699'>
+      <span style='background: #00ffcc'>
         &nbsp;&nbsp; <strong style="color: white;">ruby-xor</strong> &nbsp;&nbsp;
       </span>
     </li>
@@ -1059,7 +1121,7 @@
     
     <li>
       <input type="checkbox" data-benchmark="rubykon" />
-      <span style='background: #003399'>
+      <span style='background: #999900'>
         &nbsp;&nbsp; <strong style="color: white;">rubykon</strong> &nbsp;&nbsp;
       </span>
     </li>
@@ -1068,7 +1130,7 @@
     
     <li>
       <input type="checkbox" data-benchmark="sequel" />
-      <span style='background: #0066b3'>
+      <span style='background: #00cc00'>
         &nbsp;&nbsp; <strong style="color: white;">sequel</strong> &nbsp;&nbsp;
       </span>
     </li>
@@ -1077,7 +1139,7 @@
     
     <li>
       <input type="checkbox" data-benchmark="setivar" />
-      <span style='background: #ffcc00'>
+      <span style='background: #ff8000'>
         &nbsp;&nbsp; <strong style="color: white;">setivar</strong> &nbsp;&nbsp;
       </span>
     </li>
@@ -1086,7 +1148,7 @@
     
     <li>
       <input type="checkbox" data-benchmark="setivar_object" />
-      <span style='background: #990099'>
+      <span style='background: #330099'>
         &nbsp;&nbsp; <strong style="color: white;">setivar_object</strong> &nbsp;&nbsp;
       </span>
     </li>
@@ -1095,7 +1157,7 @@
     
     <li>
       <input type="checkbox" data-benchmark="setivar_young" />
-      <span style='background: #ff0000'>
+      <span style='background: #ccff00'>
         &nbsp;&nbsp; <strong style="color: white;">setivar_young</strong> &nbsp;&nbsp;
       </span>
     </li>
@@ -1104,7 +1166,7 @@
     
     <li>
       <input type="checkbox" data-benchmark="setivar_young_object" />
-      <span style='background: #008f00'>
+      <span style='background: #808080'>
         &nbsp;&nbsp; <strong style="color: white;">setivar_young_object</strong> &nbsp;&nbsp;
       </span>
     </li>
@@ -1113,7 +1175,7 @@
     
     <li>
       <input type="checkbox" data-benchmark="str_concat" />
-      <span style='background: #b35a00'>
+      <span style='background: #00487d'>
         &nbsp;&nbsp; <strong style="color: white;">str_concat</strong> &nbsp;&nbsp;
       </span>
     </li>
@@ -1122,7 +1184,7 @@
     
     <li>
       <input type="checkbox" data-benchmark="sudoku" />
-      <span style='background: #6b006b'>
+      <span style='background: #b38f00'>
         &nbsp;&nbsp; <strong style="color: white;">sudoku</strong> &nbsp;&nbsp;
       </span>
     </li>
@@ -1131,7 +1193,7 @@
     
     <li>
       <input type="checkbox" data-benchmark="throw" />
-      <span style='background: #b30000'>
+      <span style='background: #8fb300'>
         &nbsp;&nbsp; <strong style="color: white;">throw</strong> &nbsp;&nbsp;
       </span>
     </li>
@@ -1140,11 +1202,12 @@
     
     <li>
       <input type="checkbox" data-benchmark="tinygql" />
-      <span style='background: #80ff80'>
+      <span style='background: #bebebe'>
         &nbsp;&nbsp; <strong style="color: white;">tinygql</strong> &nbsp;&nbsp;
       </span>
     </li>
   
+    
   </ul>
 </div>
 
@@ -1185,21 +1248,21 @@ function updateGraphFromData() {
         .attr("stroke", item.color)
         .attr("stroke-width", 1.5)
         .attr("d", d3.line()
-            .x(function(d) { return x(d.date) })
+            .x(function(d) { return x(d.time) })
             .y(function(d) { return y(d.value) })
             )
         .attr("clip-path", "url(#clip)");
 
         // Add a circle at each datapoint
         var circles = group.selectAll("circle.whiskerdot." + item.name)
-        .data(item.data, (d) => d.date)
+        .data(item.data, (d) => d.time)
         .join("circle")
         .attr("class", "whiskerdot " + item.name)
         .attr("fill", item.color)
         .attr("r", 4.0)
-        .attr("cx", function(d) { return x(d.date) } )
+        .attr("cx", function(d) { return x(d.time) } )
         .attr("cy", function(d) { return y(d.value) } )
-        .attr("data-tooltip", function(d) { return item.benchmark + " at " + timePrinter(d.date) + ": " + commaPrinter(d.value) + " bytes<br/>" + item.platform + " Ruby " + d.ruby_desc; } )
+        .attr("data-tooltip", function(d) { return item.benchmark + " at " + timePrinter(d.time) + ": " + commaPrinter(d.value) + " bytes<br/>" + item.platform + " Ruby " + d.ruby_desc; } )
         .attr("clip-path", "url(#clip)")
         ;
     });

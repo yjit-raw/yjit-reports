@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width,maximum-scale=2">
     <script src="/assets/js/clipboard.min.js?15f52a1ee"></script>
     <script src="/assets/js/d3.v5.js?c88eae886"></script>
-    <script src="/assets/js/timeline.js?c9e612562"></script>
+    <script src="/assets/js/timeline.js?51fb25873"></script>
     <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/style.css?178eacd6a">
     <title>YJIT Benchmarks</title>
   </head>
@@ -238,6 +238,18 @@
       <li style="display: none" data-benchmark="chunky_png">
         <span style='background: #0066b3'>&nbsp;&nbsp;
           <strong style="color: white;">chunky_png YJIT dev</strong> &nbsp;&nbsp;
+        </span>
+      </li>
+
+      <li style="display: none" data-benchmark="discourse">
+        <span style='background: #330099'>&nbsp;&nbsp;
+          <strong style="color: white;">discourse CRUBY dev</strong> &nbsp;&nbsp;
+        </span>
+      </li>
+
+      <li style="display: none" data-benchmark="discourse">
+        <span style='background: #990099'>&nbsp;&nbsp;
+          <strong style="color: white;">discourse YJIT dev</strong> &nbsp;&nbsp;
         </span>
       </li>
 
@@ -490,6 +502,30 @@
       <li style="display: none" data-benchmark="hexapdf">
         <span style='background: #ffc080'>&nbsp;&nbsp;
           <strong style="color: white;">hexapdf YJIT dev</strong> &nbsp;&nbsp;
+        </span>
+      </li>
+
+      <li style="display: none" data-benchmark="hexapdf_line_wrap">
+        <span style='background: #ee00cc'>&nbsp;&nbsp;
+          <strong style="color: white;">hexapdf_line_wrap CRUBY dev</strong> &nbsp;&nbsp;
+        </span>
+      </li>
+
+      <li style="display: none" data-benchmark="hexapdf_line_wrap">
+        <span style='background: #ff8080'>&nbsp;&nbsp;
+          <strong style="color: white;">hexapdf_line_wrap YJIT dev</strong> &nbsp;&nbsp;
+        </span>
+      </li>
+
+      <li style="display: none" data-benchmark="jekyll">
+        <span style='background: #00ffcc'>&nbsp;&nbsp;
+          <strong style="color: white;">jekyll CRUBY dev</strong> &nbsp;&nbsp;
+        </span>
+      </li>
+
+      <li style="display: none" data-benchmark="jekyll">
+        <span style='background: #cc6699'>&nbsp;&nbsp;
+          <strong style="color: white;">jekyll YJIT dev</strong> &nbsp;&nbsp;
         </span>
       </li>
 
@@ -1349,6 +1385,15 @@
     
     
     <li>
+      <input type="checkbox" data-benchmark="discourse" />
+      <span style='background: #330099'>
+        &nbsp;&nbsp; <strong style="color: white;">discourse</strong> &nbsp;&nbsp;
+      </span>
+    </li>
+  
+    
+    
+    <li>
       <input type="checkbox" data-benchmark="erubi" />
       <span style='background: #ccff00'>
         &nbsp;&nbsp; <strong style="color: white;">erubi</strong> &nbsp;&nbsp;
@@ -1465,6 +1510,24 @@
   
     
     
+    
+    
+    <li>
+      <input type="checkbox" data-benchmark="hexapdf_line_wrap" />
+      <span style='background: #ee00cc'>
+        &nbsp;&nbsp; <strong style="color: white;">hexapdf_line_wrap</strong> &nbsp;&nbsp;
+      </span>
+    </li>
+  
+    
+    
+    <li>
+      <input type="checkbox" data-benchmark="jekyll" />
+      <span style='background: #00ffcc'>
+        &nbsp;&nbsp; <strong style="color: white;">jekyll</strong> &nbsp;&nbsp;
+      </span>
+    </li>
+  
     
     
     <li>
