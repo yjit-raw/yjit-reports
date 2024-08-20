@@ -1,0 +1,57 @@
+method call exit reasons: 
+       optimized_block_arg     767142 (36.5%)
+             cme_not_found     671020 (31.9%)
+               megamorphic     308227 (14.7%)
+   iseq_materialized_block     116388 ( 5.5%)
+  iseq_missing_optional_kw      89021 ( 4.2%)
+           cfunc_block_arg      88990 ( 4.2%)
+         bmethod_block_arg      61582 ( 2.9%)
+
+leave exit reasons: 
+  interp_return    9822848 (100.0%)
+   se_interrupt          1 ( 0.0%)
+
+getinstancevariable exit reasons: 
+  (all relevant counters are zero)
+setinstancevariable exit reasons: 
+  (all relevant counters are zero)
+opt_aref exit reasons: 
+  (all relevant counters are zero)
+
+bindings_allocations:           0
+bindings_set:                   0
+compiled_iseq_count:          347
+compiled_block_count:        5554
+invalidation_count:            14
+constant_state_bumps:           0
+inline_code_size:          706596
+outlined_code_size:        672526
+
+total_exit_count:         9822851
+total_insns_count:     1988332116
+vm_insns_count:           2358735
+yjit_insns_count:      1985973384
+ratio_in_yjit:              99.9%
+avg_len_in_yjit:            202.2
+
+Top-20 most frequent exit ops (100.0% of exits):
+                     leave:          1 (33.3)
+          opt_regexpmatch2:          1 (33.3)
+    opt_send_without_block:          1 (33.3)
+               adjuststack:          0 (0.0)
+               anytostring:          0 (0.0)
+                  branchif:          0 (0.0)
+                 branchnil:          0 (0.0)
+              branchunless:          0 (0.0)
+              checkkeyword:          0 (0.0)
+                checkmatch:          0 (0.0)
+                 checktype:          0 (0.0)
+               concatarray:          0 (0.0)
+             concatstrings:          0 (0.0)
+             concattoarray:          0 (0.0)
+               defineclass:          0 (0.0)
+                   defined:          0 (0.0)
+               definedivar:          0 (0.0)
+              definemethod:          0 (0.0)
+             definesmethod:          0 (0.0)
+                       dup:          0 (0.0)
