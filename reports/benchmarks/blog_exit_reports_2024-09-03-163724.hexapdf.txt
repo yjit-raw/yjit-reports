@@ -1,0 +1,60 @@
+method call exit reasons: 
+               megamorphic    5476084 (71.2%)
+           cfunc_block_arg    1627325 (21.1%)
+       iseq_block_arg_type     325168 ( 4.2%)
+          send_attr_reader     113907 ( 1.5%)
+             zsuper_method      80031 ( 1.0%)
+     iseq_kw_splat_non_nil      38635 ( 0.5%)
+          iseq_arity_error      32738 ( 0.4%)
+  iseq_missing_optional_kw       2390 ( 0.0%)
+    cfunc_kw_splat_non_nil         19 ( 0.0%)
+       args_splat_opt_call          5 ( 0.0%)
+
+leave exit reasons: 
+  interp_return   71205894 (100.0%)
+   se_interrupt         22 ( 0.0%)
+
+getinstancevariable exit reasons: 
+  (all relevant counters are zero)
+setinstancevariable exit reasons: 
+  (all relevant counters are zero)
+opt_aref exit reasons: 
+  (all relevant counters are zero)
+
+bindings_allocations:           0
+bindings_set:                   0
+compiled_iseq_count:          507
+compiled_block_count:       12608
+invalidation_count:            40
+constant_state_bumps:           0
+inline_code_size:         1371062
+outlined_code_size:       1208412
+
+total_exit_count:        71371540
+total_insns_count:     6517564082
+vm_insns_count:          45306164
+yjit_insns_count:      6472423564
+ratio_in_yjit:              99.3%
+avg_len_in_yjit:             90.7
+
+Top-20 most frequent exit ops (100.0% of exits):
+    opt_send_without_block:     147463 (89.0)
+                    opt_eq:      16408 (9.9)
+        getblockparamproxy:       1601 (1.0)
+                   opt_neq:        152 (0.1)
+                     leave:         22 (0.0)
+               adjuststack:          0 (0.0)
+               anytostring:          0 (0.0)
+                  branchif:          0 (0.0)
+                 branchnil:          0 (0.0)
+              branchunless:          0 (0.0)
+              checkkeyword:          0 (0.0)
+                checkmatch:          0 (0.0)
+                 checktype:          0 (0.0)
+               concatarray:          0 (0.0)
+             concatstrings:          0 (0.0)
+             concattoarray:          0 (0.0)
+               defineclass:          0 (0.0)
+                   defined:          0 (0.0)
+               definedivar:          0 (0.0)
+              definemethod:          0 (0.0)
