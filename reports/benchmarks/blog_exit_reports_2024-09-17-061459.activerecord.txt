@@ -1,0 +1,60 @@
+method call exit reasons: 
+                iseq_forwarding     129231 (37.6%)
+         cfunc_kw_splat_non_nil     118320 (34.4%)
+                cfunc_block_arg      78535 (22.8%)
+                    megamorphic       5800 ( 1.7%)
+       iseq_missing_optional_kw       2845 ( 0.8%)
+                  send_null_mid       2294 ( 0.7%)
+            iseq_block_arg_type       1740 ( 0.5%)
+                singleton_class       1686 ( 0.5%)
+  iseq_has_rest_and_kw_supplied       1685 ( 0.5%)
+                 iseq_has_no_kw       1160 ( 0.3%)
+          iseq_kw_splat_non_nil        552 ( 0.2%)
+
+leave exit reasons: 
+  interp_return   25587592 (100.0%)
+
+getinstancevariable exit reasons: 
+  (all relevant counters are zero)
+setinstancevariable exit reasons: 
+  (all relevant counters are zero)
+opt_aref exit reasons: 
+  (all relevant counters are zero)
+
+bindings_allocations:           0
+bindings_set:                   0
+compiled_iseq_count:          214
+compiled_block_count:        2301
+invalidation_count:             0
+constant_state_bumps:           0
+inline_code_size:         1449064
+outlined_code_size:       1219451
+
+total_exit_count:        25587592
+total_insns_count:     2322383421
+vm_insns_count:           1609174
+yjit_insns_count:      2320774247
+ratio_in_yjit:              99.9%
+avg_len_in_yjit:             90.7
+
+Top-20 most frequent exit ops (NaN% of exits):
+      adjuststack:          0 (NaN)
+      anytostring:          0 (NaN)
+         branchif:          0 (NaN)
+        branchnil:          0 (NaN)
+     branchunless:          0 (NaN)
+     checkkeyword:          0 (NaN)
+       checkmatch:          0 (NaN)
+        checktype:          0 (NaN)
+      concatarray:          0 (NaN)
+    concatstrings:          0 (NaN)
+    concattoarray:          0 (NaN)
+      defineclass:          0 (NaN)
+          defined:          0 (NaN)
+      definedivar:          0 (NaN)
+     definemethod:          0 (NaN)
+    definesmethod:          0 (NaN)
+              dup:          0 (NaN)
+         duparray:          0 (NaN)
+          duphash:          0 (NaN)
+             dupn:          0 (NaN)
