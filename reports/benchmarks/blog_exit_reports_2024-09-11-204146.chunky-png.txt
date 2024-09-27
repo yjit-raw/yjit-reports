@@ -4,7 +4,6 @@ method call exit reasons:
 
 leave exit reasons: 
   interp_return   78491504 (100.0%)
-   se_interrupt          1 ( 0.0%)
 
 getinstancevariable exit reasons: 
   (all relevant counters are zero)
@@ -16,21 +15,21 @@ opt_aref exit reasons:
 bindings_allocations:           0
 bindings_set:                   0
 compiled_iseq_count:           82
-compiled_block_count:        1095
+compiled_block_count:        1090
 invalidation_count:             1
 constant_state_bumps:           0
-inline_code_size:          300934
-outlined_code_size:        231554
+inline_code_size:          294253
+outlined_code_size:        242237
 
 total_exit_count:        78491505
-total_insns_count:     3368645405
-vm_insns_count:            380162
-yjit_insns_count:      3368265244
+total_insns_count:     3368644447
+vm_insns_count:            379209
+yjit_insns_count:      3368265239
 ratio_in_yjit:             100.0%
 avg_len_in_yjit:             42.9
 
 Top-20 most frequent exit ops (100.0% of exits):
-            leave:          1 (100.0)
+             send:          1 (100.0)
       adjuststack:          0 (0.0)
       anytostring:          0 (0.0)
          branchif:          0 (0.0)

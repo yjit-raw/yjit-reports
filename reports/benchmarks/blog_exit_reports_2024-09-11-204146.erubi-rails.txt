@@ -1,6 +1,6 @@
 method call exit reasons: 
-                singleton_class    7799395 (69.6%)
-  iseq_has_rest_and_kw_supplied    1199921 (10.7%)
+                singleton_class    7799406 (69.6%)
+  iseq_has_rest_and_kw_supplied    1199925 (10.7%)
        iseq_missing_optional_kw     999937 ( 8.9%)
                  iseq_has_no_kw     399942 ( 3.6%)
                 iseq_forwarding     399942 ( 3.6%)
@@ -9,8 +9,8 @@ method call exit reasons:
                     megamorphic          2 ( 0.0%)
 
 leave exit reasons: 
-  interp_return   28202884 (100.0%)
-   se_interrupt          8 ( 0.0%)
+  interp_return   28202838 (100.0%)
+   se_interrupt          6 ( 0.0%)
 
 getinstancevariable exit reasons: 
   (all relevant counters are zero)
@@ -21,24 +21,23 @@ opt_aref exit reasons:
 
 bindings_allocations:           0
 bindings_set:                   0
-compiled_iseq_count:          245
-compiled_block_count:        2838
+compiled_iseq_count:          246
+compiled_block_count:        2811
 invalidation_count:             8
 constant_state_bumps:           0
-inline_code_size:         1923785
-outlined_code_size:       1644819
+inline_code_size:         1952813
+outlined_code_size:       1710017
 
-total_exit_count:        28202894
-total_insns_count:     1864850140
-vm_insns_count:           3330792
-yjit_insns_count:      1861519358
+total_exit_count:        28202850
+total_insns_count:     1864856267
+vm_insns_count:           3336473
+yjit_insns_count:      1861519806
 ratio_in_yjit:              99.8%
 avg_len_in_yjit:             66.0
 
 Top-20 most frequent exit ops (100.0% of exits):
-                     leave:          8 (80.0)
-               invokesuper:          1 (10.0)
-    opt_send_without_block:          1 (10.0)
+                     leave:          6 (50.0)
+    opt_send_without_block:          6 (50.0)
                adjuststack:          0 (0.0)
                anytostring:          0 (0.0)
                   branchif:          0 (0.0)
@@ -56,3 +55,4 @@ Top-20 most frequent exit ops (100.0% of exits):
               definemethod:          0 (0.0)
              definesmethod:          0 (0.0)
                        dup:          0 (0.0)
+                  duparray:          0 (0.0)

@@ -4,7 +4,8 @@ method call exit reasons:
             megamorphic     201988 ( 2.7%)
 
 leave exit reasons: 
-  interp_return   84161438 (100.0%)
+  interp_return   84161437 (100.0%)
+   se_interrupt          1 ( 0.0%)
 
 getinstancevariable exit reasons: 
   (all relevant counters are zero)
@@ -19,34 +20,34 @@ compiled_iseq_count:           65
 compiled_block_count:         649
 invalidation_count:             0
 constant_state_bumps:           0
-inline_code_size:          391350
-outlined_code_size:        292900
+inline_code_size:          390553
+outlined_code_size:        358040
 
 total_exit_count:        84161438
-total_insns_count:     4337292634
-vm_insns_count:          24245894
-yjit_insns_count:      4313046740
+total_insns_count:     4337292361
+vm_insns_count:          24245621
+yjit_insns_count:      4313046741
 ratio_in_yjit:              99.4%
 avg_len_in_yjit:             51.2
 
-Top-20 most frequent exit ops (NaN% of exits):
-      adjuststack:          0 (NaN)
-      anytostring:          0 (NaN)
-         branchif:          0 (NaN)
-        branchnil:          0 (NaN)
-     branchunless:          0 (NaN)
-     checkkeyword:          0 (NaN)
-       checkmatch:          0 (NaN)
-        checktype:          0 (NaN)
-      concatarray:          0 (NaN)
-    concatstrings:          0 (NaN)
-    concattoarray:          0 (NaN)
-      defineclass:          0 (NaN)
-          defined:          0 (NaN)
-      definedivar:          0 (NaN)
-     definemethod:          0 (NaN)
-    definesmethod:          0 (NaN)
-              dup:          0 (NaN)
-         duparray:          0 (NaN)
-          duphash:          0 (NaN)
-             dupn:          0 (NaN)
+Top-20 most frequent exit ops (100.0% of exits):
+            leave:          1 (100.0)
+      adjuststack:          0 (0.0)
+      anytostring:          0 (0.0)
+         branchif:          0 (0.0)
+        branchnil:          0 (0.0)
+     branchunless:          0 (0.0)
+     checkkeyword:          0 (0.0)
+       checkmatch:          0 (0.0)
+        checktype:          0 (0.0)
+      concatarray:          0 (0.0)
+    concatstrings:          0 (0.0)
+    concattoarray:          0 (0.0)
+      defineclass:          0 (0.0)
+          defined:          0 (0.0)
+      definedivar:          0 (0.0)
+     definemethod:          0 (0.0)
+    definesmethod:          0 (0.0)
+              dup:          0 (0.0)
+         duparray:          0 (0.0)
+          duphash:          0 (0.0)

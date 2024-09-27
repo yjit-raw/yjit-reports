@@ -1,14 +1,14 @@
 method call exit reasons: 
-       optimized_block_arg     755942 (36.4%)
-             cme_not_found     661219 (31.8%)
-               megamorphic     310448 (14.9%)
-   iseq_materialized_block     114690 ( 5.5%)
-  iseq_missing_optional_kw      87721 ( 4.2%)
-           cfunc_block_arg      87691 ( 4.2%)
-         bmethod_block_arg      60682 ( 2.9%)
+       optimized_block_arg     761542 (36.4%)
+             cme_not_found     666119 (31.8%)
+               megamorphic     312748 (14.9%)
+   iseq_materialized_block     115540 ( 5.5%)
+  iseq_missing_optional_kw      88371 ( 4.2%)
+           cfunc_block_arg      88341 ( 4.2%)
+         bmethod_block_arg      61132 ( 2.9%)
 
 leave exit reasons: 
-  interp_return    9685888 (100.0%)
+  interp_return    9757589 (100.0%)
 
 getinstancevariable exit reasons: 
   (all relevant counters are zero)
@@ -20,37 +20,37 @@ opt_aref exit reasons:
 bindings_allocations:           0
 bindings_set:                   0
 compiled_iseq_count:          346
-compiled_block_count:        5484
+compiled_block_count:        5481
 invalidation_count:            16
 constant_state_bumps:           0
-inline_code_size:          748763
-outlined_code_size:        698254
+inline_code_size:          735346
+outlined_code_size:        631856
 
-total_exit_count:         9685889
-total_insns_count:     1957369517
-vm_insns_count:           2343057
-yjit_insns_count:      1955026461
+total_exit_count:         9757589
+total_insns_count:     1971873828
+vm_insns_count:           2354387
+yjit_insns_count:      1969519441
 ratio_in_yjit:              99.9%
 avg_len_in_yjit:            201.8
 
-Top-20 most frequent exit ops (100.0% of exits):
-    opt_send_without_block:          1 (100.0)
-               adjuststack:          0 (0.0)
-               anytostring:          0 (0.0)
-                  branchif:          0 (0.0)
-                 branchnil:          0 (0.0)
-              branchunless:          0 (0.0)
-              checkkeyword:          0 (0.0)
-                checkmatch:          0 (0.0)
-                 checktype:          0 (0.0)
-               concatarray:          0 (0.0)
-             concatstrings:          0 (0.0)
-             concattoarray:          0 (0.0)
-               defineclass:          0 (0.0)
-                   defined:          0 (0.0)
-               definedivar:          0 (0.0)
-              definemethod:          0 (0.0)
-             definesmethod:          0 (0.0)
-                       dup:          0 (0.0)
-                  duparray:          0 (0.0)
-                   duphash:          0 (0.0)
+Top-20 most frequent exit ops (NaN% of exits):
+      adjuststack:          0 (NaN)
+      anytostring:          0 (NaN)
+         branchif:          0 (NaN)
+        branchnil:          0 (NaN)
+     branchunless:          0 (NaN)
+     checkkeyword:          0 (NaN)
+       checkmatch:          0 (NaN)
+        checktype:          0 (NaN)
+      concatarray:          0 (NaN)
+    concatstrings:          0 (NaN)
+    concattoarray:          0 (NaN)
+      defineclass:          0 (NaN)
+          defined:          0 (NaN)
+      definedivar:          0 (NaN)
+     definemethod:          0 (NaN)
+    definesmethod:          0 (NaN)
+              dup:          0 (NaN)
+         duparray:          0 (NaN)
+          duphash:          0 (NaN)
+             dupn:          0 (NaN)
