@@ -1,0 +1,68 @@
+method call exit reasons: 
+                singleton_class   18551581 (59.9%)
+                iseq_forwarding    2762008 ( 8.9%)
+                cfunc_block_arg    1680745 ( 5.4%)
+       iseq_missing_optional_kw    1518864 ( 4.9%)
+            optimized_block_arg    1474845 ( 4.8%)
+                 iseq_has_no_kw    1060158 ( 3.4%)
+               iseq_arity_error     958637 ( 3.1%)
+            iseq_block_arg_type     599877 ( 1.9%)
+          iseq_kw_splat_non_nil     595956 ( 1.9%)
+                  cme_not_found     558634 ( 1.8%)
+                    megamorphic     361791 ( 1.2%)
+         cfunc_kw_splat_non_nil     240171 ( 0.8%)
+  iseq_has_rest_and_kw_supplied     199819 ( 0.6%)
+             iseq_splat_with_kw     119971 ( 0.4%)
+     iseq_has_rest_and_captured     119191 ( 0.4%)
+    iseq_has_rest_opt_and_block      77971 ( 0.3%)
+                     call_block      77971 ( 0.3%)
+                  send_null_mid       3607 ( 0.0%)
+
+leave exit reasons: 
+  interp_return   95612898 (100.0%)
+   se_interrupt          7 ( 0.0%)
+
+getinstancevariable exit reasons: 
+  (all relevant counters are zero)
+setinstancevariable exit reasons: 
+  (all relevant counters are zero)
+opt_aref exit reasons: 
+  (all relevant counters are zero)
+
+bindings_allocations:           0
+bindings_set:                   0
+compiled_iseq_count:         1635
+compiled_block_count:       16734
+invalidation_count:            41
+constant_state_bumps:           0
+inline_code_size:         3308849
+outlined_code_size:       2882223
+
+total_exit_count:        96426346
+total_insns_count:     6179277720
+vm_insns_count:          24567936
+yjit_insns_count:      6155523232
+ratio_in_yjit:              99.6%
+avg_len_in_yjit:             63.8
+
+Top-20 most frequent exit ops (100.0% of exits):
+               opt_reverse:     395183 (48.6)
+                    opt_eq:     298193 (36.7)
+               expandarray:     119985 (14.8)
+        getblockparamproxy:         77 (0.0)
+                     leave:          7 (0.0)
+                  branchif:          1 (0.0)
+               invokesuper:          1 (0.0)
+    opt_send_without_block:          1 (0.0)
+               adjuststack:          0 (0.0)
+               anytostring:          0 (0.0)
+                 branchnil:          0 (0.0)
+              branchunless:          0 (0.0)
+              checkkeyword:          0 (0.0)
+                checkmatch:          0 (0.0)
+                 checktype:          0 (0.0)
+               concatarray:          0 (0.0)
+             concatstrings:          0 (0.0)
+             concattoarray:          0 (0.0)
+               defineclass:          0 (0.0)
+                   defined:          0 (0.0)
