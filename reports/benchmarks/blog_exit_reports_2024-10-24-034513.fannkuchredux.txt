@@ -1,7 +1,7 @@
 method call exit reasons: 
   (all relevant counters are zero)
 leave exit reasons: 
-  interp_return        159 (100.0%)
+  interp_return        158 (100.0%)
 
 getinstancevariable exit reasons: 
   (all relevant counters are zero)
@@ -20,30 +20,30 @@ inline_code_size:           24038
 outlined_code_size:         30826
 
 total_exit_count:             159
-total_insns_count:     10976379696
-vm_insns_count:        4860065780
-yjit_insns_count:      6116313916
-ratio_in_yjit:              55.7%
-avg_len_in_yjit:       38467383.1
+total_insns_count:     10946658946
+vm_insns_count:        5027645432
+yjit_insns_count:      5919013515
+ratio_in_yjit:              54.1%
+avg_len_in_yjit:       37226500.1
 
-Top-20 most frequent exit ops (NaN% of exits):
-      adjuststack:          0 (NaN)
-      anytostring:          0 (NaN)
-         branchif:          0 (NaN)
-        branchnil:          0 (NaN)
-     branchunless:          0 (NaN)
-     checkkeyword:          0 (NaN)
-       checkmatch:          0 (NaN)
-        checktype:          0 (NaN)
-      concatarray:          0 (NaN)
-    concatstrings:          0 (NaN)
-    concattoarray:          0 (NaN)
-      defineclass:          0 (NaN)
-          defined:          0 (NaN)
-      definedivar:          0 (NaN)
-     definemethod:          0 (NaN)
-    definesmethod:          0 (NaN)
-              dup:          0 (NaN)
-         duparray:          0 (NaN)
-          duphash:          0 (NaN)
-             dupn:          0 (NaN)
+Top-20 most frequent exit ops (100.0% of exits):
+    opt_send_without_block:          1 (100.0)
+               adjuststack:          0 (0.0)
+               anytostring:          0 (0.0)
+                  branchif:          0 (0.0)
+                 branchnil:          0 (0.0)
+              branchunless:          0 (0.0)
+              checkkeyword:          0 (0.0)
+                checkmatch:          0 (0.0)
+                 checktype:          0 (0.0)
+               concatarray:          0 (0.0)
+             concatstrings:          0 (0.0)
+             concattoarray:          0 (0.0)
+               defineclass:          0 (0.0)
+                   defined:          0 (0.0)
+               definedivar:          0 (0.0)
+              definemethod:          0 (0.0)
+             definesmethod:          0 (0.0)
+                       dup:          0 (0.0)
+                  duparray:          0 (0.0)
+                   duphash:          0 (0.0)

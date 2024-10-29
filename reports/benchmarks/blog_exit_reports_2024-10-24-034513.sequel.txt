@@ -1,11 +1,11 @@
 method call exit reasons: 
-  singleton_class    4828206 (78.6%)
-  ivar_set_method     877492 (14.3%)
-  cfunc_block_arg     439000 ( 7.1%)
+  singleton_class    4916910 (78.6%)
+  ivar_set_method     893970 (14.3%)
+  cfunc_block_arg     447000 ( 7.1%)
 
 leave exit reasons: 
-  interp_return   25457330 (100.0%)
-   se_interrupt       5509 ( 0.0%)
+  interp_return   25921457 (100.0%)
+   se_interrupt       2398 ( 0.0%)
 
 getinstancevariable exit reasons: 
   (all relevant counters are zero)
@@ -17,24 +17,24 @@ opt_aref exit reasons:
 bindings_allocations:           0
 bindings_set:                   0
 compiled_iseq_count:           15
-compiled_block_count:         125
+compiled_block_count:         118
 invalidation_count:             0
 constant_state_bumps:           0
-inline_code_size:          456710
-outlined_code_size:        407474
+inline_code_size:          459278
+outlined_code_size:        444713
 
-total_exit_count:        25466703
-total_insns_count:     1001833168
-vm_insns_count:           9776899
-yjit_insns_count:       992065642
+total_exit_count:        25930782
+total_insns_count:     1019917758
+vm_insns_count:           9875578
+yjit_insns_count:      1010051505
 ratio_in_yjit:              99.0%
 avg_len_in_yjit:             39.0
 
 Top-20 most frequent exit ops (100.0% of exits):
-                     leave:       5509 (58.8)
-    opt_send_without_block:       3641 (38.8)
-                  opt_mult:        210 (2.2)
-                  branchif:         13 (0.1)
+    opt_send_without_block:       6875 (73.7)
+                     leave:       2398 (25.7)
+                  opt_mult:         48 (0.5)
+                  branchif:          4 (0.0)
                adjuststack:          0 (0.0)
                anytostring:          0 (0.0)
                  branchnil:          0 (0.0)
