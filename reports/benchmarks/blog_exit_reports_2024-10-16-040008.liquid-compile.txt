@@ -1,10 +1,10 @@
 method call exit reasons: 
-  zsuper_method     307810 (88.3%)
-    megamorphic      40673 (11.7%)
+  zsuper_method     318627 (88.3%)
+    megamorphic      42101 (11.7%)
 
 leave exit reasons: 
-  interp_return    6195572 (100.0%)
-   se_interrupt         81 ( 0.0%)
+  interp_return    6412788 (100.0%)
+   se_interrupt        131 ( 0.0%)
 
 getinstancevariable exit reasons: 
   (all relevant counters are zero)
@@ -16,25 +16,25 @@ opt_aref exit reasons:
 bindings_allocations:           0
 bindings_set:                   0
 compiled_iseq_count:          150
-compiled_block_count:        2198
+compiled_block_count:        2205
 invalidation_count:             2
 constant_state_bumps:           0
-inline_code_size:          417738
-outlined_code_size:        392877
+inline_code_size:          411377
+outlined_code_size:        322726
 
-total_exit_count:         6200395
-total_insns_count:     1271801191
-vm_insns_count:            554750
-yjit_insns_count:      1271251264
+total_exit_count:         6417755
+total_insns_count:     1316458956
+vm_insns_count:            556982
+yjit_insns_count:      1315906941
 ratio_in_yjit:             100.0%
 avg_len_in_yjit:            205.0
 
 Top-20 most frequent exit ops (100.0% of exits):
-                      once:       4411 (91.5)
-    opt_send_without_block:        301 (6.2)
-                     leave:         81 (1.7)
-                  opt_aref:         20 (0.4)
-                  branchif:         10 (0.2)
+                      once:       4567 (91.9)
+    opt_send_without_block:        242 (4.9)
+                     leave:        131 (2.6)
+                  opt_aref:         18 (0.4)
+                  branchif:          9 (0.2)
                adjuststack:          0 (0.0)
                anytostring:          0 (0.0)
                  branchnil:          0 (0.0)

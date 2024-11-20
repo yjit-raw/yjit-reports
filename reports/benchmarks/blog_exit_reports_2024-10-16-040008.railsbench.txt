@@ -1,26 +1,26 @@
 method call exit reasons: 
-                singleton_class    6183297 (59.9%)
-                iseq_forwarding     920328 ( 8.9%)
-                cfunc_block_arg     560224 ( 5.4%)
-       iseq_missing_optional_kw     506184 ( 4.9%)
-            optimized_block_arg     491519 ( 4.8%)
-                 iseq_has_no_kw     353197 ( 3.4%)
-               iseq_arity_error     319477 ( 3.1%)
-            iseq_block_arg_type     199876 ( 1.9%)
-          iseq_kw_splat_non_nil     198556 ( 1.9%)
-                  cme_not_found     186115 ( 1.8%)
-                    megamorphic     120591 ( 1.2%)
-         cfunc_kw_splat_non_nil      80011 ( 0.8%)
-  iseq_has_rest_and_kw_supplied      66620 ( 0.6%)
-             iseq_splat_with_kw      39971 ( 0.4%)
-     iseq_has_rest_and_captured      39711 ( 0.4%)
-    iseq_has_rest_opt_and_block      25971 ( 0.3%)
-                     call_block      25971 ( 0.3%)
-                  send_null_mid       1207 ( 0.0%)
+                singleton_class   18551581 (59.9%)
+                iseq_forwarding    2762007 ( 8.9%)
+                cfunc_block_arg    1680745 ( 5.4%)
+       iseq_missing_optional_kw    1518864 ( 4.9%)
+            optimized_block_arg    1474845 ( 4.8%)
+                 iseq_has_no_kw    1060157 ( 3.4%)
+               iseq_arity_error     958635 ( 3.1%)
+            iseq_block_arg_type     599877 ( 1.9%)
+          iseq_kw_splat_non_nil     595955 ( 1.9%)
+                  cme_not_found     558635 ( 1.8%)
+                    megamorphic     361791 ( 1.2%)
+         cfunc_kw_splat_non_nil     240171 ( 0.8%)
+  iseq_has_rest_and_kw_supplied     199820 ( 0.6%)
+             iseq_splat_with_kw     119971 ( 0.4%)
+     iseq_has_rest_and_captured     119191 ( 0.4%)
+                     call_block      77971 ( 0.3%)
+    iseq_has_rest_opt_and_block      77970 ( 0.3%)
+                  send_null_mid       3607 ( 0.0%)
 
 leave exit reasons: 
-  interp_return   31640062 (100.0%)
-   se_interrupt          8 ( 0.0%)
+  interp_return   94895324 (100.0%)
+   se_interrupt          4 ( 0.0%)
 
 getinstancevariable exit reasons: 
   (all relevant counters are zero)
@@ -31,30 +31,30 @@ opt_aref exit reasons:
 
 bindings_allocations:           0
 bindings_set:                   0
-compiled_iseq_count:         1631
-compiled_block_count:       16671
+compiled_iseq_count:         1632
+compiled_block_count:       16751
 invalidation_count:            41
 constant_state_bumps:           0
-inline_code_size:         3303327
-outlined_code_size:       2902772
+inline_code_size:         3307327
+outlined_code_size:       2832480
 
-total_exit_count:        31911232
-total_insns_count:     2050373096
-vm_insns_count:          10665292
-yjit_insns_count:      2039978974
-ratio_in_yjit:              99.5%
+total_exit_count:        95708770
+total_insns_count:     6144592791
+vm_insns_count:          24567997
+yjit_insns_count:      6120838240
+ratio_in_yjit:              99.6%
 avg_len_in_yjit:             63.9
 
 Top-20 most frequent exit ops (100.0% of exits):
-               opt_reverse:     131703 (48.6)
-                    opt_eq:      99393 (36.7)
-               expandarray:      39985 (14.7)
+               opt_reverse:     395183 (48.6)
+                    opt_eq:     298193 (36.7)
+               expandarray:     119985 (14.8)
         getblockparamproxy:         77 (0.0)
-                     leave:          8 (0.0)
-                  branchif:          2 (0.0)
-    opt_send_without_block:          2 (0.0)
+                     leave:          4 (0.0)
+    opt_send_without_block:          4 (0.0)
                adjuststack:          0 (0.0)
                anytostring:          0 (0.0)
+                  branchif:          0 (0.0)
                  branchnil:          0 (0.0)
               branchunless:          0 (0.0)
               checkkeyword:          0 (0.0)

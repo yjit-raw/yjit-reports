@@ -1,9 +1,10 @@
 method call exit reasons: 
-  send_attr_writer      12771 (94.9%)
-    iseq_has_no_kw        684 ( 5.1%)
+  send_attr_writer      38371 (94.4%)
+    iseq_has_no_kw       2284 ( 5.6%)
 
 leave exit reasons: 
-  interp_return   78491504 (100.0%)
+  interp_return  235474101 (100.0%)
+   se_interrupt          1 ( 0.0%)
 
 getinstancevariable exit reasons: 
   (all relevant counters are zero)
@@ -14,38 +15,38 @@ opt_aref exit reasons:
 
 bindings_allocations:           0
 bindings_set:                   0
-compiled_iseq_count:           82
-compiled_block_count:        1090
-invalidation_count:             1
+compiled_iseq_count:           87
+compiled_block_count:        1141
+invalidation_count:            17
 constant_state_bumps:           0
-inline_code_size:          287886
-outlined_code_size:        252952
+inline_code_size:          294366
+outlined_code_size:        251561
 
-total_exit_count:        78491504
-total_insns_count:     3368643971
-vm_insns_count:            378724
-yjit_insns_count:      3368265247
+total_exit_count:       235474102
+total_insns_count:     10105262667
+vm_insns_count:            381895
+yjit_insns_count:      10104880773
 ratio_in_yjit:             100.0%
 avg_len_in_yjit:             42.9
 
-Top-20 most frequent exit ops (NaN% of exits):
-      adjuststack:          0 (NaN)
-      anytostring:          0 (NaN)
-         branchif:          0 (NaN)
-        branchnil:          0 (NaN)
-     branchunless:          0 (NaN)
-     checkkeyword:          0 (NaN)
-       checkmatch:          0 (NaN)
-        checktype:          0 (NaN)
-      concatarray:          0 (NaN)
-    concatstrings:          0 (NaN)
-    concattoarray:          0 (NaN)
-      defineclass:          0 (NaN)
-          defined:          0 (NaN)
-      definedivar:          0 (NaN)
-     definemethod:          0 (NaN)
-    definesmethod:          0 (NaN)
-              dup:          0 (NaN)
-         duparray:          0 (NaN)
-          duphash:          0 (NaN)
-             dupn:          0 (NaN)
+Top-20 most frequent exit ops (100.0% of exits):
+            leave:          1 (100.0)
+      adjuststack:          0 (0.0)
+      anytostring:          0 (0.0)
+         branchif:          0 (0.0)
+        branchnil:          0 (0.0)
+     branchunless:          0 (0.0)
+     checkkeyword:          0 (0.0)
+       checkmatch:          0 (0.0)
+        checktype:          0 (0.0)
+      concatarray:          0 (0.0)
+    concatstrings:          0 (0.0)
+    concattoarray:          0 (0.0)
+      defineclass:          0 (0.0)
+          defined:          0 (0.0)
+      definedivar:          0 (0.0)
+     definemethod:          0 (0.0)
+    definesmethod:          0 (0.0)
+              dup:          0 (0.0)
+         duparray:          0 (0.0)
+          duphash:          0 (0.0)

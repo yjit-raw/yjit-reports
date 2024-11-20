@@ -1,7 +1,7 @@
 method call exit reasons: 
   (all relevant counters are zero)
 leave exit reasons: 
-  interp_return       1115 (100.0%)
+  interp_return       1554 (100.0%)
 
 getinstancevariable exit reasons: 
   (all relevant counters are zero)
@@ -12,38 +12,38 @@ opt_aref exit reasons:
 
 bindings_allocations:           0
 bindings_set:                   0
-compiled_iseq_count:            8
-compiled_block_count:          59
+compiled_iseq_count:           10
+compiled_block_count:          73
 invalidation_count:             0
 constant_state_bumps:           0
-inline_code_size:            7384
-outlined_code_size:          5592
+inline_code_size:            8595
+outlined_code_size:          6880
 
-total_exit_count:            1115
-total_insns_count:     1242653176
-vm_insns_count:            274611
-yjit_insns_count:      1242378565
+total_exit_count:            1555
+total_insns_count:     1273603984
+vm_insns_count:            279891
+yjit_insns_count:      1273324094
 ratio_in_yjit:             100.0%
-avg_len_in_yjit:        1114240.9
+avg_len_in_yjit:         818857.9
 
-Top-20 most frequent exit ops (NaN% of exits):
-      adjuststack:          0 (NaN)
-      anytostring:          0 (NaN)
-         branchif:          0 (NaN)
-        branchnil:          0 (NaN)
-     branchunless:          0 (NaN)
-     checkkeyword:          0 (NaN)
-       checkmatch:          0 (NaN)
-        checktype:          0 (NaN)
-      concatarray:          0 (NaN)
-    concatstrings:          0 (NaN)
-    concattoarray:          0 (NaN)
-      defineclass:          0 (NaN)
-          defined:          0 (NaN)
-      definedivar:          0 (NaN)
-     definemethod:          0 (NaN)
-    definesmethod:          0 (NaN)
-              dup:          0 (NaN)
-         duparray:          0 (NaN)
-          duphash:          0 (NaN)
-             dupn:          0 (NaN)
+Top-20 most frequent exit ops (100.0% of exits):
+         opt_aref:          1 (100.0)
+      adjuststack:          0 (0.0)
+      anytostring:          0 (0.0)
+         branchif:          0 (0.0)
+        branchnil:          0 (0.0)
+     branchunless:          0 (0.0)
+     checkkeyword:          0 (0.0)
+       checkmatch:          0 (0.0)
+        checktype:          0 (0.0)
+      concatarray:          0 (0.0)
+    concatstrings:          0 (0.0)
+    concattoarray:          0 (0.0)
+      defineclass:          0 (0.0)
+          defined:          0 (0.0)
+      definedivar:          0 (0.0)
+     definemethod:          0 (0.0)
+    definesmethod:          0 (0.0)
+              dup:          0 (0.0)
+         duparray:          0 (0.0)
+          duphash:          0 (0.0)

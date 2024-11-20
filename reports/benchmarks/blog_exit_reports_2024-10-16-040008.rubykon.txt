@@ -1,9 +1,9 @@
 method call exit reasons: 
-  iseq_arity_error     930880 (73.3%)
-       megamorphic     339736 (26.7%)
+  iseq_arity_error    2796085 (73.3%)
+       megamorphic    1020759 (26.7%)
 
 leave exit reasons: 
-  interp_return   43123899 (100.0%)
+  interp_return  129282917 (100.0%)
    se_interrupt          1 ( 0.0%)
 
 getinstancevariable exit reasons: 
@@ -15,22 +15,22 @@ opt_aref exit reasons:
 
 bindings_allocations:           0
 bindings_set:                   0
-compiled_iseq_count:          132
-compiled_block_count:        1523
-invalidation_count:             3
+compiled_iseq_count:          139
+compiled_block_count:        1586
+invalidation_count:             7
 constant_state_bumps:           0
-inline_code_size:          136122
-outlined_code_size:        116214
+inline_code_size:          142379
+outlined_code_size:        139044
 
-total_exit_count:        43271892
-total_insns_count:     3797657179
-vm_insns_count:           2340892
-yjit_insns_count:      3795464280
+total_exit_count:       129727921
+total_insns_count:     11403878488
+vm_insns_count:           6216092
+yjit_insns_count:      11398107400
 ratio_in_yjit:              99.9%
-avg_len_in_yjit:             87.7
+avg_len_in_yjit:             87.9
 
 Top-20 most frequent exit ops (100.0% of exits):
-           opt_eq:     147992 (100.0)
+           opt_eq:     445003 (100.0)
             leave:          1 (0.0)
       adjuststack:          0 (0.0)
       anytostring:          0 (0.0)

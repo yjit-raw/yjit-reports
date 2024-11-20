@@ -1,11 +1,11 @@
 method call exit reasons: 
-  iseq_kw_splat_non_nil    2069097 (86.4%)
-         iseq_has_no_kw     260248 (10.9%)
-            megamorphic      64628 ( 2.7%)
-        singleton_class        611 ( 0.0%)
+  iseq_kw_splat_non_nil    2263077 (86.4%)
+         iseq_has_no_kw     284668 (10.9%)
+            megamorphic      70688 ( 2.7%)
+        singleton_class        671 ( 0.0%)
 
 leave exit reasons: 
-  interp_return   27034349 (100.0%)
+  interp_return   29554592 (100.0%)
    se_interrupt          1 ( 0.0%)
 
 getinstancevariable exit reasons: 
@@ -17,19 +17,19 @@ opt_aref exit reasons:
 
 bindings_allocations:           0
 bindings_set:                   0
-compiled_iseq_count:           70
-compiled_block_count:         700
+compiled_iseq_count:           69
+compiled_block_count:         695
 invalidation_count:             0
 constant_state_bumps:           0
-inline_code_size:          397003
-outlined_code_size:        287364
+inline_code_size:          393283
+outlined_code_size:        352803
 
-total_exit_count:        27034350
-total_insns_count:     1384448765
-vm_insns_count:          24228061
-yjit_insns_count:      1360220705
-ratio_in_yjit:              98.2%
-avg_len_in_yjit:             50.3
+total_exit_count:        29554593
+total_insns_count:     1514725520
+vm_insns_count:          24231912
+yjit_insns_count:      1490493609
+ratio_in_yjit:              98.4%
+avg_len_in_yjit:             50.4
 
 Top-20 most frequent exit ops (100.0% of exits):
             leave:          1 (100.0)

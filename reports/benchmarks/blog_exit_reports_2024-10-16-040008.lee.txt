@@ -1,8 +1,9 @@
 method call exit reasons: 
-  cme_not_found      12122 (100.0%)
+    cme_not_found      36482 (99.8%)
+  cfunc_block_arg         62 ( 0.2%)
 
 leave exit reasons: 
-  interp_return   13060610 (100.0%)
+  interp_return   39159029 (100.0%)
 
 getinstancevariable exit reasons: 
   (all relevant counters are zero)
@@ -13,23 +14,23 @@ opt_aref exit reasons:
 
 bindings_allocations:           0
 bindings_set:                   0
-compiled_iseq_count:           33
-compiled_block_count:         567
-invalidation_count:             0
+compiled_iseq_count:           49
+compiled_block_count:         810
+invalidation_count:            17
 constant_state_bumps:           0
-inline_code_size:          269853
-outlined_code_size:        234031
+inline_code_size:          281822
+outlined_code_size:        263517
 
-total_exit_count:        13118880
-total_insns_count:     2741302257
-vm_insns_count:           1203497
-yjit_insns_count:      2740157030
+total_exit_count:        39333891
+total_insns_count:     8223162983
+vm_insns_count:           2856994
+yjit_insns_count:      8220480851
 ratio_in_yjit:             100.0%
-avg_len_in_yjit:            208.9
+avg_len_in_yjit:            209.0
 
 Top-20 most frequent exit ops (100.0% of exits):
-                      dupn:      58251 (100.0)
-    opt_send_without_block:         19 (0.0)
+                      dupn:     174811 (100.0)
+    opt_send_without_block:         51 (0.0)
                adjuststack:          0 (0.0)
                anytostring:          0 (0.0)
                   branchif:          0 (0.0)

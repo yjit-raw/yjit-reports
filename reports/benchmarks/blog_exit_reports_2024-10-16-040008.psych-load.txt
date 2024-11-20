@@ -1,9 +1,9 @@
 method call exit reasons: 
-  cfunc_block_arg      11942 (100.0%)
+  cfunc_block_arg      35942 (100.0%)
 
 leave exit reasons: 
-  interp_return   77454148 (100.0%)
-   se_interrupt          1 ( 0.0%)
+  interp_return  232359556 (100.0%)
+   se_interrupt          2 ( 0.0%)
 
 getinstancevariable exit reasons: 
   (all relevant counters are zero)
@@ -14,22 +14,22 @@ opt_aref exit reasons:
 
 bindings_allocations:           0
 bindings_set:                   0
-compiled_iseq_count:           60
-compiled_block_count:         613
-invalidation_count:             3
+compiled_iseq_count:           65
+compiled_block_count:         661
+invalidation_count:            17
 constant_state_bumps:           0
-inline_code_size:          278546
-outlined_code_size:        235452
+inline_code_size:          255938
+outlined_code_size:        225097
 
-total_exit_count:        77454149
-total_insns_count:     4946104227
-vm_insns_count:            389103
-yjit_insns_count:      4945715125
+total_exit_count:       232359558
+total_insns_count:     14837625752
+vm_insns_count:            394656
+yjit_insns_count:      14837231098
 ratio_in_yjit:             100.0%
 avg_len_in_yjit:             63.9
 
 Top-20 most frequent exit ops (100.0% of exits):
-            leave:          1 (100.0)
+            leave:          2 (100.0)
       adjuststack:          0 (0.0)
       anytostring:          0 (0.0)
          branchif:          0 (0.0)
