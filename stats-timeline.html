@@ -11,7 +11,7 @@
       window.timeline_events = [{"time":"2022-01-26 22:00:00","description":"Drop in performance due to changing AWS instances"},{"time":"2022-05-09 19:00:00","description":"Slowdown due to CRuby commit 85479b34f76d5b426c2a8"},{"time":"2022-06-08 19:00:00","description":"Fix for May 9th slowdown, commit 8d57336360497e94"},{"time":"2022-06-07 19:00:00","description":"Slowdown in some benchmarks due to configuring local Rubies with CC=clang"},{"time":"2022-06-09 19:00:00","description":"Revert CC=clang config in yjit-metrics, fix June 7th slowdown"},{"time":"2022-09-30 06:00:00","description":"ARM64 and yjit-metrics multiplatform changes; changes to warmup params; general benchmarking churn"},{"time":"2023-01-10 08:00:00","description":"Several ActiveRecord benchmark changes in functionality, which resulted in lower speed"},{"time":"2023-01-20 08:00:00","description":"Switchover to Jenkins, plus changes in warmup behaviour, though on same ARM AWS worker and different x86 AWS worker"},{"time":"2023-03-01 12:22:00","description":"Added srand to yjit-metrics test harness"},{"time":"2023-03-02 14:50:00","description":"Changed peak_mem_bytes to use /proc/smaps_rollup on Linux, not ps"},{"time":"2024-04-30 14:08:45","description":"Disabled variable warmup restoring default of 10 warmup iterations per benchmark."},{"time":"2024-05-11 19:42:45","description":"Changed baseline to be previous version of interpreter."},{"time":"2024-05-19 03:08:05","description":"Changed previous ruby to build as static instead of shared."},{"time":"2024-08-01 03:25:08","description":"Changed previous ruby to build from git source the same way we do the current versions."},{"time":"2024-08-12 21:40:19","description":"Upgraded benchmark servers to GCC 13"},{"time":"2024-09-12 17:43:04","description":"CRuby switched default parser to Prism"},{"time":"2024-09-27 21:13:54","description":"Reduced running time of several benchmarks that were simply looping to bring iteration times below 1 second."},{"time":"2024-10-15 04:00:08","description":"Moved benchmarks to new servers to upgrade CPUs and operating systems. (c5.metal -> c7i.metal-24xl and a1.metal -> c7g.metal)."},{"time":"2024-10-16 03:00:00","description":"Changed warmup count from 10 iterations to 5 for CRuby and 50 for YJIT"},{"time":"2024-10-16 22:00:00","description":"Decreased YJIT warmup count from 50 to 30"},{"time":"2024-10-17 03:45:17","description":"GCC upgraded to 14.2.0"},{"time":"2024-10-18 03:45:00","description":"Increased YJIT warmup count from 30 to 50"},{"time":"2024-11-20 03:45:08","description":"Upgraded ARM instance from Graviton3 (c7g) to Graviton4 (c8g).  Rebuilt intel instance."},{"time":"2024-11-20 19:37:34","description":"Upgraded baseline Ruby to 3.3.6"}];
     </script>
     <script src="/assets/js/timeline.js?1115ef857"></script>
-    <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/style.css?ff2315290">
+    <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/style.css?a46d819ad">
     <title>YJIT Benchmarks</title>
   </head>
 
@@ -19,9 +19,7 @@
     <!-- HEADER -->
     <div id="header_wrap" class="outer">
         <header class="inner">
-          <!-- <a id="forkme_banner" href="https://github.com/Shopify/yjit-metrics">View on GitHub</a> -->
-
-          <h1 id="project_title">YJIT Benchmarks</h1>
+          <h1 id="project_title"><a href="/">YJIT Benchmarks</a></h1>
           <div style="clear:both;"></div>
         </header>
     </div>
