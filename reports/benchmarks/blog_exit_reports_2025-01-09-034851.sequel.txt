@@ -1,11 +1,11 @@
 method call exit reasons: 
-      singleton_class    4696482 (78.6%)
-      ivar_set_method     853300 (14.3%)
-  iseq_block_arg_type     425193 ( 7.1%)
+      singleton_class    4672617 (78.6%)
+      ivar_set_method     847816 (14.3%)
+  iseq_block_arg_type     423599 ( 7.1%)
 
 leave exit reasons: 
-  interp_return   17529982 (100.0%)
-   se_interrupt       5589 ( 0.0%)
+  interp_return   17436753 (100.0%)
+   se_interrupt       4366 ( 0.0%)
 
 getinstancevariable exit reasons: 
   (all relevant counters are zero)
@@ -20,21 +20,21 @@ compiled_iseq_count:           12
 compiled_block_count:          97
 invalidation_count:             0
 constant_state_bumps:           0
-inline_code_size:          451707
-outlined_code_size:        393471
+inline_code_size:          445819
+outlined_code_size:        390335
 
-total_exit_count:        17537971
-total_insns_count:     1086585029
-vm_insns_count:           9861366
-yjit_insns_count:      1076731652
+total_exit_count:        17445829
+total_insns_count:     1081518948
+vm_insns_count:           9934146
+yjit_insns_count:      1071593878
 ratio_in_yjit:              99.1%
 avg_len_in_yjit:             61.4
 
 Top-20 most frequent exit ops (100.0% of exits):
-                     leave:       5589 (70.0)
-    opt_send_without_block:       2249 (28.2)
-                  opt_mult:        123 (1.5)
-                  branchif:         28 (0.4)
+                     leave:       4366 (48.1)
+    opt_send_without_block:       4063 (44.8)
+                  opt_mult:        582 (6.4)
+                  branchif:         65 (0.7)
                adjuststack:          0 (0.0)
                anytostring:          0 (0.0)
                  branchnil:          0 (0.0)

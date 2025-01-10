@@ -1,11 +1,11 @@
 method call exit reasons: 
-     iseq_arity_error    2383674 (54.0%)
-          megamorphic    1882738 (42.7%)
-      cfunc_block_arg     145171 ( 3.3%)
+     iseq_arity_error    2363974 (54.0%)
+          megamorphic    1867178 (42.7%)
+      cfunc_block_arg     143971 ( 3.3%)
   iseq_block_arg_type          1 ( 0.0%)
 
 leave exit reasons: 
-  interp_return   13134685 (100.0%)
+  interp_return   13026145 (100.0%)
 
 getinstancevariable exit reasons: 
   (all relevant counters are zero)
@@ -20,18 +20,18 @@ compiled_iseq_count:          132
 compiled_block_count:        2315
 invalidation_count:             8
 constant_state_bumps:           0
-inline_code_size:          586206
-outlined_code_size:        454668
+inline_code_size:          593211
+outlined_code_size:        494645
 
-total_exit_count:        13144365
-total_insns_count:     2147142325
-vm_insns_count:           2244348
-yjit_insns_count:      2144907657
+total_exit_count:        13035745
+total_insns_count:     2129403721
+vm_insns_count:           2232729
+yjit_insns_count:      2127180592
 ratio_in_yjit:              99.9%
 avg_len_in_yjit:            163.2
 
 Top-20 most frequent exit ops (100.0% of exits):
-           opt_eq:       9680 (100.0)
+           opt_eq:       9600 (100.0)
       adjuststack:          0 (0.0)
       anytostring:          0 (0.0)
          branchif:          0 (0.0)

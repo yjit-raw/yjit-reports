@@ -3,7 +3,7 @@ method call exit reasons:
     iseq_has_no_kw       2284 ( 5.6%)
 
 leave exit reasons: 
-  interp_return   34057939 (100.0%)
+  interp_return   34057938 (100.0%)
 
 getinstancevariable exit reasons: 
   (all relevant counters are zero)
@@ -18,21 +18,21 @@ compiled_iseq_count:           85
 compiled_block_count:        1127
 invalidation_count:             1
 constant_state_bumps:           0
-inline_code_size:          296078
-outlined_code_size:        284556
+inline_code_size:          323703
+outlined_code_size:        292958
 
 total_exit_count:        34057940
-total_insns_count:     12731321346
-vm_insns_count:            392810
-yjit_insns_count:      12730928537
+total_insns_count:     12731333276
+vm_insns_count:            406425
+yjit_insns_count:      12730926853
 ratio_in_yjit:             100.0%
 avg_len_in_yjit:            373.8
 
 Top-20 most frequent exit ops (100.0% of exits):
-             send:          1 (100.0)
+         branchif:          1 (50.0)
+             send:          1 (50.0)
       adjuststack:          0 (0.0)
       anytostring:          0 (0.0)
-         branchif:          0 (0.0)
         branchnil:          0 (0.0)
      branchunless:          0 (0.0)
      checkkeyword:          0 (0.0)

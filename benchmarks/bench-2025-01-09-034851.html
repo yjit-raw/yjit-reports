@@ -37,27 +37,27 @@
       </p>
 
       <div>Using the <a href="https://en.wikipedia.org/wiki/Geometric_mean">geomean</a>
-of the <a href="https://github.com/Shopify/yjit-bench/blob/d031f03d54486dcc23f26c8449f30bba38cd56f3/benchmarks.yml">headline benchmarks</a>
+of the <a href="https://github.com/Shopify/yjit-bench/blob/42834eb19724318e0d4453d80ede3f4ed8145167/benchmarks.yml">headline benchmarks</a>
 for x86
 
 YJIT 3.5.0dev is
 
 <ul style="list-style: none">
-  <li>89.5% faster than CRuby 3.5.0dev</li>
+  <li>88.7% faster than CRuby 3.5.0dev</li>
 
   
-    <li>7.2% faster than YJIT 3.3.6</li>
+    <li>4.9% faster than YJIT 3.3.6</li>
   
 </ul>
 
 
-  On <a href="https://github.com/Shopify/yjit-bench/blob/d031f03d54486dcc23f26c8449f30bba38cd56f3/benchmarks/railsbench/benchmark.rb">railsbench</a> it is
+  On <a href="https://github.com/Shopify/yjit-bench/blob/42834eb19724318e0d4453d80ede3f4ed8145167/benchmarks/railsbench/benchmark.rb">railsbench</a> it is
 
   <ul style="list-style: none">
-    <li>104.8% faster than CRuby 3.5.0dev</li>
+    <li>92.0% faster than CRuby 3.5.0dev</li>
 
     
-      <li>6.5% faster than YJIT 3.3.6</li>
+      <li>the same speed as YJIT 3.3.6</li>
     
   </ul>
 
@@ -68,7 +68,7 @@ YJIT 3.5.0dev is
         
           x86_64 runtime:
           3 hours,
-          44 minutes
+          55 minutes
         
         </div>
       
@@ -76,7 +76,7 @@ YJIT 3.5.0dev is
         
           aarch64 runtime:
           3 hours,
-          10 minutes
+          18 minutes
         
         </div>
       
@@ -187,7 +187,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            83
+            82
             </td>
           
             <td>
@@ -195,7 +195,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            82
+            84
             </td>
           
             <td>
@@ -211,7 +211,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            163
+            161
             </td>
           
         </tr>
@@ -227,7 +227,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            32
+            31
             </td>
           
             <td>
@@ -243,7 +243,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            16
+            15
             </td>
           
             <td>
@@ -251,7 +251,47 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            33
+            34
+            </td>
+          
+        </tr>
+      
+        <tr style="border: 1px solid black;">
+          
+            <th scope="row">
+            <a href="https://github.com/Shopify/yjit-bench/blob/main/benchmarks/erubi-rails/benchmark.rb" title="Uses Rails template rendering to repeatedly render a stubbed Discourse view.">erubi-rails</a>
+            </th>
+          
+            <td>
+            5
+            </td>
+          
+            <td>
+            16
+            </td>
+          
+            <td>
+            5
+            </td>
+          
+            <td>
+            15
+            </td>
+          
+            <td>
+            50
+            </td>
+          
+            <td>
+            10
+            </td>
+          
+            <td>
+            50
+            </td>
+          
+            <td>
+            10
             </td>
           
         </tr>
@@ -307,7 +347,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            412
+            421
             </td>
           
             <td>
@@ -315,7 +355,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            427
+            423
             </td>
           
             <td>
@@ -331,7 +371,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            627
+            625
             </td>
           
         </tr>
@@ -355,7 +395,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            412
+            410
             </td>
           
             <td>
@@ -363,7 +403,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            540
+            567
             </td>
           
             <td>
@@ -371,7 +411,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            562
+            559
             </td>
           
         </tr>
@@ -395,7 +435,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            172
+            171
             </td>
           
             <td>
@@ -403,7 +443,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            406
+            404
             </td>
           
             <td>
@@ -411,7 +451,47 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            440
+            420
+            </td>
+          
+        </tr>
+      
+        <tr style="border: 1px solid black;">
+          
+            <th scope="row">
+            <a href="https://github.com/Shopify/yjit-bench/blob/main/benchmarks/lobsters/benchmark.rb" title="test a wide variety of routes in the Lobste.rs Rails app">lobsters</a>
+            </th>
+          
+            <td>
+            5
+            </td>
+          
+            <td>
+            20
+            </td>
+          
+            <td>
+            5
+            </td>
+          
+            <td>
+            20
+            </td>
+          
+            <td>
+            50
+            </td>
+          
+            <td>
+            10
+            </td>
+          
+            <td>
+            50
+            </td>
+          
+            <td>
+            10
             </td>
           
         </tr>
@@ -435,7 +515,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            181
+            189
             </td>
           
             <td>
@@ -443,7 +523,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            251
+            252
             </td>
           
             <td>
@@ -451,7 +531,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            255
+            253
             </td>
           
         </tr>
@@ -539,7 +619,7 @@ YJIT 3.5.0dev is
         <tr style="border: 1px solid black;">
           
             <th scope="row">
-            <a href="https://github.com/Shopify/yjit-bench/blob/main/benchmarks/ruby-lsp/benchmark.rb" title="Run the Ruby LSP's indexing mechanism.">ruby-lsp</a>
+            <a href="https://github.com/Shopify/yjit-bench/blob/main/benchmarks/rubocop/benchmark.rb" title="Run the RuboCop auto correction on a sizable file.">rubocop</a>
             </th>
           
             <td>
@@ -547,7 +627,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            145
+            156
             </td>
           
             <td>
@@ -563,7 +643,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            243
+            248
             </td>
           
             <td>
@@ -571,7 +651,47 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            250
+            262
+            </td>
+          
+        </tr>
+      
+        <tr style="border: 1px solid black;">
+          
+            <th scope="row">
+            <a href="https://github.com/Shopify/yjit-bench/blob/main/benchmarks/ruby-lsp/benchmark.rb" title="Run the Ruby LSP's indexing mechanism.">ruby-lsp</a>
+            </th>
+          
+            <td>
+            5
+            </td>
+          
+            <td>
+            155
+            </td>
+          
+            <td>
+            5
+            </td>
+          
+            <td>
+            160
+            </td>
+          
+            <td>
+            50
+            </td>
+          
+            <td>
+            248
+            </td>
+          
+            <td>
+            50
+            </td>
+          
+            <td>
+            242
             </td>
           
         </tr>
@@ -587,7 +707,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            423
+            428
             </td>
           
             <td>
@@ -595,7 +715,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            419
+            425
             </td>
           
             <td>
@@ -603,7 +723,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            575
+            570
             </td>
           
             <td>
@@ -611,7 +731,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            588
+            592
             </td>
           
         </tr>
@@ -651,7 +771,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            137
+            141
             </td>
           
         </tr>
@@ -707,7 +827,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            117
+            121
             </td>
           
             <td>
@@ -715,7 +835,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            143
+            144
             </td>
           
             <td>
@@ -723,7 +843,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            93
+            98
             </td>
           
             <td>
@@ -731,7 +851,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            152
+            151
             </td>
           
         </tr>
@@ -747,7 +867,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            91
+            90
             </td>
           
             <td>
@@ -835,7 +955,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            62
+            60
             </td>
           
             <td>
@@ -843,7 +963,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            26
+            24
             </td>
           
             <td>
@@ -851,7 +971,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            29
+            22
             </td>
           
         </tr>
@@ -867,7 +987,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            84
+            85
             </td>
           
             <td>
@@ -875,7 +995,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            85
+            86
             </td>
           
             <td>
@@ -891,7 +1011,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            57
+            58
             </td>
           
         </tr>
@@ -931,7 +1051,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            14
+            15
             </td>
           
         </tr>
@@ -947,7 +1067,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            22
+            23
             </td>
           
             <td>
@@ -1027,7 +1147,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            51
+            50
             </td>
           
             <td>
@@ -1043,7 +1163,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            84
+            85
             </td>
           
             <td>
@@ -1075,7 +1195,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            242
+            241
             </td>
           
             <td>
@@ -1083,7 +1203,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            576
+            577
             </td>
           
             <td>
@@ -1115,7 +1235,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            120
+            119
             </td>
           
             <td>
@@ -1187,7 +1307,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            174
+            179
             </td>
           
             <td>
@@ -1195,7 +1315,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            175
+            172
             </td>
           
             <td>
@@ -1227,7 +1347,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            174
+            180
             </td>
           
             <td>
@@ -1235,7 +1355,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            177
+            193
             </td>
           
             <td>
@@ -1251,7 +1371,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            812
+            813
             </td>
           
         </tr>
@@ -1267,7 +1387,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            586
+            589
             </td>
           
             <td>
@@ -1275,7 +1395,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            632
+            630
             </td>
           
             <td>
@@ -1283,7 +1403,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            943
+            949
             </td>
           
             <td>
@@ -1291,7 +1411,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            1087
+            1081
             </td>
           
         </tr>
@@ -1307,7 +1427,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            83
+            84
             </td>
           
             <td>
@@ -1331,7 +1451,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            51
+            50
             </td>
           
         </tr>
@@ -1443,7 +1563,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            23
+            22
             </td>
           
             <td>
@@ -1451,7 +1571,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            29
+            28
             </td>
           
         </tr>
@@ -1483,7 +1603,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            215
+            214
             </td>
           
             <td>
@@ -1491,7 +1611,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            206
+            205
             </td>
           
         </tr>
@@ -1507,7 +1627,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            39
+            38
             </td>
           
             <td>
@@ -1523,7 +1643,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            484
+            475
             </td>
           
             <td>
@@ -1531,7 +1651,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            467
+            477
             </td>
           
         </tr>
@@ -1563,7 +1683,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            1046
+            1045
             </td>
           
             <td>
@@ -1571,7 +1691,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            1144
+            1143
             </td>
           
         </tr>
@@ -1587,7 +1707,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            127
+            126
             </td>
           
             <td>
@@ -1595,7 +1715,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            127
+            126
             </td>
           
             <td>
@@ -1611,7 +1731,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            937
+            935
             </td>
           
         </tr>
@@ -1635,7 +1755,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            216
+            217
             </td>
           
             <td>
@@ -1643,7 +1763,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            2259
+            2256
             </td>
           
             <td>
@@ -1651,7 +1771,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            2616
+            2621
             </td>
           
         </tr>
@@ -1683,7 +1803,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            959
+            958
             </td>
           
             <td>
@@ -1731,7 +1851,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            386
+            303
             </td>
           
         </tr>
@@ -1747,7 +1867,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            133
+            134
             </td>
           
             <td>
@@ -1771,7 +1891,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            3983
+            3979
             </td>
           
         </tr>
@@ -1787,7 +1907,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            241
+            240
             </td>
           
             <td>
@@ -1795,7 +1915,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            238
+            237
             </td>
           
             <td>
@@ -1843,7 +1963,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            3124
+            3127
             </td>
           
             <td>
@@ -1851,7 +1971,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            5699
+            5700
             </td>
           
         </tr>
@@ -1891,7 +2011,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            836
+            851
             </td>
           
         </tr>
@@ -1915,7 +2035,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            344
+            343
             </td>
           
             <td>
@@ -1955,7 +2075,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            397
+            407
             </td>
           
             <td>
@@ -1963,7 +2083,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            969
+            967
             </td>
           
             <td>
@@ -1971,7 +2091,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            1212
+            1190
             </td>
           
         </tr>
@@ -1987,7 +2107,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            1262
+            1261
             </td>
           
             <td>
@@ -1995,7 +2115,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            1253
+            1090
             </td>
           
             <td>
@@ -2003,7 +2123,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            1741
+            1739
             </td>
           
             <td>
@@ -2011,7 +2131,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            1649
+            1648
             </td>
           
         </tr>
@@ -2076,11 +2196,11 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            1421128
+            1440990
             </td>
           
             <td>
-            1197254
+            1226184
             </td>
           
             <td>
@@ -2112,7 +2232,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            63.96786
+            63.220942
             </td>
           
         </tr>
@@ -2128,11 +2248,11 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            296078
+            323703
             </td>
           
             <td>
-            284556
+            292958
             </td>
           
             <td>
@@ -2164,7 +2284,59 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            33.316076
+            33.053067
+            </td>
+          
+        </tr>
+      
+        <tr style="border: 1px solid black;">
+          
+            <th scope="row">
+            <a href="https://github.com/Shopify/yjit-bench/blob/main/benchmarks/erubi-rails/benchmark.rb" title="Uses Rails template rendering to repeatedly render a stubbed Discourse view.">erubi-rails</a>
+            </th>
+          
+            <td>
+            <a href="/reports/benchmarks/blog_exit_reports_2025-01-09-034851.erubi-rails.txt">(click)</a>
+            </td>
+          
+            <td>
+            1920342
+            </td>
+          
+            <td>
+            1674744
+            </td>
+          
+            <td>
+            261
+            </td>
+          
+            <td>
+            2974
+            </td>
+          
+            <td>
+            19
+            </td>
+          
+            <td>
+            0%
+            </td>
+          
+            <td>
+            0
+            </td>
+          
+            <td>
+            0
+            </td>
+          
+            <td>
+            
+            </td>
+          
+            <td>
+            81.137347
             </td>
           
         </tr>
@@ -2180,11 +2352,11 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            1469249
+            1466629
             </td>
           
             <td>
-            1311258
+            1227293
             </td>
           
             <td>
@@ -2216,7 +2388,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            376.707009
+            378.499013
             </td>
           
         </tr>
@@ -2232,11 +2404,11 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            480934
+            501582
             </td>
           
             <td>
-            417207
+            451626
             </td>
           
             <td>
@@ -2268,7 +2440,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            48.514737
+            49.418764
             </td>
           
         </tr>
@@ -2284,11 +2456,11 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            402937
+            433439
             </td>
           
             <td>
-            345500
+            346937
             </td>
           
             <td>
@@ -2296,7 +2468,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            2087
+            2094
             </td>
           
             <td>
@@ -2320,7 +2492,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            66.052162
+            65.10485
             </td>
           
         </tr>
@@ -2336,11 +2508,11 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            586206
+            593211
             </td>
           
             <td>
-            454668
+            494645
             </td>
           
             <td>
@@ -2372,7 +2544,59 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            65.523289
+            65.598363
+            </td>
+          
+        </tr>
+      
+        <tr style="border: 1px solid black;">
+          
+            <th scope="row">
+            <a href="https://github.com/Shopify/yjit-bench/blob/main/benchmarks/lobsters/benchmark.rb" title="test a wide variety of routes in the Lobste.rs Rails app">lobsters</a>
+            </th>
+          
+            <td>
+            <a href="/reports/benchmarks/blog_exit_reports_2025-01-09-034851.lobsters.txt">(click)</a>
+            </td>
+          
+            <td>
+            8104964
+            </td>
+          
+            <td>
+            6803814
+            </td>
+          
+            <td>
+            3211
+            </td>
+          
+            <td>
+            52442
+            </td>
+          
+            <td>
+            169
+            </td>
+          
+            <td>
+            0%
+            </td>
+          
+            <td>
+            0
+            </td>
+          
+            <td>
+            0
+            </td>
+          
+            <td>
+            
+            </td>
+          
+            <td>
+            1789.416121
             </td>
           
         </tr>
@@ -2388,11 +2612,11 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            721854
+            757844
             </td>
           
             <td>
-            645750
+            668079
             </td>
           
             <td>
@@ -2424,7 +2648,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            153.508202
+            153.687891
             </td>
           
         </tr>
@@ -2440,11 +2664,11 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            249613
+            274996
             </td>
           
             <td>
-            199681
+            224800
             </td>
           
             <td>
@@ -2476,7 +2700,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            19.154009
+            19.442827
             </td>
           
         </tr>
@@ -2492,11 +2716,11 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            3240294
+            3234563
             </td>
           
             <td>
-            2876501
+            2732337
             </td>
           
             <td>
@@ -2504,7 +2728,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            16190
+            16182
             </td>
           
             <td>
@@ -2528,7 +2752,59 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            467.270615
+            466.997955
+            </td>
+          
+        </tr>
+      
+        <tr style="border: 1px solid black;">
+          
+            <th scope="row">
+            <a href="https://github.com/Shopify/yjit-bench/blob/main/benchmarks/rubocop/benchmark.rb" title="Run the RuboCop auto correction on a sizable file.">rubocop</a>
+            </th>
+          
+            <td>
+            <a href="/reports/benchmarks/blog_exit_reports_2025-01-09-034851.rubocop.txt">(click)</a>
+            </td>
+          
+            <td>
+            5692156
+            </td>
+          
+            <td>
+            4768328
+            </td>
+          
+            <td>
+            2888
+            </td>
+          
+            <td>
+            50557
+            </td>
+          
+            <td>
+            110
+            </td>
+          
+            <td>
+            0%
+            </td>
+          
+            <td>
+            4
+            </td>
+          
+            <td>
+            0
+            </td>
+          
+            <td>
+            
+            </td>
+          
+            <td>
+            1474.560533
             </td>
           
         </tr>
@@ -2544,11 +2820,11 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            843599
+            840458
             </td>
           
             <td>
-            754326
+            718718
             </td>
           
             <td>
@@ -2556,7 +2832,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            4738
+            4737
             </td>
           
             <td>
@@ -2580,7 +2856,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            134.510564
+            133.096498
             </td>
           
         </tr>
@@ -2596,11 +2872,11 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            451707
+            445819
             </td>
           
             <td>
-            393471
+            390335
             </td>
           
             <td>
@@ -2632,7 +2908,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            3.631109
+            3.759303
             </td>
           
         </tr>
@@ -2684,7 +2960,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            2.368005
+            2.40444
             </td>
           
         </tr>
@@ -2736,7 +3012,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            14.176736
+            14.167172
             </td>
           
         </tr>
@@ -2752,11 +3028,11 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            225509
+            250476
             </td>
           
             <td>
-            163660
+            211004
             </td>
           
             <td>
@@ -2788,7 +3064,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            3.266495
+            3.339875
             </td>
           
         </tr>
@@ -2804,19 +3080,19 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            31129
+            27627
             </td>
           
             <td>
-            29637
+            26630
             </td>
           
             <td>
-            8
+            9
             </td>
           
             <td>
-            87
+            91
             </td>
           
             <td>
@@ -2840,7 +3116,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            2.940242
+            3.093496
             </td>
           
         </tr>
@@ -2892,7 +3168,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            7.479993
+            7.427577
             </td>
           
         </tr>
@@ -2908,11 +3184,11 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            372063
+            335083
             </td>
           
             <td>
-            325206
+            294001
             </td>
           
             <td>
@@ -2944,7 +3220,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            3.198211
+            3.324374
             </td>
           
         </tr>
@@ -2960,11 +3236,11 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            423093
+            401323
             </td>
           
             <td>
-            387485
+            356755
             </td>
           
             <td>
@@ -2996,7 +3272,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            21.246416
+            21.336127
             </td>
           
         </tr>
@@ -3012,11 +3288,11 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            365094
+            393322
             </td>
           
             <td>
-            328922
+            344617
             </td>
           
             <td>
@@ -3048,7 +3324,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            8.690021
+            8.569166
             </td>
           
         </tr>
@@ -3064,11 +3340,11 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            275748
+            277013
             </td>
           
             <td>
-            245780
+            246765
             </td>
           
             <td>
@@ -3100,7 +3376,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            23.333152
+            23.503218
             </td>
           
         </tr>
@@ -3152,7 +3428,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            2.410054
+            2.400313
             </td>
           
         </tr>
@@ -3204,7 +3480,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            3.648278
+            3.679755
             </td>
           
         </tr>
@@ -3256,7 +3532,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            4.544587
+            4.586525
             </td>
           
         </tr>
@@ -3308,7 +3584,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            6.98574
+            7.003229
             </td>
           
         </tr>
@@ -3360,7 +3636,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            102.704081
+            102.969504
             </td>
           
         </tr>
@@ -3412,7 +3688,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            42.209232
+            42.266203
             </td>
           
         </tr>
@@ -3464,7 +3740,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            31.403082
+            31.000567
             </td>
           
         </tr>
@@ -3480,11 +3756,11 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            250414
+            265588
             </td>
           
             <td>
-            229828
+            225669
             </td>
           
             <td>
@@ -3516,7 +3792,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            10.253628
+            10.210271
             </td>
           
         </tr>
@@ -3532,11 +3808,11 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            25796
+            24110
             </td>
           
             <td>
-            22844
+            21036
             </td>
           
             <td>
@@ -3568,7 +3844,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            5.076193
+            5.073479
             </td>
           
         </tr>
@@ -3620,7 +3896,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            42.813608
+            42.683365
             </td>
           
         </tr>
@@ -3672,7 +3948,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            15.411786
+            15.34076
             </td>
           
         </tr>
@@ -3688,11 +3964,11 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            292783
+            272840
             </td>
           
             <td>
-            249048
+            219853
             </td>
           
             <td>
@@ -3724,7 +4000,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            21.653069
+            21.806991
             </td>
           
         </tr>
@@ -3776,7 +4052,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            1413.318392
+            1414.367872
             </td>
           
         </tr>
@@ -3828,7 +4104,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            451.587871
+            451.717536
             </td>
           
         </tr>
@@ -3880,7 +4156,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            1.456671
+            1.447605
             </td>
           
         </tr>
@@ -3932,7 +4208,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            1.074984
+            1.076917
             </td>
           
         </tr>
@@ -3984,7 +4260,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            1.407144
+            1.431016
             </td>
           
         </tr>
@@ -4036,7 +4312,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            1.727462
+            1.706698
             </td>
           
         </tr>
@@ -4088,7 +4364,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            0.872839
+            0.917082
             </td>
           
         </tr>
@@ -4140,7 +4416,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            1.915373
+            1.904453
             </td>
           
         </tr>
@@ -4192,7 +4468,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            2.00609
+            1.966565
             </td>
           
         </tr>
@@ -4244,7 +4520,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            1.094731
+            1.113389
             </td>
           
         </tr>
@@ -4296,7 +4572,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            1.207095
+            1.222558
             </td>
           
         </tr>
@@ -4348,7 +4624,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            1.422038
+            1.432186
             </td>
           
         </tr>
@@ -4400,7 +4676,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            2.114783
+            2.130273
             </td>
           
         </tr>
@@ -4452,7 +4728,7 @@ YJIT 3.5.0dev is
             </td>
           
             <td>
-            1.714433
+            1.697179
             </td>
           
         </tr>
