@@ -1,0 +1,57 @@
+method call exit reasons: 
+       optimized_block_arg     637595 (39.1%)
+             cme_not_found     573020 (35.1%)
+               megamorphic     116949 ( 7.2%)
+   iseq_materialized_block      99389 ( 6.1%)
+  iseq_missing_optional_kw      76021 ( 4.7%)
+         bmethod_block_arg      52582 ( 3.2%)
+       iseq_block_arg_type      40920 ( 2.5%)
+           cfunc_block_arg      35071 ( 2.1%)
+
+leave exit reasons: 
+  interp_return    2639914 (100.0%)
+
+getinstancevariable exit reasons: 
+  (all relevant counters are zero)
+setinstancevariable exit reasons: 
+  (all relevant counters are zero)
+opt_aref exit reasons: 
+  (all relevant counters are zero)
+
+bindings_allocations:           0
+bindings_set:                   0
+compiled_iseq_count:          342
+compiled_block_count:        7232
+invalidation_count:            40
+constant_state_bumps:           0
+inline_code_size:          798633
+outlined_code_size:        791441
+
+total_exit_count:         2704262
+total_insns_count:     2070682792
+vm_insns_count:           2613753
+yjit_insns_count:      2068133387
+ratio_in_yjit:              99.9%
+avg_len_in_yjit:            764.7
+
+Top-20 most frequent exit ops (100.0% of exits):
+             opt_new:      64347 (100.0)
+    opt_regexpmatch2:          1 (0.0)
+         adjuststack:          0 (0.0)
+         anytostring:          0 (0.0)
+            branchif:          0 (0.0)
+           branchnil:          0 (0.0)
+        branchunless:          0 (0.0)
+        checkkeyword:          0 (0.0)
+          checkmatch:          0 (0.0)
+           checktype:          0 (0.0)
+         concatarray:          0 (0.0)
+       concatstrings:          0 (0.0)
+       concattoarray:          0 (0.0)
+         defineclass:          0 (0.0)
+             defined:          0 (0.0)
+         definedivar:          0 (0.0)
+        definemethod:          0 (0.0)
+       definesmethod:          0 (0.0)
+                 dup:          0 (0.0)
+            duparray:          0 (0.0)
