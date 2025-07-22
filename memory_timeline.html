@@ -700,50 +700,62 @@
         </span>
       </li>
       
-        <li style="display: none" data-benchmark="str_concat">
+        <li style="display: none" data-benchmark="shipit">
         <span style='background: #bebebe'>&nbsp;&nbsp;
+          <strong style="color: white;">shipit no-jit</strong> &nbsp;&nbsp;
+        </span>
+      </li>
+      
+        <li style="display: none" data-benchmark="shipit">
+        <span style='background: #80ff80'>&nbsp;&nbsp;
+          <strong style="color: white;">shipit yjit</strong> &nbsp;&nbsp;
+        </span>
+      </li>
+      
+        <li style="display: none" data-benchmark="str_concat">
+        <span style='background: #80c9ff'>&nbsp;&nbsp;
           <strong style="color: white;">str_concat no-jit</strong> &nbsp;&nbsp;
         </span>
       </li>
       
         <li style="display: none" data-benchmark="str_concat">
-        <span style='background: #80ff80'>&nbsp;&nbsp;
+        <span style='background: #ffc080'>&nbsp;&nbsp;
           <strong style="color: white;">str_concat yjit</strong> &nbsp;&nbsp;
         </span>
       </li>
       
         <li style="display: none" data-benchmark="sudoku">
-        <span style='background: #80c9ff'>&nbsp;&nbsp;
+        <span style='background: #ffe680'>&nbsp;&nbsp;
           <strong style="color: white;">sudoku no-jit</strong> &nbsp;&nbsp;
         </span>
       </li>
       
         <li style="display: none" data-benchmark="sudoku">
-        <span style='background: #ffc080'>&nbsp;&nbsp;
+        <span style='background: #aa80ff'>&nbsp;&nbsp;
           <strong style="color: white;">sudoku yjit</strong> &nbsp;&nbsp;
         </span>
       </li>
       
         <li style="display: none" data-benchmark="throw">
-        <span style='background: #ffe680'>&nbsp;&nbsp;
+        <span style='background: #ee00cc'>&nbsp;&nbsp;
           <strong style="color: white;">throw no-jit</strong> &nbsp;&nbsp;
         </span>
       </li>
       
         <li style="display: none" data-benchmark="throw">
-        <span style='background: #aa80ff'>&nbsp;&nbsp;
+        <span style='background: #ff8080'>&nbsp;&nbsp;
           <strong style="color: white;">throw yjit</strong> &nbsp;&nbsp;
         </span>
       </li>
       
         <li style="display: none" data-benchmark="tinygql">
-        <span style='background: #ee00cc'>&nbsp;&nbsp;
+        <span style='background: #666600'>&nbsp;&nbsp;
           <strong style="color: white;">tinygql no-jit</strong> &nbsp;&nbsp;
         </span>
       </li>
       
         <li style="display: none" data-benchmark="tinygql">
-        <span style='background: #ff8080'>&nbsp;&nbsp;
+        <span style='background: #ffbfff'>&nbsp;&nbsp;
           <strong style="color: white;">tinygql yjit</strong> &nbsp;&nbsp;
         </span>
       </li>
@@ -1238,8 +1250,17 @@
     
     
     <li>
-      <input type="checkbox" data-benchmark="str_concat" />
+      <input type="checkbox" data-benchmark="shipit" />
       <span style='background: #bebebe'>
+        &nbsp;&nbsp; <strong style="color: white;">shipit</strong> &nbsp;&nbsp;
+      </span>
+    </li>
+  
+    
+    
+    <li>
+      <input type="checkbox" data-benchmark="str_concat" />
+      <span style='background: #80c9ff'>
         &nbsp;&nbsp; <strong style="color: white;">str_concat</strong> &nbsp;&nbsp;
       </span>
     </li>
@@ -1248,7 +1269,7 @@
     
     <li>
       <input type="checkbox" data-benchmark="sudoku" />
-      <span style='background: #80c9ff'>
+      <span style='background: #ffe680'>
         &nbsp;&nbsp; <strong style="color: white;">sudoku</strong> &nbsp;&nbsp;
       </span>
     </li>
@@ -1257,7 +1278,7 @@
     
     <li>
       <input type="checkbox" data-benchmark="throw" />
-      <span style='background: #ffe680'>
+      <span style='background: #ee00cc'>
         &nbsp;&nbsp; <strong style="color: white;">throw</strong> &nbsp;&nbsp;
       </span>
     </li>
@@ -1266,7 +1287,7 @@
     
     <li>
       <input type="checkbox" data-benchmark="tinygql" />
-      <span style='background: #ee00cc'>
+      <span style='background: #666600'>
         &nbsp;&nbsp; <strong style="color: white;">tinygql</strong> &nbsp;&nbsp;
       </span>
     </li>

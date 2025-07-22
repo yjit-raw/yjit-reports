@@ -1262,98 +1262,122 @@
         </span>
       </li>
 
-      <li style="display: none" data-benchmark="str_concat">
+      <li style="display: none" data-benchmark="shipit">
         <span style='background: #ff8000'>&nbsp;&nbsp;
+          <strong style="color: white;">shipit CRUBY stable</strong> &nbsp;&nbsp;
+        </span>
+      </li>
+
+      <li style="display: none" data-benchmark="shipit">
+        <span style='background: #ffcc00'>&nbsp;&nbsp;
+          <strong style="color: white;">shipit YJIT stable</strong> &nbsp;&nbsp;
+        </span>
+      </li>
+
+      <li style="display: none" data-benchmark="shipit">
+        <span style='background: #330099'>&nbsp;&nbsp;
+          <strong style="color: white;">shipit CRUBY dev</strong> &nbsp;&nbsp;
+        </span>
+      </li>
+
+      <li style="display: none" data-benchmark="shipit">
+        <span style='background: #990099'>&nbsp;&nbsp;
+          <strong style="color: white;">shipit YJIT dev</strong> &nbsp;&nbsp;
+        </span>
+      </li>
+
+      <li style="display: none" data-benchmark="str_concat">
+        <span style='background: #ccff00'>&nbsp;&nbsp;
           <strong style="color: white;">str_concat CRUBY stable</strong> &nbsp;&nbsp;
         </span>
       </li>
 
       <li style="display: none" data-benchmark="str_concat">
-        <span style='background: #ffcc00'>&nbsp;&nbsp;
+        <span style='background: #ff0000'>&nbsp;&nbsp;
           <strong style="color: white;">str_concat YJIT stable</strong> &nbsp;&nbsp;
         </span>
       </li>
 
       <li style="display: none" data-benchmark="str_concat">
-        <span style='background: #330099'>&nbsp;&nbsp;
+        <span style='background: #808080'>&nbsp;&nbsp;
           <strong style="color: white;">str_concat CRUBY dev</strong> &nbsp;&nbsp;
         </span>
       </li>
 
       <li style="display: none" data-benchmark="str_concat">
-        <span style='background: #990099'>&nbsp;&nbsp;
+        <span style='background: #008f00'>&nbsp;&nbsp;
           <strong style="color: white;">str_concat YJIT dev</strong> &nbsp;&nbsp;
         </span>
       </li>
 
       <li style="display: none" data-benchmark="sudoku">
-        <span style='background: #ccff00'>&nbsp;&nbsp;
+        <span style='background: #00487d'>&nbsp;&nbsp;
           <strong style="color: white;">sudoku CRUBY stable</strong> &nbsp;&nbsp;
         </span>
       </li>
 
       <li style="display: none" data-benchmark="sudoku">
-        <span style='background: #ff0000'>&nbsp;&nbsp;
+        <span style='background: #b35a00'>&nbsp;&nbsp;
           <strong style="color: white;">sudoku YJIT stable</strong> &nbsp;&nbsp;
         </span>
       </li>
 
       <li style="display: none" data-benchmark="sudoku">
-        <span style='background: #808080'>&nbsp;&nbsp;
+        <span style='background: #b38f00'>&nbsp;&nbsp;
           <strong style="color: white;">sudoku CRUBY dev</strong> &nbsp;&nbsp;
         </span>
       </li>
 
       <li style="display: none" data-benchmark="sudoku">
-        <span style='background: #008f00'>&nbsp;&nbsp;
+        <span style='background: #6b006b'>&nbsp;&nbsp;
           <strong style="color: white;">sudoku YJIT dev</strong> &nbsp;&nbsp;
         </span>
       </li>
 
       <li style="display: none" data-benchmark="throw">
-        <span style='background: #00487d'>&nbsp;&nbsp;
+        <span style='background: #8fb300'>&nbsp;&nbsp;
           <strong style="color: white;">throw CRUBY stable</strong> &nbsp;&nbsp;
         </span>
       </li>
 
       <li style="display: none" data-benchmark="throw">
-        <span style='background: #b35a00'>&nbsp;&nbsp;
+        <span style='background: #b30000'>&nbsp;&nbsp;
           <strong style="color: white;">throw YJIT stable</strong> &nbsp;&nbsp;
         </span>
       </li>
 
       <li style="display: none" data-benchmark="throw">
-        <span style='background: #b38f00'>&nbsp;&nbsp;
+        <span style='background: #bebebe'>&nbsp;&nbsp;
           <strong style="color: white;">throw CRUBY dev</strong> &nbsp;&nbsp;
         </span>
       </li>
 
       <li style="display: none" data-benchmark="throw">
-        <span style='background: #6b006b'>&nbsp;&nbsp;
+        <span style='background: #80ff80'>&nbsp;&nbsp;
           <strong style="color: white;">throw YJIT dev</strong> &nbsp;&nbsp;
         </span>
       </li>
 
       <li style="display: none" data-benchmark="tinygql">
-        <span style='background: #8fb300'>&nbsp;&nbsp;
+        <span style='background: #80c9ff'>&nbsp;&nbsp;
           <strong style="color: white;">tinygql CRUBY stable</strong> &nbsp;&nbsp;
         </span>
       </li>
 
       <li style="display: none" data-benchmark="tinygql">
-        <span style='background: #b30000'>&nbsp;&nbsp;
+        <span style='background: #ffc080'>&nbsp;&nbsp;
           <strong style="color: white;">tinygql YJIT stable</strong> &nbsp;&nbsp;
         </span>
       </li>
 
       <li style="display: none" data-benchmark="tinygql">
-        <span style='background: #bebebe'>&nbsp;&nbsp;
+        <span style='background: #ffe680'>&nbsp;&nbsp;
           <strong style="color: white;">tinygql CRUBY dev</strong> &nbsp;&nbsp;
         </span>
       </li>
 
       <li style="display: none" data-benchmark="tinygql">
-        <span style='background: #80ff80'>&nbsp;&nbsp;
+        <span style='background: #aa80ff'>&nbsp;&nbsp;
           <strong style="color: white;">tinygql YJIT dev</strong> &nbsp;&nbsp;
         </span>
       </li>
@@ -1943,8 +1967,19 @@
     
     
     <li>
-      <input type="checkbox" data-benchmark="str_concat" />
+      <input type="checkbox" data-benchmark="shipit" />
       <span style='background: #ff8000'>
+        &nbsp;&nbsp; <strong style="color: white;">shipit</strong> &nbsp;&nbsp;
+      </span>
+    </li>
+  
+    
+    
+    
+    
+    <li>
+      <input type="checkbox" data-benchmark="str_concat" />
+      <span style='background: #ccff00'>
         &nbsp;&nbsp; <strong style="color: white;">str_concat</strong> &nbsp;&nbsp;
       </span>
     </li>
@@ -1955,7 +1990,7 @@
     
     <li>
       <input type="checkbox" data-benchmark="sudoku" />
-      <span style='background: #ccff00'>
+      <span style='background: #00487d'>
         &nbsp;&nbsp; <strong style="color: white;">sudoku</strong> &nbsp;&nbsp;
       </span>
     </li>
@@ -1966,7 +2001,7 @@
     
     <li>
       <input type="checkbox" data-benchmark="throw" />
-      <span style='background: #00487d'>
+      <span style='background: #8fb300'>
         &nbsp;&nbsp; <strong style="color: white;">throw</strong> &nbsp;&nbsp;
       </span>
     </li>
@@ -1977,7 +2012,7 @@
     
     <li>
       <input type="checkbox" data-benchmark="tinygql" />
-      <span style='background: #8fb300'>
+      <span style='background: #80c9ff'>
         &nbsp;&nbsp; <strong style="color: white;">tinygql</strong> &nbsp;&nbsp;
       </span>
     </li>
