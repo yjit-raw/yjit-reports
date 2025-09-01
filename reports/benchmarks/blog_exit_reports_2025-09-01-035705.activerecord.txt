@@ -1,0 +1,58 @@
+method call exit reasons: 
+       iseq_missing_optional_kw    1261745 (84.6%)
+                     forwarding     133717 ( 9.0%)
+                cfunc_block_arg      77739 ( 5.2%)
+                    megamorphic       6000 ( 0.4%)
+            iseq_block_arg_type       5972 ( 0.4%)
+                 iseq_has_no_kw       2374 ( 0.2%)
+  iseq_has_rest_and_kw_supplied       1745 ( 0.1%)
+                  send_null_mid       1200 ( 0.1%)
+          iseq_kw_splat_non_nil        572 ( 0.0%)
+
+leave exit reasons: 
+  interp_return    8625849 (100.0%)
+
+getinstancevariable exit reasons: 
+  (all relevant counters are zero)
+setinstancevariable exit reasons: 
+  (all relevant counters are zero)
+opt_aref exit reasons: 
+  (all relevant counters are zero)
+
+bindings_allocations:           0
+bindings_set:                   0
+compiled_iseq_count:          203
+compiled_block_count:        2570
+invalidation_count:             0
+constant_state_bumps:           0
+inline_code_size:         1535247
+outlined_code_size:       1354910
+
+total_exit_count:         8625849
+total_insns_count:     2815200446
+vm_insns_count:           1591053
+yjit_insns_count:      2813609393
+ratio_in_yjit:              99.9%
+avg_len_in_yjit:            326.2
+
+Top-20 most frequent exit ops (NaN% of exits):
+      adjuststack:          0 (NaN)
+      anytostring:          0 (NaN)
+         branchif:          0 (NaN)
+        branchnil:          0 (NaN)
+     branchunless:          0 (NaN)
+     checkkeyword:          0 (NaN)
+       checkmatch:          0 (NaN)
+        checktype:          0 (NaN)
+      concatarray:          0 (NaN)
+    concatstrings:          0 (NaN)
+    concattoarray:          0 (NaN)
+      defineclass:          0 (NaN)
+          defined:          0 (NaN)
+      definedivar:          0 (NaN)
+     definemethod:          0 (NaN)
+    definesmethod:          0 (NaN)
+              dup:          0 (NaN)
+         duparray:          0 (NaN)
+          duphash:          0 (NaN)
+             dupn:          0 (NaN)
