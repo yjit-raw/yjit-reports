@@ -8,14 +8,14 @@
     <meta name="viewport" content="width=device-width,maximum-scale=2">
     <script src="/assets/js/clipboard.min.js"></script>
     <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/style.css?a46d819ad">
-    <title>YJIT Benchmarks from 2025-09-11 03:47:34 UTC for 0dc1cd407e7775610f2bcaef6c1282369867f91c</title>
+    <title>Ruby Benchmarks from 2025-09-11 03:47:34 UTC for 0dc1cd407e7775610f2bcaef6c1282369867f91c</title>
   </head>
 
   <body>
     <!-- HEADER -->
     <div id="header_wrap" class="outer">
         <header class="inner">
-          <h1 id="project_title"><a href="/">YJIT Benchmarks</a></h1>
+          <h1 id="project_title"><a href="/">Ruby Benchmarks</a></h1>
           <div style="clear:both;"></div>
         </header>
     </div>
@@ -36,7 +36,32 @@
         
       </p>
 
-      <div></div>
+      <div>Using the <a href="https://en.wikipedia.org/wiki/Geometric_mean">geomean</a>
+of the <a href="https://github.com/ruby/ruby-bench/blob/901adb68ad6b4f51af2464e41078a9e76442fee7/benchmarks.yml">headline benchmarks</a>
+for x86
+
+YJIT 3.5.0dev is
+
+<ul style="list-style: none">
+  <li>93.4% faster than CRuby 3.5.0dev</li>
+
+  
+    <li>7.2% faster than YJIT 3.3.6</li>
+  
+</ul>
+
+
+  On <a href="https://github.com/ruby/ruby-bench/blob/901adb68ad6b4f51af2464e41078a9e76442fee7/benchmarks/railsbench/benchmark.rb">railsbench</a> it is
+
+  <ul style="list-style: none">
+    <li>98.4% faster than CRuby 3.5.0dev</li>
+
+    
+      <li>6.6% faster than YJIT 3.3.6</li>
+    
+  </ul>
+
+</div>
 
       
         <div>
@@ -5216,7 +5241,7 @@
     <div id="footer_wrap" class="outer">
       <footer class="inner">
         <ul>
-          <li><a href="/about.html">About YJIT Benchmarks</a></li>
+          <li><a href="/about.html">About Ruby Benchmarks</a></li>
           <li><a href="/history.html">Raw Results History</a></li>
         </ul>
       </footer>
