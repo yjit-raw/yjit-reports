@@ -1,9 +1,10 @@
 method call exit reasons: 
-  cfunc_block_arg     478771 (96.8%)
-      megamorphic      15960 ( 3.2%)
+  cfunc_block_arg     467971 (96.8%)
+      megamorphic      15600 ( 3.2%)
 
 leave exit reasons: 
-  interp_return   22975786 (100.0%)
+  interp_return   22457557 (100.0%)
+   se_interrupt          1 ( 0.0%)
 
 getinstancevariable exit reasons: 
   (all relevant counters are zero)
@@ -15,21 +16,22 @@ opt_aref exit reasons:
 bindings_allocations:           0
 bindings_set:                   0
 compiled_iseq_count:          114
-compiled_block_count:        2228
+compiled_block_count:        2230
 invalidation_count:             5
 constant_state_bumps:           0
-inline_code_size:          539867
-outlined_code_size:        509530
+inline_code_size:          541428
+outlined_code_size:        469717
 
-total_exit_count:        23007706
-total_insns_count:     1182878085
-vm_insns_count:           2525519
-yjit_insns_count:      1180384486
+total_exit_count:        22488758
+total_insns_count:     1156206356
+vm_insns_count:           2479887
+yjit_insns_count:      1153757670
 ratio_in_yjit:              99.8%
 avg_len_in_yjit:             51.3
 
 Top-20 most frequent exit ops (100.0% of exits):
-           opt_eq:      31920 (100.0)
+           opt_eq:      31200 (100.0)
+            leave:          1 (0.0)
       adjuststack:          0 (0.0)
       anytostring:          0 (0.0)
          branchif:          0 (0.0)
@@ -48,4 +50,3 @@ Top-20 most frequent exit ops (100.0% of exits):
     definesmethod:          0 (0.0)
               dup:          0 (0.0)
          duparray:          0 (0.0)
-          duphash:          0 (0.0)

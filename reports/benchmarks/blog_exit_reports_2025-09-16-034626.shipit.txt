@@ -1,26 +1,26 @@
 method call exit reasons: 
-                    megamorphic   19335019 (54.5%)
-                     forwarding    5833884 (16.4%)
-                singleton_class    2985752 ( 8.4%)
-                cfunc_block_arg    2144318 ( 6.0%)
-            optimized_block_arg    1882569 ( 5.3%)
-            iseq_block_arg_type     820315 ( 2.3%)
-       iseq_missing_optional_kw     472006 ( 1.3%)
-  iseq_has_rest_and_kw_supplied     464706 ( 1.3%)
-                  cme_not_found     400684 ( 1.1%)
+                    megamorphic   19341776 (54.5%)
+                     forwarding    5833872 (16.4%)
+                singleton_class    2985772 ( 8.4%)
+                cfunc_block_arg    2144425 ( 6.0%)
+            optimized_block_arg    1882573 ( 5.3%)
+            iseq_block_arg_type     819755 ( 2.3%)
+       iseq_missing_optional_kw     472005 ( 1.3%)
+  iseq_has_rest_and_kw_supplied     464700 ( 1.3%)
+                  cme_not_found     400669 ( 1.1%)
                  iseq_has_no_kw     390676 ( 1.1%)
-               iseq_arity_error     330082 ( 0.9%)
-          iseq_kw_splat_non_nil     307293 ( 0.9%)
-        iseq_materialized_block      58995 ( 0.2%)
+               iseq_arity_error     330079 ( 0.9%)
+          iseq_kw_splat_non_nil     307294 ( 0.9%)
+        iseq_materialized_block      58992 ( 0.2%)
                cfunc_splat_neg2      47101 ( 0.1%)
          cfunc_kw_splat_non_nil      16132 ( 0.0%)
-     iseq_has_rest_and_captured       8701 ( 0.0%)
+     iseq_has_rest_and_captured       8698 ( 0.0%)
            iseq_send_forwarding       1562 ( 0.0%)
              iseq_splat_with_kw        804 ( 0.0%)
 
 leave exit reasons: 
-  interp_return   65408257 (100.0%)
-   se_interrupt       1119 ( 0.0%)
+  interp_return   65415043 (100.0%)
+   se_interrupt       1075 ( 0.0%)
 
 getinstancevariable exit reasons: 
   (all relevant counters are zero)
@@ -32,16 +32,16 @@ opt_aref exit reasons:
 bindings_allocations:           1
 bindings_set:                   0
 compiled_iseq_count:         3351
-compiled_block_count:       54054
+compiled_block_count:       53803
 invalidation_count:           185
 constant_state_bumps:           0
-inline_code_size:         7766630
-outlined_code_size:       6470569
+inline_code_size:         7748884
+outlined_code_size:       6529753
 
-total_exit_count:        65812928
-total_insns_count:     6411177007
-vm_insns_count:          12224792
-yjit_insns_count:      6399356886
+total_exit_count:        65819665
+total_insns_count:     6411246544
+vm_insns_count:          12224790
+yjit_insns_count:      6399426376
 ratio_in_yjit:              99.8%
 avg_len_in_yjit:             97.2
 
@@ -50,19 +50,19 @@ Top-20 most frequent exit ops (100.0% of exits):
         getblockparamproxy:     134096 (33.1)
                    splatkw:      52433 (13.0)
                     opt_eq:      24120 (6.0)
-    opt_send_without_block:       7200 (1.8)
+    opt_send_without_block:       7206 (1.8)
                       once:       5949 (1.5)
-               expandarray:       3848 (1.0)
-               invokesuper:       2026 (0.5)
-                     leave:       1119 (0.3)
-                  branchif:        501 (0.1)
-                      send:        241 (0.1)
-                  opt_aref:         33 (0.0)
-               objtostring:          5 (0.0)
-          opt_regexpmatch2:          3 (0.0)
+               expandarray:       3847 (1.0)
+               invokesuper:       2010 (0.5)
+                     leave:       1075 (0.3)
+                  branchif:        523 (0.1)
+                      send:        233 (0.1)
+                  opt_aref:         28 (0.0)
+               objtostring:          2 (0.0)
                   opt_ltlt:          2 (0.0)
-                   opt_mod:          1 (0.0)
+          opt_regexpmatch2:          2 (0.0)
+                 opt_minus:          1 (0.0)
+                  opt_plus:          1 (0.0)
                adjuststack:          0 (0.0)
                anytostring:          0 (0.0)
                  branchnil:          0 (0.0)
-              branchunless:          0 (0.0)

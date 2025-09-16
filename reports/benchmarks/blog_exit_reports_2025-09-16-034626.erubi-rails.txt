@@ -1,16 +1,16 @@
 method call exit reasons: 
-                singleton_class   24599375 (69.5%)
-  iseq_has_rest_and_kw_supplied    3599924 (10.2%)
-       iseq_missing_optional_kw    3599915 (10.2%)
+                singleton_class   24599363 (69.5%)
+  iseq_has_rest_and_kw_supplied    3599921 (10.2%)
+       iseq_missing_optional_kw    3599914 (10.2%)
                  iseq_has_no_kw    1199943 ( 3.4%)
                      forwarding    1199942 ( 3.4%)
-            iseq_block_arg_type     599989 ( 1.7%)
+            iseq_block_arg_type     599991 ( 1.7%)
                iseq_arity_error     599971 ( 1.7%)
                     megamorphic          2 ( 0.0%)
 
 leave exit reasons: 
-  interp_return   75293267 (100.0%)
-   se_interrupt         13 ( 0.0%)
+  interp_return   75293364 (100.0%)
+   se_interrupt         15 ( 0.0%)
 
 getinstancevariable exit reasons: 
   (all relevant counters are zero)
@@ -21,24 +21,24 @@ opt_aref exit reasons:
 
 bindings_allocations:           0
 bindings_set:                   0
-compiled_iseq_count:          262
-compiled_block_count:        3659
+compiled_iseq_count:          263
+compiled_block_count:        3717
 invalidation_count:            22
 constant_state_bumps:           0
-inline_code_size:         1938546
-outlined_code_size:       1700888
+inline_code_size:         1934972
+outlined_code_size:       1631088
 
-total_exit_count:        75293289
-total_insns_count:     6221276455
-vm_insns_count:           4478084
-yjit_insns_count:      6216798393
+total_exit_count:        75293385
+total_insns_count:     6221278791
+vm_insns_count:           4481434
+yjit_insns_count:      6216797378
 ratio_in_yjit:              99.9%
 avg_len_in_yjit:             82.6
 
 Top-20 most frequent exit ops (100.0% of exits):
-                     leave:         13 (59.1)
-    opt_send_without_block:          8 (36.4)
-                      send:          1 (4.5)
+                     leave:         15 (71.4)
+    opt_send_without_block:          4 (19.0)
+               invokesuper:          2 (9.5)
                adjuststack:          0 (0.0)
                anytostring:          0 (0.0)
                   branchif:          0 (0.0)
